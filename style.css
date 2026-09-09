@@ -316,63 +316,46 @@ button {
 /* =========================================
    4. HERO (BACKGROUND FOTO)
 ========================================= */
+/* =========================================
+   HERO (BACKGROUND SLIDER - AUTO 4 DETIK)
+========================================= */
 .hero-bri-style {
     width: 100%;
     height: 100vh;
-    background-image: url('herobg-new.jpeg');
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 100px 50px 0 50px;
+}
+
+/* KEDUA BACKGROUND SLIDE */
+.hero-bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    display: flex;
-    align-items: flex-end; /* TURUNKAN TEKS KE BAWAH */
-    justify-content: flex-start;
-    padding: 100px 50px 80px 50px; /* padding-bottom 80px */
-    overflow: hidden;
-    position: relative;
+    z-index: 0;
 }
 
-.hero-bri-content {
-    color: white;
-    max-width: 600px;
-    margin-top: 0; /* Kembalikan margin-top ke 0 */
-    z-index: 3;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+/* SLIDE 1 */
+.hero-slide-1 {
+    background-image: url('SVN00690 ok.JPG');
+    animation: heroSlide1 8s infinite;
 }
 
-.hero-bri-title {
-    font-size: 3rem;
-    line-height: 1.2;
-    font-weight: 800;
-    margin-bottom: 15px;
-    text-align: left;
+/* SLIDE 2 */
+.hero-slide-2 {
+    background-image: url('Add a heading.png');
+    animation: heroSlide2 8s infinite;
 }
 
-.hero-bri-subtitle {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #f0f0f0;
-    margin-bottom: 30px;
-}
-
-.btn-bri-primary {
-    background-color: #ff0000;
-    color: white;
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 15px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.btn-bri-primary:hover {
-    background-color: #cc0000;
-    transform: translateY(-3px);
-}
-
-/* Overlay Gelap Agar Teks Terbaca */
-.hero-bri-style::before {
-    content: '';
+/* OVERLAY GELAP */
+.hero-overlay-dark {
     position: absolute;
     top: 0;
     left: 0;
@@ -380,6 +363,41 @@ button {
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
     z-index: 1;
+}
+
+/* TEKS */
+.hero-bri-content {
+    color: white;
+    max-width: 600px;
+    margin-top: 50px;
+    z-index: 3;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ANIMASI SLIDE 1 (MUNCUL, LALU HILANG) */
+@keyframes heroSlide1 {
+    0%, 45% {
+        opacity: 1;
+    }
+    50%, 95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* ANIMASI SLIDE 2 (MUNCUL SETELAH 4 DETIK) */
+@keyframes heroSlide2 {
+    0%, 45% {
+        opacity: 0;
+    }
+    50%, 95% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /* =========================================
