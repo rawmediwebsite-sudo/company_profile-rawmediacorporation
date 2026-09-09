@@ -313,7 +313,11 @@ button {
     color: #ff3333;
 }
 /* =========================================
-   HERO (BACKGROUND MARQUEE - HORIZONTAL)
+ /* =========================================
+   HERO (BACKGROUND STATIS)
+========================================= */
+/* =========================================
+   HERO (BACKGROUND STATIS + TOMBOL MERAH)
 ========================================= */
 .hero-bri-style {
     width: 100%;
@@ -324,30 +328,9 @@ button {
     align-items: center;
     justify-content: flex-start;
     padding: 100px 50px 0 50px;
-}
-
-/* KEDUA BACKGROUND SLIDE */
-.hero-bg-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
+    background-image: url('herobg-new.jpeg');
     background-size: cover;
     background-position: center;
-    z-index: 0;
-}
-
-/* SLIDE 1 */
-.hero-slide-1 {
-    background-image: url('img/SVN00690 ok.JPG');
-    animation: heroSlide1 10s linear infinite;
-}
-
-/* SLIDE 2 */
-.hero-slide-2 {
-    background-image: url('Add\ a\ heading.png');
-    animation: heroSlide2 10s linear infinite;
 }
 
 /* OVERLAY GELAP */
@@ -357,7 +340,7 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
     z-index: 1;
 }
 
@@ -370,26 +353,67 @@ button {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* ANIMASI SLIDE 1 (BERGESER KE KANAN) */
-@keyframes heroSlide1 {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(100%);
-    }
+/* TOMBOL MERAH SOLID */
+/* TOMBOL MERAH SOLID */
+.btn-bri-primary {
+    background-color: #ff0000;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    /* BISA KLIK & TURUN KE BAWAH */
+    margin-top: 30px; /* Membuat tombol turun ke bawah */
+    display: inline-block;
 }
 
-/* ANIMASI SLIDE 2 (BERGESER KE KIRI) */
-@keyframes heroSlide2 {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
+.btn-bri-primary:hover {
+    background-color: #cc0000;
+    transform: translateY(-3px);
 }
 
+.btn-bri-primary:active {
+    transform: scale(0.97);
+}
+
+/* =========================================
+   RESPONSIVE DI HP
+========================================= */
+@media (max-width: 768px) {
+    .hero-bri-style {
+        padding: 0 20px;
+        height: auto;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .hero-bri-content {
+        max-width: 100%;
+        text-align: center;
+        margin-top: 80px;
+        padding-bottom: 60px;
+    }
+
+    .hero-bri-title {
+        font-size: 2.2rem;
+        color: #ffffff;
+    }
+
+    .hero-bri-subtitle {
+        font-size: 0.9rem;
+        color: #f0f0f0;
+    }
+
+    .btn-bri-primary {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
 /* =========================================
    5. TENTANG KAMI
 ========================================= */
