@@ -312,12 +312,8 @@ button {
     font-size: 1rem;
     color: #ff3333;
 }
-
 /* =========================================
-   4. HERO (BACKGROUND FOTO)
-========================================= */
-/* =========================================
-   HERO (BACKGROUND SLIDER - AUTO 4 DETIK)
+   HERO (BACKGROUND MARQUEE - HORIZONTAL)
 ========================================= */
 .hero-bri-style {
     width: 100%;
@@ -335,7 +331,7 @@ button {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
     background-size: cover;
     background-position: center;
@@ -344,14 +340,14 @@ button {
 
 /* SLIDE 1 */
 .hero-slide-1 {
-    background-image: url('SVN00690 ok.JPG');
-    animation: heroSlide1 8s infinite;
+    background-image: url('img/SVN00690 ok.JPG');
+    animation: heroSlide1 10s linear infinite;
 }
 
 /* SLIDE 2 */
 .hero-slide-2 {
-    background-image: url('Add a heading.png');
-    animation: heroSlide2 8s infinite;
+    background-image: url('Add\ a\ heading.png');
+    animation: heroSlide2 10s linear infinite;
 }
 
 /* OVERLAY GELAP */
@@ -374,29 +370,23 @@ button {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* ANIMASI SLIDE 1 (MUNCUL, LALU HILANG) */
+/* ANIMASI SLIDE 1 (BERGESER KE KANAN) */
 @keyframes heroSlide1 {
-    0%, 45% {
-        opacity: 1;
+    from {
+        transform: translateX(0);
     }
-    50%, 95% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
+    to {
+        transform: translateX(100%);
     }
 }
 
-/* ANIMASI SLIDE 2 (MUNCUL SETELAH 4 DETIK) */
+/* ANIMASI SLIDE 2 (BERGESER KE KIRI) */
 @keyframes heroSlide2 {
-    0%, 45% {
-        opacity: 0;
+    from {
+        transform: translateX(-100%);
     }
-    50%, 95% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
+    to {
+        transform: translateX(0);
     }
 }
 
