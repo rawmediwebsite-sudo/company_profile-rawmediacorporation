@@ -3,25 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAW Media Indonesia - Percetakan dan Finishing</title>
+    <title>RAW Media Indonesia - Percetakan Profesional & Terpercaya</title>
+    <meta name="description" content="Jasa percetakan buku, cetak buku ajar, novel, kitab pesantren, buku tahunan, finishing premium, dan desain grafis. Berpengalaman lebih dari 10 tahun.">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- =========================================
+         NAVBAR
+    ========================================= -->
     <nav class="navbar">
         <div class="logo">
-            <img src="raw-media.svg" alt="Logo RAW Media" class="logo-img">
+            <a href="#home">
+                <img src="raw-media.svg" alt="Logo RAW Media Indonesia" class="logo-img">
+            </a>
         </div>
         <ul class="nav-links" id="navMenu">
             <li><a href="#home" class="active">HOME</a></li>
             <li><a href="#tentang">TENTANG KAMI</a></li>
             <li><a href="#layanan">LAYANAN</a></li>
             <li><a href="#galeri">GALERI</a></li>
+            <li><a href="#client">CLIENT</a></li>
+            <li><a href="#testimoni">TESTIMONI</a></li>
             <li><a href="#pemesanan">PEMESANAN</a></li>
-            <li><a href="#kalkulator">Kalkulator</a></li>
-            <li><a href="#faq">FAQ</a></li>
         </ul>
         <div class="nav-right">
             <div class="hamburger" id="hamburger">
@@ -31,13 +40,16 @@
         </div>
     </nav>
 
+    <!-- =========================================
+         MOBILE MENU
+    ========================================= -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
             <div class="mobile-logo">
                 <img src="raw-media.svg" alt="Logo RAW Media" class="mobile-logo-img">
                 <span class="mobile-logo-text">RAW MEDIA</span>
             </div>
-            <button class="close-btn" id="closeBtn">
+            <button class="close-btn" id="closeBtn" aria-label="Tutup">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
@@ -47,38 +59,53 @@
                 <li><a href="#tentang">TENTANG KAMI</a></li>
                 <li><a href="#layanan">LAYANAN</a></li>
                 <li><a href="#galeri">GALERI</a></li>
+                <li><a href="#client">CLIENT</a></li>
+                <li><a href="#testimoni">TESTIMONI</a></li>
                 <li><a href="#pemesanan">PEMESANAN</a></li>
-                <li><a href="#kalkulator">Kalkulator</a></li>
-                <li><a href="#faq">FAQ</a></li>
             </ul>
             <div class="mobile-address">
-                <p><i class="fa-solid fa-location-dot"></i> Yogyakarta, Indonesia</p>
+                <p><i class="fa-solid fa-location-dot"></i> Sleman, Yogyakarta</p>
                 <p><i class="fa-solid fa-phone"></i> 085231092020</p>
-                <p><i class="fa-solid fa-envelope"></i> info@rawmedia.id</p>
+                <p><i class="fa-solid fa-envelope"></i> cv.rawmedia@gmail.com</p>
             </div>
         </div>
     </div>
+
+    <!-- =========================================
+         HERO
+    ========================================= -->
     <header id="home" class="hero-bri-style">
         <div class="hero-overlay-dark"></div>
         <div class="hero-bri-content">
             <h1 class="hero-bri-title">Percetakan Profesional & Terpercaya di Indonesia</h1>
-            <p class="hero-bri-subtitle">Solusi Cetak Buku Self Publishing, Buku Ajar Sekolah, dan Buku Pesantren dengan kualitas premium.</p>
+            <p class="hero-bri-subtitle">Solusi cetak buku self publishing, buku ajar sekolah, kitab pesantren, dan buku tahunan dengan kualitas premium.</p>
             <a href="#pemesanan" class="btn-bri-primary">Pesan Sekarang</a>
         </div>
     </header>
+
+    <!-- =========================================
+         TENTANG KAMI
+    ========================================= -->
     <section id="tentang" class="about-bri-style">
         <div class="about-bri-text">
             <h2>Tentang Kami</h2>
-            <p>CV. RAW Media Indonesia adalah perusahaan percetakan dan jasa finishing dengan pengalaman lebih dari 10 tahun. Kami menyediakan solusi cetak berkualitas tinggi untuk kebutuhan bisnis dan personal, mulai dari cetakan komersial, promosi, hingga kebutuhan korporat.</p>
+            <p>CV. RAW Media Indonesia adalah perusahaan percetakan dan jasa finishing dengan pengalaman lebih dari 10 tahun. Kami menyediakan solusi cetak berkualitas tinggi untuk kebutuhan sekolah, kampus, pesantren, penerbit, dan korporat.</p>
             <p>Dengan dukungan mesin cetak modern dan tenaga kerja profesional, kami berkomitmen memberikan hasil cetak terbaik dengan waktu pengerjaan efisien dan harga kompetitif.</p>
         </div>
-        <div class="about-bri-stats">
-            <div class="stat-box"><i class="fa-solid fa-award"></i><h4>10+ Tahun</h4><p>Pengalaman</p></div>
-            <div class="stat-box"><i class="fa-solid fa-handshake"></i><h4>500+ Klien</h4><p>Kepercayaan</p></div>
-            <div class="stat-box"><i class="fa-solid fa-gears"></i><h4>Modern</h4><p>Teknologi</p></div>
+
+        <div class="about-bri-video">
+            <video class="about-video-player" controls muted loop playsinline preload="none"
+                   poster="img/thumbnail-video.jpg">
+                <source src="img/video-profil.mp4" type="video/mp4">
+                <source src="img/video-profil.webm" type="video/webm">
+                Browser Anda tidak mendukung pemutaran video.
+            </video>
         </div>
     </section>
 
+    <!-- =========================================
+         VISI & MISI
+    ========================================= -->
     <section id="visi-misi" class="visi-misi-section">
         <div class="vm-wrapper">
             <div class="vm-section-title">
@@ -111,146 +138,164 @@
         </div>
     </section>
 
-    <section id="layanan" class="layanan-section">
-        <div class="layanan-header">
-            <h2 class="layanan-title">
-                <span class="layanan-title-white">Layanan</span> <span class="layanan-title-red">Kami</span>
+    <!-- =========================================
+         KATALOG LAYANAN (PERCETAKAN)
+    ========================================= -->
+    <section id="layanan" class="katalog-section">
+        <div class="katalog-header">
+            <h2 class="katalog-title">
+                <span class="katalog-title-white">Daftar</span> <span class="katalog-title-red">Layanan Kami</span>
             </h2>
-            <p class="layanan-description">
-                Kami melayani berbagai jenis percetakan untuk kebutuhan sekolah, bisnis, dan personal. 
-                Dari desain hingga hasil akhir, semua kami kerjakan dengan kualitas premium.
-            </p>
-            <div class="layanan-divider"></div>
+            <p class="katalog-subtitle">Klik setiap layanan untuk melihat detail spesifikasi dan konsultasi gratis</p>
         </div>
-    
-        <div class="layanan-grid">
-            <!-- Card 1 -->
-            <div class="layanan-card">
-                <div class="card-icon">
-                    <i class="fa-solid fa-book-open"></i>
+
+        <div class="katalog-grid">
+
+            <!-- Produk 1 - CETAK BUKU -->
+            <div class="produk-card" onclick="openProdukModal('buku')" data-produk="buku" role="button" tabindex="0">
+                <div class="produk-image">
+                    <img src="img/produk/buku-1.jpg" alt="Cetak Buku Ajar dan Novel" loading="lazy" decoding="async">
                 </div>
-                <div class="card-content">
-                    <h3 class="card-title">Percetakan Buku</h3>
-                    <ul class="card-features">
-                        <li><i class="fa-solid fa-check"></i> Buku Pelajaran Sekolah</li>
-                        <li><i class="fa-solid fa-check"></i> Buku Akademik & Ilmiah</li>
-                        <li><i class="fa-solid fa-check"></i> Buku Bimbingan Belajar</li>
-                        <li><i class="fa-solid fa-check"></i> Novel & Buku Penulis</li>
-                    </ul>
-                    <p class="card-description">
-                        Hasil cetak tajam dengan berbagai pilihan kertas. Cocok untuk sekolah, kampus, dan penerbit.
-                    </p>
-                    <a href="#" class="card-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="produk-info">
+                    <h3 class="produk-title">Cetak Buku</h3>
+                    <p class="produk-kategori">BUKU AJAR · NOVEL · MODUL · AKADEMIK</p>
                 </div>
             </div>
-    
-            <!-- Card 2 -->
-            <div class="layanan-card">
-                <div class="card-icon">
-                    <i class="fa-solid fa-layer-group"></i>
+
+            <!-- Produk 2 - BUKU TAHUNAN -->
+            <div class="produk-card" onclick="openProdukModal('tahunan')" data-produk="tahunan" role="button" tabindex="0">
+                <div class="produk-image">
+                    <img src="img/produk/tahunan-1.jpg" alt="Cetak Buku Tahunan Sekolah" loading="lazy" decoding="async">
                 </div>
-                <div class="card-content">
-                    <h3 class="card-title">Finishing Premium</h3>
-                    <ul class="card-features">
-                        <li><i class="fa-solid fa-check"></i> Jilid Soft Cover</li>
-                        <li><i class="fa-solid fa-check"></i> Jilid Hard Cover</li>
-                        <li><i class="fa-solid fa-check"></i> Jilid Spiral</li>
-                        <li><i class="fa-solid fa-check"></i> Laminasi Glossy & Doff</li>
-                    </ul>
-                    <p class="card-description">
-                        Finishing presisi dengan berbagai pilihan jilid dan laminasi sesuai kebutuhan dokumen Anda.
-                    </p>
-                    <a href="#" class="card-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="produk-info">
+                    <h3 class="produk-title">Buku Tahunan</h3>
+                    <p class="produk-kategori">YEARBOOK SEKOLAH · FOTO · DESAIN</p>
                 </div>
             </div>
-    
-            <!-- Card 3 -->
-            <div class="layanan-card">
-                <div class="card-icon">
-                    <i class="fa-solid fa-pen-nib"></i>
+
+            <!-- Produk 3 - BUKU PESANTREN -->
+            <div class="produk-card" onclick="openProdukModal('pesantren')" data-produk="pesantren" role="button" tabindex="0">
+                <div class="produk-image">
+                    <img src="img/produk/pesantren-1.jpg" alt="Cetak Kitab dan Buku Pesantren" loading="lazy" decoding="async">
                 </div>
-                <div class="card-content">
-                    <h3 class="card-title">Desain Grafis</h3>
-                    <ul class="card-features">
-                        <li><i class="fa-solid fa-check"></i> Desain Cover Buku</li>
-                        <li><i class="fa-solid fa-check"></i> Desain Brosur & Pamflet</li>
-                        <li><i class="fa-solid fa-check"></i> Desain Logo & Branding</li>
-                        <li><i class="fa-solid fa-check"></i> Social Media Kit</li>
-                    </ul>
-                    <p class="card-description">
-                        Tim desain berpengalaman siap menciptakan identitas visual yang kuat untuk brand Anda.
-                    </p>
-                    <a href="#" class="card-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="produk-info">
+                    <h3 class="produk-title">Buku Pesantren</h3>
+                    <p class="produk-kategori">KITAB · DOA · HAFALAN · JUZ AMMA</p>
                 </div>
             </div>
-    
-            <!-- Card 4 -->
-            <div class="layanan-card">
-                <div class="card-icon">
-                    <i class="fa-solid fa-camera-retro"></i>
+
+            <!-- Produk 4 - FINISHING -->
+            <div class="produk-card" onclick="openProdukModal('finishing')" data-produk="finishing" role="button" tabindex="0">
+                <div class="produk-image">
+                    <img src="img/produk/finishing-1.jpg" alt="Finishing dan Jilid Buku Premium" loading="lazy" decoding="async">
                 </div>
-                <div class="card-content">
-                    <h3 class="card-title">Buku Tahunan</h3>
-                    <ul class="card-features">
-                        <li><i class="fa-solid fa-check"></i> Desain & Layout Yearbook</li>
-                        <li><i class="fa-solid fa-check"></i> Fotografi Siswa & Kelas</li>
-                        <li><i class="fa-solid fa-check"></i> Cetak Full Color</li>
-                        <li><i class="fa-solid fa-check"></i> Jilid Hard Cover</li>
-                    </ul>
-                    <p class="card-description">
-                        Paket lengkap buku tahunan dengan foto profesional dan layout kreatif yang memorable.
-                    </p>
-                    <a href="#" class="card-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="produk-info">
+                    <h3 class="produk-title">Finishing Premium</h3>
+                    <p class="produk-kategori">JILID · LAMINASI · SPOT UV · EMBOSS</p>
                 </div>
             </div>
-    
-            <!-- Card 5 -->
-            <div class="layanan-card">
-                <div class="card-icon">
-                    <i class="fa-solid fa-book-quran"></i>
+
+            <!-- Produk 5 - DESAIN GRAFIS -->
+            <div class="produk-card" onclick="openProdukModal('desain')" data-produk="desain" role="button" tabindex="0">
+                <div class="produk-image">
+                    <img src="img/produk/desain-1.jpg" alt="Jasa Desain Cover Buku dan Branding" loading="lazy" decoding="async">
                 </div>
-                <div class="card-content">
-                    <h3 class="card-title">Buku Pesantren</h3>
-                    <ul class="card-features">
-                        <li><i class="fa-solid fa-check"></i> Kitab Kuning & Terjemahan</li>
-                        <li><i class="fa-solid fa-check"></i> Buku Panduan Amaliyah</li>
-                        <li><i class="fa-solid fa-check"></i> Buku Hafalan & Doa</li>
-                        <li><i class="fa-solid fa-check"></i> Buku Administrasi</li>
-                    </ul>
-                    <p class="card-description">
-                        Memahami kebutuhan pesantren dengan format yang familiar dan pengerjaan teliti.
-                    </p>
-                    <a href="#" class="card-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="produk-info">
+                    <h3 class="produk-title">Desain Grafis</h3>
+                    <p class="produk-kategori">COVER · LAYOUT · LOGO · BRANDING</p>
                 </div>
             </div>
-    
-            <!-- Card 6 -->
-            <div class="layanan-card">
-                <div class="card-icon">
-                    <i class="fa-solid fa-building"></i>
+
+            <!-- Produk 6 - B2B -->
+            <div class="produk-card" onclick="openProdukModal('b2b')" data-produk="b2b" role="button" tabindex="0">
+                <div class="produk-image">
+                    <img src="img/produk/b2b-1.jpg" alt="Pengadaan Cetak Instansi dan Korporat" loading="lazy" decoding="async">
                 </div>
-                <div class="card-content">
-                    <h3 class="card-title">B2B & Korporat</h3>
-                    <ul class="card-features">
-                        <li><i class="fa-solid fa-check"></i> Pengadaan Buku Instansi</li>
-                        <li><i class="fa-solid fa-check"></i> Cetak Laporan & Dokumen</li>
-                        <li><i class="fa-solid fa-check"></i> Brosur & Katalog Produk</li>
-                        <li><i class="fa-solid fa-check"></i> Banner & Spanduk</li>
-                    </ul>
-                    <p class="card-description">
-                        Dukungan penuh untuk kebutuhan korporat dengan pengadaan jumlah besar dan tepat waktu.
-                    </p>
-                    <a href="#" class="card-link">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+                <div class="produk-info">
+                    <h3 class="produk-title">B2B & Korporat</h3>
+                    <p class="produk-kategori">PENGADAAN · INSTANSI · KONTRAK</p>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <div class="lightbox" id="lightbox">
-        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-        <img class="lightbox-image" id="lightboxImage" src="" alt="Foto Diperbesar">
-    </div>
+    <!-- =========================================
+         GALERI COVERFLOW
+    ========================================= -->
+    <section id="galeri" class="galeri-section">
+        <div class="galeri-container">
+            
+            <div class="galeri-header">
+                <span class="galeri-label">Portofolio</span>
+                <h2 class="galeri-title">
+                    <span class="galeri-title-white">Galeri</span> <span class="galeri-title-red">Produksi Kami</span>
+                </h2>
+                <p class="galeri-subtitle">Ini proses Pengerjaan pesanan yang kami terima. Prosesnya seperti ini</p>
+                <div class="galeri-divider"></div>
+            </div>
 
+            <div class="coverflow-wrap">
+                <div class="coverflow" id="coverflow">
+
+                    <div class="coverflow-item" data-index="0">
+                        <img src="galeri/production.jpeg" alt="Hasil produksi RAW Media 1" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="coverflow-item" data-index="1">
+                        <img src="galeri/production2.jpeg" alt="Hasil produksi RAW Media 2" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="coverflow-item" data-index="2">
+                        <img src="galeri/production3.jpeg" alt="Hasil produksi RAW Media 3" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="coverflow-item" data-index="3">
+                        <img src="galeri/production4.jpeg" alt="Hasil produksi RAW Media 4" loading="lazy" decoding="async">
+                    </div>
+
+                    <div class="coverflow-item" data-index="4">
+                        <img src="galeri/production5.jpeg" alt="Hasil produksi RAW Media 5" loading="lazy" decoding="async">
+                    </div>
+
+                </div>
+
+                <button class="coverflow-nav coverflow-prev" onclick="coverflowPrev()" aria-label="Sebelumnya">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="coverflow-nav coverflow-next" onclick="coverflowNext()" aria-label="Selanjutnya">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="coverflow-dots" id="coverflowDots">
+                <span class="coverflow-dot active" data-index="0"></span>
+                <span class="coverflow-dot" data-index="1"></span>
+                <span class="coverflow-dot" data-index="2"></span>
+                <span class="coverflow-dot" data-index="3"></span>
+                <span class="coverflow-dot" data-index="4"></span>
+            </div>
+
+            <div class="galeri-cta">
+                <p class="galeri-cta-text">Ingin melihat lebih banyak hasil produksi kami?</p>
+                <div class="galeri-cta-buttons">
+                    <a href="https://instagram.com/cetakbukuindonesia" target="_blank" rel="noopener" class="galeri-cta-btn galeri-cta-instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>Follow Instagram</span>
+                    </a>
+                    <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20lihat%20portofolio%20lengkap" target="_blank" rel="noopener" class="galeri-cta-btn galeri-cta-wa">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Minta Portofolio</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================
+         CLIENT / KLIEN
+    ========================================= -->
     <section id="client" class="client-section">
         <div class="client-title-wrap">
             <h2 class="client-title">
@@ -260,6 +305,20 @@
             <div class="client-divider"></div>
         </div>
 
+        <!-- STATISTIK KLIEN -->
+        <div class="client-stats">
+            <div class="client-stat-item">
+                <div class="client-stat-number">5.000+</div>
+                <div class="client-stat-label">Klien Terselesaikan</div>
+            </div>
+            <div class="client-stat-divider"></div>
+            <div class="client-stat-item">
+                <div class="client-stat-number">100+</div>
+                <div class="client-stat-label">Klien Langganan</div>
+            </div>
+        </div>
+
+        <!-- MARQUEE LOGO KLIEN -->
         <div class="client-marquee">
             <div class="client-marquee-track">
                 <div class="client-logo"><img src="img/Logo Client/Akmil.png" alt="Akmil"></div>
@@ -283,139 +342,173 @@
                 <div class="client-logo"><img src="img/Logo Client/UGM.svg" alt="UGM"></div>
                 <div class="client-logo"><img src="img/Logo Client/Umeds.png" alt="Umeds"></div>
             </div>
-            <div class="client-marquee-track">
-                <div class="client-logo"><img src="img/Logo Client/Akmil.png" alt="Akmil"></div>
-                <div class="client-logo"><img src="img/Logo Client/Cahaya Quran.png" alt="Cahaya Quran"></div>
-                <div class="client-logo"><img src="img/Logo Client/Coretan Pena.png" alt="Coretan Pena"></div>
-                <div class="client-logo"><img src="img/Logo Client/Divif 2.svg" alt="Divif 2"></div>
-                <div class="client-logo"><img src="img/Logo Client/DIY.svg" alt="DIY"></div>
-                <div class="client-logo"><img src="img/Logo Client/DMH Academy.webp" alt="DMH Academy"></div>
-                <div class="client-logo"><img src="img/Logo Client/Kab Magelang.svg" alt="Kab Magelang"></div>
-                <div class="client-logo"><img src="img/Logo Client/Kelas Bimbel.png" alt="Kelas Bimbel"></div>
-                <div class="client-logo"><img src="img/Logo Client/Kepri.svg" alt="Kepri"></div>
-                <div class="client-logo"><img src="img/Logo Client/Kota Magelang.svg" alt="Kota Magelang"></div>
-                <div class="client-logo"><img src="img/Logo Client/MA Daarul 'Ulum.jpg" alt="MA Daarul 'Ulum"></div>
-                <div class="client-logo"><img src="img/Logo Client/Mediko.webp" alt="Mediko"></div>
-                <div class="client-logo"><img src="img/Logo Client/NTB.svg" alt="NTB"></div>
-                <div class="client-logo"><img src="img/Logo Client/PT ABA.png" alt="PT ABA"></div>
-                <div class="client-logo"><img src="img/Logo Client/SD N Percobaan 2 Depok.png" alt="SD N Percobaan 2 Depok"></div>
-                <div class="client-logo"><img src="img/Logo Client/Sleman.svg" alt="Sleman"></div>
-                <div class="client-logo"><img src="img/Logo Client/SMK N 1 Magelang.png" alt="SMK N 1 Magelang"></div>
-                <div class="client-logo"><img src="img/Logo Client/Tangerang Selatan.svg" alt="Tangerang Selatan"></div>
-                <div class="client-logo"><img src="img/Logo Client/UGM.svg" alt="UGM"></div>
-                <div class="client-logo"><img src="img/Logo Client/Umeds.png" alt="Umeds"></div>
+            <div class="client-marquee-track" aria-hidden="true">
+                <div class="client-logo"><img src="img/Logo Client/Akmil.png" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/Cahaya Quran.png" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/Coretan Pena.png" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/Divif 2.svg" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/DIY.svg" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/DMH Academy.webp" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/Kab Magelang.svg" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/Kelas Bimbel.png" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/Kepri.svg" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/Kota Magelang.svg" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/MA Daarul 'Ulum.jpg" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/Mediko.webp" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/NTB.svg" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/PT ABA.png" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/SD N Percobaan 2 Depok.png" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/Sleman.svg" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/SMK N 1 Magelang.png" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/Tangerang Selatan.svg" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/UGM.svg" alt=""></div>
+                <div class="client-logo"><img src="img/Logo Client/Umeds.png" alt=""></div>
             </div>
         </div>
     </section>
 
+    <!-- =========================================
+         TESTIMONI
+    ========================================= -->
     <section id="testimoni" class="testimoni-section">
         <div class="testimoni-title-wrap">
-            <h2 class="testimoni-title">
-                <span class="testimoni-title-white">Kata</span> <span class="testimoni-title-red">Klien</span>
-            </h2>
-            <p class="section-description">Apa kata mereka yang telah mempercayakan kebutuhan percetakan kepada kami?</p>
-            <div class="testimoni-divider"></div>
+            <h2 class="testimoni-title">Testimoni</h2>
+            <p class="testimoni-subtitle">Tanggapan pelanggan tentang kami</p>
         </div>
 
         <div class="testimoni-grid">
             <div class="testimoni-card">
-                <i class="fa-solid fa-quote-left testimoni-icon"></i>
-                <p class="testimoni-text">"Kualitas buku tahunan kami sangat bagus. Hasilnya rapi, warna akurat, dan selesai tepat waktu. Sangat direkomendasikan!"</p>
-                <div class="testimoni-author">
-                    <i class="fa-solid fa-user testimoni-user-icon"></i>
-                    <div>
-                        <h4>Kepala Sekolah</h4>
-                        <p>SMK N 1 Magelang</p>
+                <p class="testimoni-text">Kualitas buku tahunan kami sangat bagus. Hasilnya rapi, warna akurat, dan selesai tepat waktu. Sangat direkomendasikan!</p>
+                <div class="testimoni-footer">
+                    <div class="testimoni-info">
+                        <h4 class="testimoni-name">Kepala Sekolah</h4>
+                        <div class="testimoni-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimoni-avatar">
+                        <img src="img/testimoni/smk.jpg" alt="SMK N 1 Magelang"
+                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=SMK&background=c1272d&color=fff&size=100'">
                     </div>
                 </div>
             </div>
 
             <div class="testimoni-card">
-                <i class="fa-solid fa-quote-left testimoni-icon"></i>
-                <p class="testimoni-text">"Kami sudah 3 tahun bekerja sama. Hasil cetak selalu konsisten dan harganya sangat kompetitif untuk skala korporat."</p>
-                <div class="testimoni-author">
-                    <i class="fa-solid fa-user testimoni-user-icon"></i>
-                    <div>
-                        <h4>Manajer Pengadaan</h4>
-                        <p>PT ABA</p>
+                <p class="testimoni-text">Kami sudah 3 tahun bekerja sama. Hasil cetak selalu konsisten dan harganya sangat kompetitif untuk skala korporat.</p>
+                <div class="testimoni-footer">
+                    <div class="testimoni-info">
+                        <h4 class="testimoni-name">Manajer PT ABA</h4>
+                        <div class="testimoni-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimoni-avatar">
+                        <img src="img/testimoni/ptaba.jpg" alt="PT ABA"
+                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=PT&background=c1272d&color=fff&size=100'">
                     </div>
                 </div>
             </div>
 
             <div class="testimoni-card">
-                <i class="fa-solid fa-quote-left testimoni-icon"></i>
-                <p class="testimoni-text">"Pesan buku pelajaran untuk 500 siswa, hasilnya luar biasa. Kertas tebal dan jilidan kuat. Terima kasih RAW Media!"</p>
-                <div class="testimoni-author">
-                    <i class="fa-solid fa-user testimoni-user-icon"></i>
-                    <div>
-                        <h4>Kepala Sekolah</h4>
-                        <p>SD N Percobaan 2 Depok</p>
+                <p class="testimoni-text">Pesan buku pelajaran untuk 500 siswa, hasilnya luar biasa. Kertas tebal dan jilidan kuat. Terima kasih RAW Media!</p>
+                <div class="testimoni-footer">
+                    <div class="testimoni-info">
+                        <h4 class="testimoni-name">SDN Percobaan 2</h4>
+                        <div class="testimoni-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimoni-avatar">
+                        <img src="img/testimoni/sdn.jpg" alt="SDN Percobaan 2"
+                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=SDN&background=c1272d&color=fff&size=100'">
                     </div>
                 </div>
             </div>
 
             <div class="testimoni-card">
-                <i class="fa-solid fa-quote-left testimoni-icon"></i>
-                <p class="testimoni-text">"Proses pemesanan sangat mudah. Kami hanya kirim file, dan hasilnya sudah jadi. Sangat membantu tim kami."</p>
-                <div class="testimoni-author">
-                    <i class="fa-solid fa-user testimoni-user-icon"></i>
-                    <div>
-                        <h4>Staf Administrasi</h4>
-                        <p>Kota Magelang</p>
+                <p class="testimoni-text">Proses pemesanan sangat mudah. Kami hanya kirim file, dan hasilnya sudah jadi. Sangat membantu tim kami.</p>
+                <div class="testimoni-footer">
+                    <div class="testimoni-info">
+                        <h4 class="testimoni-name">Staf Administrasi</h4>
+                        <div class="testimoni-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimoni-avatar">
+                        <img src="img/testimoni/kota.jpg" alt="Kota Magelang"
+                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=KM&background=c1272d&color=fff&size=100'">
                     </div>
                 </div>
             </div>
 
             <div class="testimoni-card">
-                <i class="fa-solid fa-quote-left testimoni-icon"></i>
-                <p class="testimoni-text">"Kami memesan kitab dan buku keagamaan. Hasilnya rapi dan sesuai dengan spesifikasi. Sangat puas dengan pelayanannya."</p>
-                <div class="testimoni-author">
-                    <i class="fa-solid fa-user testimoni-user-icon"></i>
-                    <div>
-                        <h4>Pengurus</h4>
-                        <p>MA Daarul 'Ulum</p>
+                <p class="testimoni-text">Kami memesan kitab dan buku keagamaan. Hasilnya rapi dan sesuai dengan spesifikasi. Sangat puas dengan pelayanannya.</p>
+                <div class="testimoni-footer">
+                    <div class="testimoni-info">
+                        <h4 class="testimoni-name">Pengurus</h4>
+                        <div class="testimoni-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimoni-avatar">
+                        <img src="img/testimoni/pesantren.jpg" alt="MA Daarul Ulum"
+                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=MA&background=c1272d&color=fff&size=100'">
                     </div>
                 </div>
             </div>
 
             <div class="testimoni-card">
-                <i class="fa-solid fa-quote-left testimoni-icon"></i>
-                <p class="testimoni-text">"Brosur dan katalog produk kami dicetak dengan sangat baik. Tim RAW Media juga sangat responsif dan komunikatif."</p>
-                <div class="testimoni-author">
-                    <i class="fa-solid fa-user testimoni-user-icon"></i>
-                    <div>
-                        <h4>Marketing</h4>
-                        <p>DMH Academy</p>
+                <p class="testimoni-text">Kualitas jilid hard cover sangat premium. Cocok untuk buku referensi yang sering dipakai. Harga juga masuk akal.</p>
+                <div class="testimoni-footer">
+                    <div class="testimoni-info">
+                        <h4 class="testimoni-name">Dosen</h4>
+                        <div class="testimoni-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="testimoni-card">
-                <i class="fa-solid fa-quote-left testimoni-icon"></i>
-                <p class="testimoni-text">"Kualitas jilid hard cover sangat premium. Cocok untuk buku referensi yang sering dipakai. Harga juga masuk akal."</p>
-                <div class="testimoni-author">
-                    <i class="fa-solid fa-user testimoni-user-icon"></i>
-                    <div>
-                        <h4>Dosen</h4>
-                        <p>UGM</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimoni-card">
-                <i class="fa-solid fa-quote-left testimoni-icon"></i>
-                <p class="testimoni-text">"Pesan dalam jumlah besar, tetap cepat dan rapi. Kami percaya RAW Media untuk semua kebutuhan cetak kami."</p>
-                <div class="testimoni-author">
-                    <i class="fa-solid fa-user testimoni-user-icon"></i>
-                    <div>
-                        <h4>Direktur</h4>
-                        <p>Kelas Bimbel</p>
+                    <div class="testimoni-avatar">
+                        <img src="img/testimoni/ugm.jpg" alt="UGM"
+                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=UGM&background=c1272d&color=fff&size=100'">
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="testimoni-cta">
+            <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20tahu%20lebih%20banyak%20tentang%20layanan%20RAW%20Media" 
+               target="_blank" rel="noopener" class="testimoni-btn">
+                View More Rate
+            </a>
+        </div>
     </section>
 
+    <!-- =========================================
+         FORM PEMESANAN - PERCETAKAN
+    ========================================= -->
     <section id="pemesanan" class="order-section">
         <div class="order-title-wrap">
             <h2 class="order-title">
@@ -427,6 +520,8 @@
 
         <div class="order-form-container">
             <form id="orderForm" class="order-form">
+
+                <!-- DATA PEMESAN -->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="nama">Nama Lengkap</label>
@@ -443,6 +538,32 @@
                     <input type="text" id="alamat" name="alamat" placeholder="Alamat lengkap untuk pengiriman" required>
                 </div>
 
+                <!-- DETAIL PESANAN -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="jenis_layanan">Jenis Layanan</label>
+                        <select id="jenis_layanan" name="jenis_layanan" required>
+                            <option value="">-- Pilih Jenis Layanan --</option>
+                            <option value="Cetak Buku Ajar">Cetak Buku Ajar</option>
+                            <option value="Cetak Novel">Cetak Novel</option>
+                            <option value="Cetak Modul Pembelajaran">Cetak Modul Pembelajaran</option>
+                            <option value="Cetak Buku Akademik">Cetak Buku Akademik</option>
+                            <option value="Cetak Buku Self Publishing">Cetak Buku Self Publishing</option>
+                            <option value="Cetak Kitab Pesantren">Cetak Kitab Pesantren</option>
+                            <option value="Cetak Buku Doa & Hafalan">Cetak Buku Doa & Hafalan</option>
+                            <option value="Cetak Buku Tahunan">Cetak Buku Tahunan</option>
+                            <option value="Finishing & Jilid">Finishing & Jilid</option>
+                            <option value="Desain Cover & Layout">Desain Cover & Layout</option>
+                            <option value="Pengadaan Instansi">Pengadaan Instansi</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlah_cetak">Jumlah Cetak</label>
+                        <input type="number" id="jumlah_cetak" name="jumlah_cetak" placeholder="Contoh: 100" required>
+                    </div>
+                </div>
+
                 <div class="form-row">
                     <div class="form-group">
                         <label for="ukuran">Ukuran Buku</label>
@@ -452,117 +573,110 @@
                             <option value="Unesco">Unesco</option>
                             <option value="B5">B5</option>
                             <option value="A4">A4</option>
+                            <option value="A4+">A4+</option>
                             <option value="Custom">Custom</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="jumlah_halaman">Jumlah Halaman</label>
-                        <input type="number" id="jumlah_halaman" name="jumlah_halaman" placeholder="Contoh: 100" required>
+                        <input type="number" id="jumlah_halaman" name="jumlah_halaman" placeholder="Contoh: 150" required>
                     </div>
                 </div>
 
                 <div class="form-row">
+                    <div class="form-group">
+                        <label for="jenis_kertas">Jenis Kertas Isi</label>
+                        <select id="jenis_kertas" name="jenis_kertas" required>
+                            <option value="">-- Pilih Kertas Isi --</option>
+                            <option value="HVS 60 gsm">HVS 60 gsm</option>
+                            <option value="HVS 70 gsm">HVS 70 gsm</option>
+                            <option value="HVS 80 gsm">HVS 80 gsm</option>
+                            <option value="Bookpaper 57 gsm">Bookpaper 57 gsm</option>
+                            <option value="Bookpaper 72 gsm">Bookpaper 72 gsm</option>
+                            <option value="Artpaper 120 gsm">Artpaper 120 gsm</option>
+                            <option value="Artpaper 150 gsm">Artpaper 150 gsm</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="jenis_cetak">Jenis Cetak</label>
                         <select id="jenis_cetak" name="jenis_cetak" required>
                             <option value="">-- Pilih Jenis Cetak --</option>
-                            <option value="Fullcolor">Fullcolor</option>
                             <option value="Hitam Putih">Hitam Putih</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="jenis_kertas">Jenis Kertas Isi</label>
-                        <select id="jenis_kertas" name="jenis_kertas" required>
-                            <option value="">-- Pilih Kertas --</option>
-                            <option value="HVS 60 gsm">HVS 60 gsm</option>
-                            <option value="HVS 75 gsm">HVS 75 gsm</option>
-                            <option value="HVS 80 gsm">HVS 80 gsm</option>
-                            <option value="Bookpapper 57 gsm">Bookpapper 57 gsm</option>
-                            <option value="Bookpapper 72 gsm">Bookpapper 72 gsm</option>
-                            <option value="Artpapper 150 gsm">Artpapper 150 gsm</option>
+                            <option value="Full Color">Full Color</option>
+                            <option value="Kombinasi (BW + Warna)">Kombinasi (BW + Warna)</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="jumlah_cetak">Jumlah Cetak</label>
-                        <input type="number" id="jumlah_cetak" name="jumlah_cetak" placeholder="Contoh: 100" required>
-                    </div>
                     <div class="form-group">
                         <label for="jenis_cover">Jenis Cover</label>
                         <select id="jenis_cover" name="jenis_cover" required>
                             <option value="">-- Pilih Cover --</option>
-                            <option value="Hardcover">Hardcover</option>
                             <option value="Softcover">Softcover</option>
+                            <option value="Hardcover">Hardcover</option>
+                            <option value="Hardcover + Box">Hardcover + Box</option>
+                            <option value="Spiral">Spiral</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jenis_finishing">Jenis Finishing</label>
+                        <select id="jenis_finishing" name="jenis_finishing" required>
+                            <option value="">-- Pilih Finishing --</option>
+                            <option value="Perfect Binding">Perfect Binding</option>
+                            <option value="Jahit Benang">Jahit Benang</option>
+                            <option value="Jilid Lem">Jilid Lem</option>
+                            <option value="Jilid Spiral">Jilid Spiral</option>
+                            <option value="Hardcover Lem">Hardcover Lem</option>
+                            <option value="Hardcover Jahit">Hardcover Jahit</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="jenis_finishing">Jenis Finishing</label>
-                        <select id="jenis_finishing" name="jenis_finishing" required>
-                            <option value="">-- Pilih Finishing --</option>
-                            <option value="Hardcover Lem">Hardcover Lem</option>
-                            <option value="Hardcover Jahit">Hardcover Jahit</option>
-                            <option value="Hardcover Spiral">Hardcover Spiral</option>
-                            <option value="Perfect Binding">Perfect Binding</option>
-                            <option value="Steples tengah">Steples tengah</option>
-                            <option value="Nail Binding">Nail Binding</option>
-                        </select>
-                    </div>
                     <div class="form-group">
                         <label for="laminasi_cover">Laminasi Cover</label>
                         <select id="laminasi_cover" name="laminasi_cover">
                             <option value="">-- Pilih Laminasi --</option>
                             <option value="Doff">Doff</option>
                             <option value="Glossy">Glossy</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="finishing_tambahan">Finishing Tambahan</label>
-                        <select id="finishing_tambahan" name="finishing_tambahan">
-                            <option value="">-- Pilih Finishing Tambahan --</option>
                             <option value="Spot UV">Spot UV</option>
                             <option value="Emboss">Emboss</option>
                             <option value="Deboss">Deboss</option>
+                            <option value="Hot Print">Hot Print</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="shrink_wrapping">Shrink / Wrapping</label>
-                        <select id="shrink_wrapping" name="shrink_wrapping">
-                            <option value="">-- Pilih --</option>
-                            <option value="Ya">Ya</option>
-                            <option value="Tidak">Tidak</option>
-                        </select>
+                        <label for="deadline">Target Selesai</label>
+                        <input type="text" id="deadline" name="deadline" placeholder="Contoh: 2 minggu">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="catatan">Catatan (Opsional)</label>
-                    <textarea id="catatan" name="catatan" rows="4" placeholder="Tuliskan catatan tambahan seperti ukuran, warna, atau deadline"></textarea>
+                    <label for="catatan">Catatan Tambahan (Opsional)</label>
+                    <textarea id="catatan" name="catatan" rows="4" placeholder="Tuliskan catatan tambahan seperti warna cover, jumlah halaman warna, atau detail khusus lainnya"></textarea>
                 </div>
 
                 <button type="submit" class="order-btn">
                     <i class="fa-solid fa-paper-plane"></i>
-                    Kirim formulir
+                    Kirim Formulir via WhatsApp
                 </button>
+
             </form>
         </div>
     </section>
 
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
     <footer class="footer-modern">
         <div class="footer-accent"></div>
         <div class="footer-container">
             <div class="footer-col footer-brand">
                 <div class="footer-logo">
-                    <img src="raw-media.svg" alt="Logo RAW Media" class="footer-logo-img">
+                    <img src="raw-media.svg" alt="Logo RAW Media Indonesia" class="footer-logo-img">
                 </div>
-                <p class="footer-desc">Solusi percetakan dan finishing berkualitas tinggi untuk kebutuhan bisnis dan personal. Berpengalaman lebih dari 10 tahun.</p>
+                <p class="footer-desc">Solusi percetakan dan finishing berkualitas tinggi untuk kebutuhan bisnis, sekolah, dan personal. Berpengalaman lebih dari 10 tahun.</p>
             </div>
             <div class="footer-col footer-menu">
                 <h4 class="footer-heading">Perusahaan</h4>
@@ -570,27 +684,30 @@
                     <li><a href="#tentang">Tentang Kami</a></li>
                     <li><a href="#layanan">Layanan</a></li>
                     <li><a href="#galeri">Galeri</a></li>
+                    <li><a href="#testimoni">Testimoni</a></li>
                 </ul>
             </div>
             <div class="footer-col footer-menu">
                 <h4 class="footer-heading">Layanan Kami</h4>
                 <ul class="footer-links">
-                    <li><a href="#layanan">Percetakan Buku</a></li>
-                    <li><a href="#layanan">Finishing Premium</a></li>
-                    <li><a href="#layanan">Desain Grafis</a></li>
+                    <li><a href="#layanan">Cetak Buku</a></li>
                     <li><a href="#layanan">Buku Tahunan</a></li>
                     <li><a href="#layanan">Buku Pesantren</a></li>
+                    <li><a href="#layanan">Finishing Premium</a></li>
+                    <li><a href="#layanan">Desain Grafis</a></li>
                     <li><a href="#layanan">B2B & Korporat</a></li>
                 </ul>
             </div>
             <div class="footer-col footer-contact">
                 <h4 class="footer-heading">Alamat & Kontak</h4>
                 <ul class="footer-contact-list">
-                    <li><i class="fa-solid fa-location-dot"></i> Balangan, RT.02/RW.04, Balongan, Sendangrejo, Kec. Minggir, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55562</li>
-                    <p class="contact-description">Hubungi Customer Service Kami</p>
-                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282223191719" target="_blank">082223191719</a></li>
-                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282342974320" target="_blank">082342974320</a></li>
-                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6285232232500" target="_blank">085232232500</a></li>
+                    <li><i class="fa-solid fa-location-dot"></i> Balangan, RT.02/RW.04, Sendangrejo, Kec. Minggir, Sleman, DIY 55562</li>
+                </ul>
+                <p class="contact-description">Hubungi Customer Service Kami</p>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282223191719" target="_blank" rel="noopener">082223191719</a></li>
+                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282342974320" target="_blank" rel="noopener">082342974320</a></li>
+                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6285232232500" target="_blank" rel="noopener">085232232500</a></li>
                     <li><i class="fa-solid fa-envelope"></i> <a href="mailto:cv.rawmedia@gmail.com">cv.rawmedia@gmail.com</a></li>
                 </ul>
                 <div class="footer-hours">
@@ -602,15 +719,90 @@
         <div class="footer-social-section">
             <h4 class="footer-social-title">Ikuti Kami</h4>
             <div class="footer-social-links">
-                <a href="https://instagram.com/rawmedia.id" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://tiktok.com/@rawmedia.id" target="_blank" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="https://facebook.com/rawmedia.id" target="_blank" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://instagram.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://tiktok.com/@rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://facebook.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
             </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2026 RAW Media Indonesia. Semua Hak Dilindungi.</p></div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RAW Media Indonesia. Semua Hak Dilindungi.</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me/6285231092020" class="floating-wa" target="_blank" aria-label="Chat WhatsApp">
+    <!-- =========================================
+         MODAL DETAIL PRODUK
+    ========================================= -->
+    <div class="produk-modal" id="produkModal">
+        <div class="produk-modal-overlay" onclick="closeProdukModal()"></div>
+        <div class="produk-modal-content">
+            <button class="produk-modal-close" onclick="closeProdukModal()" aria-label="Tutup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="produk-modal-layout">
+
+                <div class="produk-galeri-wrap">
+                    <div class="produk-thumbnails" id="produkThumbnails"></div>
+                    <div class="produk-main-image">
+                        <img id="produkMainImage" src="" alt="Produk">
+                    </div>
+                </div>
+
+                <div class="produk-detail">
+                    <h2 class="produk-detail-title" id="produkTitle">Judul Produk</h2>
+
+                    <div class="produk-section">
+                        <h3 class="produk-section-title">Bahan</h3>
+                        <div class="produk-chips" id="produkBahan"></div>
+                    </div>
+
+                    <div class="produk-section">
+                        <h3 class="produk-section-title">Ukuran Tersedia</h3>
+                        <div class="produk-chips" id="produkUkuran"></div>
+                    </div>
+
+                    <div class="produk-section">
+                        <h3 class="produk-section-title">Teknik Cetak / Finishing</h3>
+                        <div class="produk-chips" id="produkFinishing"></div>
+                    </div>
+
+                    <div class="produk-section">
+                        <h3 class="produk-section-title">Keterangan</h3>
+                        <p class="produk-deskripsi" id="produkDeskripsi"></p>
+                    </div>
+
+                    <div class="produk-info-extra" id="produkInfoExtra"></div>
+
+                    <div class="produk-detail-cta">
+                        <a href="#" target="_blank" rel="noopener" class="produk-btn-wa" id="produkWA">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Konsultasi & Tanya Harga</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================
+         LIGHTBOX
+    ========================================= -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-image" id="lightboxImage" src="" alt="Foto Diperbesar">
+    </div>
+
+    <!-- =========================================
+         FLOATING WHATSAPP
+    ========================================= -->
+    <a href="https://wa.me/6285231092020" class="floating-wa" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
         <span class="floating-wa-text">Hotline</span>
     </a>
