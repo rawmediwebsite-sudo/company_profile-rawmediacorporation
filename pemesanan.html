@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Sekarang - RAW Media Indonesia</title>
+    <meta name="description" content="Jasa percetakan buku profesional - cetak buku ajar, novel, kitab pesantren, buku tahunan, dan finishing premium. Isi form, kami proses via WhatsApp.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================= -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="raw-media.svg" alt="Logo RAW Media Indonesia" class="logo-img">
+            </a>
+        </div>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="tentang.html">TENTANG KAMI</a></li>
+            <li><a href="index.html#layanan">LAYANAN</a></li>
+            <li><a href="pemesanan.html" class="active">PEMESANAN</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="hamburger" id="hamburger">
+                <span class="hamburger-text">MENU</span>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================
+         MOBILE MENU
+    ========================================= -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <img src="raw-media.svg" alt="Logo RAW Media" class="mobile-logo-img">
+                <span class="mobile-logo-text">RAW MEDIA</span>
+            </div>
+            <button class="close-btn" id="closeBtn" aria-label="Tutup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-body">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="tentang.html">TENTANG KAMI</a></li>
+                <li><a href="index.html#layanan">LAYANAN</a></li>
+                <li><a href="pemesanan.html" class="active">PEMESANAN</a></li>
+            </ul>
+            <div class="mobile-address">
+                <p><i class="fa-solid fa-location-dot"></i> Sleman, Yogyakarta</p>
+                <p><i class="fa-solid fa-phone"></i> 085231092020</p>
+                <p><i class="fa-solid fa-envelope"></i> cv.rawmedia@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================
+         BANNER PEMESANAN - JASA PERCETAKAN
+    ========================================= -->
+    <section class="order-banner-section">
+        <div class="order-banner-container">
+            
+            <div class="order-banner-card">
+                
+                <!-- KIRI: FOTO -->
+                <div class="order-banner-image">
+                    <img src="orderanime.png" 
+                         alt="Tim percetakan RAW Media Indonesia" 
+                         loading="lazy" 
+                         decoding="async">
+                </div>
+                
+                <!-- KANAN: TEKS -->
+                <div class="order-banner-content">
+                    <span class="order-banner-label">Spesialis Percetakan Buku</span>
+                    
+                    <h1 class="order-banner-title">
+                        Dari Naskah Siap Cetak Jadi Buku Berkualitas
+                    </h1>
+                    
+                    <p class="order-banner-desc">
+                        Kami fokus di <strong>jasa cetak buku</strong> — buku ajar sekolah, 
+                        novel, modul, kitab pesantren, doa &amp; hafalan, hingga 
+                        buku tahunan. Semua ukuran dan finishing tersedia.
+                    </p>
+                    
+                    <p class="order-banner-desc">
+                        Konsultasi gratis, isi form di bawah untuk 
+                        dapatkan <strong>estimasi harga cetak</strong> Anda.
+                    </p>
+                    
+                    <div class="order-banner-features">
+                        <div class="order-banner-feature">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Pengerjaan cepat 3-7 hari</span>
+                        </div>
+                        <div class="order-banner-feature">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Finishing rapi &amp; profesional</span>
+                        </div>
+                        <div class="order-banner-feature">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Garansi cetak ulang</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#form-pemesanan" class="order-banner-btn">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        <span>Mulai Isi Form</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- =========================================
+         FORM PEMESANAN
+    ========================================= -->
+    <section id="form-pemesanan" class="order-section">
+        <div class="order-title-wrap">
+            <h2 class="order-title">
+                <span class="order-title-white">Lengkapi</span> <span class="order-title-red">Data Pesanan</span>
+            </h2>
+            <p class="section-description">Isi detail di bawah ini untuk memulai pesanan cetak buku Anda</p>
+            <div class="order-divider"></div>
+        </div>
+
+        <div class="order-form-container">
+            <form id="orderForm" class="order-form">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telepon">No. WhatsApp</label>
+                        <input type="tel" id="telepon" name="telepon" placeholder="08xxxxxxxxxx" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat">Alamat Pengiriman</label>
+                    <input type="text" id="alamat" name="alamat" placeholder="Alamat lengkap untuk pengiriman" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="jenis_layanan">Jenis Layanan</label>
+                        <select id="jenis_layanan" name="jenis_layanan" required>
+                            <option value="">-- Pilih Jenis Layanan --</option>
+                            <option value="Cetak Buku Ajar">Cetak Buku Ajar</option>
+                            <option value="Cetak Novel">Cetak Novel</option>
+                            <option value="Cetak Modul Pembelajaran">Cetak Modul Pembelajaran</option>
+                            <option value="Cetak Buku Akademik">Cetak Buku Akademik</option>
+                            <option value="Cetak Buku Self Publishing">Cetak Buku Self Publishing</option>
+                            <option value="Cetak Kitab Pesantren">Cetak Kitab Pesantren</option>
+                            <option value="Cetak Buku Doa & Hafalan">Cetak Buku Doa & Hafalan</option>
+                            <option value="Cetak Buku Tahunan">Cetak Buku Tahunan</option>
+                            <option value="Finishing & Jilid">Finishing & Jilid</option>
+                            <option value="Desain Cover & Layout">Desain Cover & Layout</option>
+                            <option value="Pengadaan Instansi">Pengadaan Instansi</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlah_cetak">Jumlah Cetak</label>
+                        <input type="number" id="jumlah_cetak" name="jumlah_cetak" placeholder="Contoh: 100" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ukuran">Ukuran Buku</label>
+                        <select id="ukuran" name="ukuran" required>
+                            <option value="">-- Pilih Ukuran --</option>
+                            <option value="A5">A5</option>
+                            <option value="Unesco">Unesco</option>
+                            <option value="B5">B5</option>
+                            <option value="A4">A4</option>
+                            <option value="A4+">A4+</option>
+                            <option value="Custom">Custom</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlah_halaman">Jumlah Halaman</label>
+                        <input type="number" id="jumlah_halaman" name="jumlah_halaman" placeholder="Contoh: 150" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="jenis_kertas">Jenis Kertas Isi</label>
+                        <select id="jenis_kertas" name="jenis_kertas" required>
+                            <option value="">-- Pilih Kertas Isi --</option>
+                            <option value="HVS 60 gsm">HVS 60 gsm</option>
+                            <option value="HVS 70 gsm">HVS 70 gsm</option>
+                            <option value="HVS 80 gsm">HVS 80 gsm</option>
+                            <option value="Bookpaper 57 gsm">Bookpaper 57 gsm</option>
+                            <option value="Bookpaper 72 gsm">Bookpaper 72 gsm</option>
+                            <option value="Artpaper 120 gsm">Artpaper 120 gsm</option>
+                            <option value="Artpaper 150 gsm">Artpaper 150 gsm</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jenis_cetak">Jenis Cetak</label>
+                        <select id="jenis_cetak" name="jenis_cetak" required>
+                            <option value="">-- Pilih Jenis Cetak --</option>
+                            <option value="Hitam Putih">Hitam Putih</option>
+                            <option value="Full Color">Full Color</option>
+                            <option value="Kombinasi (BW + Warna)">Kombinasi (BW + Warna)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="jenis_cover">Jenis Cover</label>
+                        <select id="jenis_cover" name="jenis_cover" required>
+                            <option value="">-- Pilih Cover --</option>
+                            <option value="Softcover">Softcover</option>
+                            <option value="Hardcover">Hardcover</option>
+                            <option value="Hardcover + Box">Hardcover + Box</option>
+                            <option value="Spiral">Spiral</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jenis_finishing">Jenis Finishing</label>
+                        <select id="jenis_finishing" name="jenis_finishing" required>
+                            <option value="">-- Pilih Finishing --</option>
+                            <option value="Perfect Binding">Perfect Binding</option>
+                            <option value="Jahit Benang">Jahit Benang</option>
+                            <option value="Jilid Lem">Jilid Lem</option>
+                            <option value="Jilid Spiral">Jilid Spiral</option>
+                            <option value="Hardcover Lem">Hardcover Lem</option>
+                            <option value="Hardcover Jahit">Hardcover Jahit</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="laminasi_cover">Laminasi Cover</label>
+                        <select id="laminasi_cover" name="laminasi_cover">
+                            <option value="">-- Pilih Laminasi --</option>
+                            <option value="Doff">Doff</option>
+                            <option value="Glossy">Glossy</option>
+                            <option value="Spot UV">Spot UV</option>
+                            <option value="Emboss">Emboss</option>
+                            <option value="Deboss">Deboss</option>
+                            <option value="Hot Print">Hot Print</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="deadline">Target Selesai</label>
+                        <input type="text" id="deadline" name="deadline" placeholder="Contoh: 2 minggu">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="catatan">Catatan Tambahan (Opsional)</label>
+                    <textarea id="catatan" name="catatan" rows="4" placeholder="Tuliskan catatan tambahan seperti warna cover, jumlah halaman warna, atau detail khusus lainnya"></textarea>
+                </div>
+
+                <button type="submit" class="order-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Kirim Formulir via WhatsApp
+                </button>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- =========================================
+         SPLIT BANNER - REPEAT ORDER
+    ========================================= -->
+    <section class="split-banner-section">
+        <div class="split-banner-container">
+            
+            <div class="split-banner-card">
+                
+                <!-- KIRI: FOTO -->
+                <div class="split-banner-image">
+                    <img src="img/banner/cs-rawmedia.png" 
+                         alt="Customer Service RAW Media Indonesia" 
+                         loading="lazy" 
+                         decoding="async">
+                </div>
+                
+                <!-- KANAN: TEKS -->
+                <div class="split-banner-content">
+                    <h2 class="split-banner-title">
+                        Sudah Pernah Cetak Sebelumnya?
+                    </h2>
+                    
+                    <p class="split-banner-desc">
+                        Jangan isi form dari awal lagi! Untuk <strong>pemesanan ulang</strong> 
+                        dengan spesifikasi yang sama, cukup hubungi kami via WhatsApp dan 
+                        sebutkan nomor pesanan sebelumnya.
+                    </p>
+                    
+                    <p class="split-banner-desc">
+                        Tim kami akan langsung memproses pesanan cetak Anda tanpa perlu 
+                        konfirmasi ulang detail yang sudah pernah disepakati.
+                    </p>
+                    
+                    <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20melakukan%20pemesanan%20ulang%20dengan%20spesifikasi%20yang%20sama" 
+                       target="_blank" 
+                       rel="noopener" 
+                       class="split-banner-btn">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Pemesanan Ulang Sekarang</span>
+                    </a>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+    <footer class="footer-modern">
+        <div class="footer-accent"></div>
+        <div class="footer-container">
+            <div class="footer-col footer-brand">
+                <div class="footer-logo">
+                    <img src="raw-media.svg" alt="Logo RAW Media Indonesia" class="footer-logo-img">
+                </div>
+                <p class="footer-desc">Solusi percetakan dan finishing berkualitas tinggi untuk kebutuhan bisnis, sekolah, dan personal. Berpengalaman lebih dari 10 tahun.</p>
+            </div>
+            <div class="footer-col footer-menu">
+                <h4 class="footer-heading">Perusahaan</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="index.html#layanan">Layanan</a></li>
+                    <li><a href="index.html#galeri">Galeri</a></li>
+                    <li><a href="index.html#testimoni">Testimoni</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-menu">
+                <h4 class="footer-heading">Layanan Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#layanan">Cetak Buku</a></li>
+                    <li><a href="index.html#layanan">Buku Tahunan</a></li>
+                    <li><a href="index.html#layanan">Buku Pesantren</a></li>
+                    <li><a href="index.html#layanan">Finishing Premium</a></li>
+                    <li><a href="index.html#layanan">Desain Grafis</a></li>
+                    <li><a href="index.html#layanan">B2B & Korporat</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4 class="footer-heading">Alamat & Kontak</h4>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-location-dot"></i> Balangan, RT.02/RW.04, Sendangrejo, Kec. Minggir, Sleman, DIY 55562</li>
+                </ul>
+                <p class="contact-description">Hubungi Customer Service Kami</p>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282223191719" target="_blank" rel="noopener">082223191719</a></li>
+                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282342974320" target="_blank" rel="noopener">082342974320</a></li>
+                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6285232232500" target="_blank" rel="noopener">085232232500</a></li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:cv.rawmedia@gmail.com">cv.rawmedia@gmail.com</a></li>
+                </ul>
+                <div class="footer-hours">
+                    <h5>Jam Operasional</h5>
+                    <p>Senin - Sabtu: 09.00 - 17.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-social-section">
+            <h4 class="footer-social-title">Ikuti Kami</h4>
+            <div class="footer-social-links">
+                <a href="https://instagram.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://tiktok.com/@rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://facebook.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RAW Media Indonesia. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- =========================================
+         FLOATING WHATSAPP
+    ========================================= -->
+    <a href="https://wa.me/6285231092020" class="floating-wa" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="floating-wa-text">Hotline</span>
+    </a>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
