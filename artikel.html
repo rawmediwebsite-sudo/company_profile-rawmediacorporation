@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel & Tips Percetakan - RAW Media Indonesia</title>
+    <meta name="description" content="Kumpulan artikel, tips, dan panduan seputar percetakan buku, self publishing, cetak kitab pesantren, dan industri cetak. Update rutin dari RAW Media Indonesia.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://rawmedia.id/artikel.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="RAW Media Indonesia">
+    <meta property="og:title" content="Artikel & Tips Percetakan - RAW Media Indonesia">
+    <meta property="og:description" content="Kumpulan artikel, tips, dan panduan seputar percetakan buku.">
+    <meta property="og:url" content="https://rawmedia.id/artikel.html">
+    <meta property="og:image" content="https://rawmedia.id/img/og-image.jpg">
+    <meta property="og:locale" content="id_ID">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#BE1A1A">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Schema: Blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Artikel RAW Media Indonesia",
+      "url": "https://rawmedia.id/artikel.html",
+      "description": "Kumpulan artikel, tips, dan panduan seputar percetakan buku.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "RAW Media Indonesia"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================= -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="raw-media.svg" alt="Logo RAW Media Indonesia" class="logo-img">
+            </a>
+        </div>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#layanan">LAYANAN</a></li>
+            <li><a href="pemesanan.html">PEMESANAN</a></li>
+            <li><a href="tentang.html">TENTANG KAMI</a></li>
+            <li><a href="artikel.html" class="active">ARTIKEL</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="hamburger" id="hamburger">
+                <span class="hamburger-text">MENU</span>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================
+         MOBILE MENU
+    ========================================= -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <img src="raw-media.svg" alt="Logo RAW Media" class="mobile-logo-img">
+                <span class="mobile-logo-text">RAW MEDIA</span>
+            </div>
+            <button class="close-btn" id="closeBtn" aria-label="Tutup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-body">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#layanan">LAYANAN</a></li>
+                <li><a href="pemesanan.html">PEMESANAN</a></li>
+                <li><a href="tentang.html">TENTANG KAMI</a></li>
+                <li><a href="artikel.html" class="active">ARTIKEL</a></li>
+            </ul>
+            <div class="mobile-address">
+                <p><i class="fa-solid fa-location-dot"></i> Sleman, Yogyakarta</p>
+                <p><i class="fa-solid fa-phone"></i> 085231092020</p>
+                <p><i class="fa-solid fa-envelope"></i> cv.rawmedia@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================
+         KATEGORI NAVBAR (Sub-Navbar)
+    ========================================= -->
+    <div class="kategori-bar">
+        <div class="kategori-container">
+            <ul class="kategori-list">
+                <li><a href="artikel.html" class="active">Semua</a></li>
+                <li><a href="artikel.html?kategori=percetakan">Percetakan</a></li>
+                <li><a href="artikel.html?kategori=self-publishing">Self Publishing</a></li>
+                <li><a href="artikel.html?kategori=tips">Tips & Trik</a></li>
+                <li><a href="artikel.html?kategori=industri">Industri</a></li>
+                <li><a href="artikel.html?kategori=inspirasi">Inspirasi</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- =========================================
+         MAIN CONTENT — Portal Layout
+    ========================================= -->
+    <main class="portal-main">
+        <div class="portal-container">
+
+            <!-- =========================================
+                 HEADER KATEGORI
+            ========================================= -->
+            <div class="portal-header">
+                <h1 class="portal-title">Artikel</h1>
+                <p class="portal-desc">
+                    Kumpulan tulisan menarik seputar dunia percetakan, self publishing, 
+                    tips praktis, dan insight industri cetak. Update rutin dari tim 
+                    RAW Media Indonesia.
+                </p>
+                <div class="portal-divider"></div>
+            </div>
+
+            <!-- =========================================
+                 LAYOUT 2 KOLOM
+            ========================================= -->
+            <div class="portal-layout">
+
+                <!-- =========================================
+                     KIRI — KONTEN UTAMA
+                ========================================= -->
+                <div class="portal-content">
+
+                    <!-- HEADLINE ARTICLE -->
+                    <article class="headline-article">
+                        <a href="artikel-detail.html" class="headline-link">
+                            <div class="headline-image">
+                                <img src="img/artikel/headline.jpg" 
+                                     alt="Panduan Lengkap Cetak Buku Pertama Anda"
+                                     loading="eager"
+                                     decoding="async">
+                                <span class="headline-badge">HEADLINE</span>
+                                <div class="headline-overlay"></div>
+                            </div>
+                            <div class="headline-info">
+                                <h2 class="headline-title">
+                                    Panduan Lengkap Cetak Buku Pertama Anda
+                                </h2>
+                                <p class="headline-excerpt">
+                                    Dari naskah siap cetak sampai buku jadi di tangan Anda. 
+                                    Simak panduan lengkap proses cetak buku untuk pemula.
+                                </p>
+                                <div class="headline-meta">
+                                    <span><i class="fa-regular fa-calendar"></i> 21 September 2026</span>
+                                    <span><i class="fa-regular fa-clock"></i> 5 menit baca</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- GRID ARTIKEL -->
+                    <div class="artikel-grid-portal">
+
+                        <!-- Artikel 1 -->
+                        <article class="artikel-card-portal">
+                            <a href="artikel-detail.html" class="artikel-link-portal">
+                                <div class="artikel-image-portal">
+                                    <img src="img/artikel/artikel-1.jpg" 
+                                         alt="Panduan Cetak Buku Ajar Sekolah"
+                                         loading="lazy"
+                                         decoding="async">
+                                </div>
+                                <div class="artikel-info-portal">
+                                    <span class="artikel-kategori-portal">Percetakan</span>
+                                    <h3 class="artikel-title-portal">
+                                        Cara Menghitung Biaya Cetak Buku dengan Akurat
+                                    </h3>
+                                    <div class="artikel-meta-portal">
+                                        <span>20 September 2026</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Artikel 2 -->
+                        <article class="artikel-card-portal">
+                            <a href="artikel-detail.html" class="artikel-link-portal">
+                                <div class="artikel-image-portal">
+                                    <img src="img/artikel/artikel-2.jpg" 
+                                         alt="Tips Self Publishing"
+                                         loading="lazy"
+                                         decoding="async">
+                                </div>
+                                <div class="artikel-info-portal">
+                                    <span class="artikel-kategori-portal">Self Publishing</span>
+                                    <h3 class="artikel-title-portal">
+                                        Perbedaan Self Publishing vs Penerbit Mayor
+                                    </h3>
+                                    <div class="artikel-meta-portal">
+                                        <span>18 September 2026</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Artikel 3 -->
+                        <article class="artikel-card-portal">
+                            <a href="artikel-detail.html" class="artikel-link-portal">
+                                <div class="artikel-image-portal">
+                                    <img src="img/artikel/artikel-3.jpg" 
+                                         alt="Tips Memilih Kertas"
+                                         loading="lazy"
+                                         decoding="async">
+                                </div>
+                                <div class="artikel-info-portal">
+                                    <span class="artikel-kategori-portal">Tips & Trik</span>
+                                    <h3 class="artikel-title-portal">
+                                        5 Tips Memilih Kertas untuk Cetak Buku
+                                    </h3>
+                                    <div class="artikel-meta-portal">
+                                        <span>15 September 2026</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Artikel 4 -->
+                        <article class="artikel-card-portal">
+                            <a href="artikel-detail.html" class="artikel-link-portal">
+                                <div class="artikel-image-portal">
+                                    <img src="img/artikel/artikel-4.jpg" 
+                                         alt="Tren Industri Percetakan 2026"
+                                         loading="lazy"
+                                         decoding="async">
+                                </div>
+                                <div class="artikel-info-portal">
+                                    <span class="artikel-kategori-portal">Industri</span>
+                                    <h3 class="artikel-title-portal">
+                                        Tren Industri Percetakan di 2026
+                                    </h3>
+                                    <div class="artikel-meta-portal">
+                                        <span>12 September 2026</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Artikel 5 -->
+                        <article class="artikel-card-portal">
+                            <a href="artikel-detail.html" class="artikel-link-portal">
+                                <div class="artikel-image-portal">
+                                    <img src="img/artikel/artikel-5.jpg" 
+                                         alt="Tips Memilih Jasa Percetakan"
+                                         loading="lazy"
+                                         decoding="async">
+                                </div>
+                                <div class="artikel-info-portal">
+                                    <span class="artikel-kategori-portal">Tips & Trik</span>
+                                    <h3 class="artikel-title-portal">
+                                        7 Ciri Jasa Percetakan Terpercaya
+                                    </h3>
+                                    <div class="artikel-meta-portal">
+                                        <span>10 September 2026</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Artikel 6 -->
+                        <article class="artikel-card-portal">
+                            <a href="artikel-detail.html" class="artikel-link-portal">
+                                <div class="artikel-image-portal">
+                                    <img src="img/artikel/artikel-6.jpg" 
+                                         alt="Cara Cetak Kitab Pesantren"
+                                         loading="lazy"
+                                         decoding="async">
+                                </div>
+                                <div class="artikel-info-portal">
+                                    <span class="artikel-kategori-portal">Percetakan</span>
+                                    <h3 class="artikel-title-portal">
+                                        Panduan Cetak Kitab untuk Pesantren
+                                    </h3>
+                                    <div class="artikel-meta-portal">
+                                        <span>8 September 2026</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                    </div>
+
+                    <!-- LOAD MORE -->
+                    <div class="portal-loadmore">
+                        <button class="portal-loadmore-btn" id="loadMoreBtn">
+                            <i class="fa-solid fa-rotate"></i>
+                            <span>Muat Lebih Banyak</span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- =========================================
+                     KANAN — SIDEBAR
+                ========================================= -->
+                <aside class="portal-sidebar">
+
+                    <!-- Iklan -->
+                    <div class="sidebar-ad">
+                        <div class="sidebar-ad-box">
+                            <span class="sidebar-ad-label">ADVERTISEMENT</span>
+                            <div class="sidebar-ad-content">
+                                <p>Slot Iklan</p>
+                                <p class="sidebar-ad-small">Ukuran 300×250</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artikel Terbaru -->
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-widget-title">Artikel Terbaru</h3>
+                        <div class="sidebar-widget-divider"></div>
+
+                        <ul class="sidebar-posts">
+
+                            <li class="sidebar-post">
+                                <a href="artikel-detail.html" class="sidebar-post-link">
+                                    <div class="sidebar-post-image">
+                                        <img src="img/artikel/artikel-7.jpg" alt="Artikel Terbaru" loading="lazy">
+                                    </div>
+                                    <div class="sidebar-post-info">
+                                        <h4 class="sidebar-post-title">
+                                            Cara Memilih Ukuran Buku yang Tepat
+                                        </h4>
+                                        <span class="sidebar-post-date">22 Sep 2026</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-post">
+                                <a href="artikel-detail.html" class="sidebar-post-link">
+                                    <div class="sidebar-post-image">
+                                        <img src="img/artikel/artikel-8.jpg" alt="Artikel Terbaru" loading="lazy">
+                                    </div>
+                                    <div class="sidebar-post-info">
+                                        <h4 class="sidebar-post-title">
+                                            Perbedaan Hardcover vs Softcover
+                                        </h4>
+                                        <span class="sidebar-post-date">20 Sep 2026</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-post">
+                                <a href="artikel-detail.html" class="sidebar-post-link">
+                                    <div class="sidebar-post-image">
+                                        <img src="img/artikel/artikel-9.jpg" alt="Artikel Terbaru" loading="lazy">
+                                    </div>
+                                    <div class="sidebar-post-info">
+                                        <h4 class="sidebar-post-title">
+                                            Cara Mengurus ISBN untuk Buku Anda
+                                        </h4>
+                                        <span class="sidebar-post-date">18 Sep 2026</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-post">
+                                <a href="artikel-detail.html" class="sidebar-post-link">
+                                    <div class="sidebar-post-image">
+                                        <img src="img/artikel/artikel-10.jpg" alt="Artikel Terbaru" loading="lazy">
+                                    </div>
+                                    <div class="sidebar-post-info">
+                                        <h4 class="sidebar-post-title">
+                                            Tips Memilih Font untuk Isi Buku
+                                        </h4>
+                                        <span class="sidebar-post-date">15 Sep 2026</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <!-- Kategori -->
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-widget-title">Kategori</h3>
+                        <div class="sidebar-widget-divider"></div>
+
+                        <ul class="sidebar-kategori">
+                            <li><a href="artikel.html?kategori=percetakan">Percetakan <span>12</span></a></li>
+                            <li><a href="artikel.html?kategori=self-publishing">Self Publishing <span>8</span></a></li>
+                            <li><a href="artikel.html?kategori=tips">Tips & Trik <span>15</span></a></li>
+                            <li><a href="artikel.html?kategori=industri">Industri <span>6</span></a></li>
+                            <li><a href="artikel.html?kategori=inspirasi">Inspirasi <span>9</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA Konsultasi -->
+                    <div class="sidebar-cta">
+                        <h3 class="sidebar-cta-title">Butuh Jasa Cetak Buku?</h3>
+                        <p class="sidebar-cta-desc">
+                            Konsultasi gratis dengan tim kami. Dapatkan penawaran terbaik.
+                        </p>
+                        <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20konsultasi%20cetak%20buku" 
+                           target="_blank" 
+                           rel="noopener" 
+                           class="sidebar-cta-btn">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>Konsultasi Gratis</span>
+                        </a>
+                    </div>
+
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+    <footer class="footer-modern">
+        <div class="footer-accent"></div>
+        <div class="footer-container">
+            <div class="footer-col footer-brand">
+                <div class="footer-logo">
+                    <img src="raw-media.svg" alt="Logo RAW Media Indonesia" class="footer-logo-img">
+                </div>
+                <p class="footer-desc">Solusi percetakan dan finishing berkualitas tinggi untuk kebutuhan bisnis, sekolah, dan personal. Berpengalaman lebih dari 10 tahun.</p>
+            </div>
+            <div class="footer-col footer-menu">
+                <h4 class="footer-heading">Perusahaan</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="index.html#layanan">Layanan</a></li>
+                    <li><a href="artikel.html">Artikel</a></li>
+                    <li><a href="index.html#galeri">Galeri</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-menu">
+                <h4 class="footer-heading">Layanan Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#layanan">Cetak Buku</a></li>
+                    <li><a href="index.html#layanan">Buku Tahunan</a></li>
+                    <li><a href="index.html#layanan">Buku Pesantren</a></li>
+                    <li><a href="index.html#layanan">Finishing Premium</a></li>
+                    <li><a href="index.html#layanan">B2B & Korporat</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4 class="footer-heading">Alamat & Kontak</h4>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-location-dot"></i> Balangan, RT.02/RW.04, Sendangrejo, Kec. Minggir, Sleman, DIY 55562</li>
+                </ul>
+                <p class="contact-description">Hubungi Customer Service Kami</p>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282223191719" target="_blank" rel="noopener">082223191719</a></li>
+                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282342974320" target="_blank" rel="noopener">082342974320</a></li>
+                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6285232232500" target="_blank" rel="noopener">085232232500</a></li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:cv.rawmedia@gmail.com">cv.rawmedia@gmail.com</a></li>
+                </ul>
+                <div class="footer-hours">
+                    <h5>Jam Operasional</h5>
+                    <p>Senin - Sabtu: 09.00 - 17.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-social-section">
+            <h4 class="footer-social-title">Ikuti Kami</h4>
+            <div class="footer-social-links">
+                <a href="https://instagram.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://tiktok.com/@rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://facebook.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RAW Media Indonesia. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- =========================================
+         FLOATING WHATSAPP
+    ========================================= -->
+    <a href="https://wa.me/6285231092020" class="floating-wa" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="floating-wa-text">Hotline</span>
+    </a>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

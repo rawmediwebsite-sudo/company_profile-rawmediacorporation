@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Buku - RAW Media Indonesia</title>
+    <meta name="description" content="Katalog buku terbitan RAW Media Indonesia. Buku ajar, novel, kitab pesantren, dan buku panduan berkualitas.">
+    <meta name="keywords" content="katalog buku, penerbit buku yogyakarta, buku raw media">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rawmedia.id/katalog.html">
+    
+    <link rel="icon" type="image/svg+xml" href="raw-media.svg">
+    <meta name="theme-color" content="#BE1A1A">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="raw-media.svg" alt="Logo RAW Media Indonesia" class="logo-img">
+            </a>
+        </div>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#layanan">LAYANAN</a></li>
+            <li><a href="katalog.html" class="active">KATALOG</a></li>
+            <li><a href="pemesanan.html">PEMESANAN</a></li>
+            <li><a href="tentang.html">TENTANG KAMI</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="hamburger" id="hamburger">
+                <span class="hamburger-text">MENU</span>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <img src="raw-media.svg" alt="Logo RAW Media" class="mobile-logo-img">
+                <span class="mobile-logo-text">RAW MEDIA</span>
+            </div>
+            <button class="close-btn" id="closeBtn" aria-label="Tutup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-body">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html#layanan">LAYANAN</a></li>
+                <li><a href="katalog.html" class="active">KATALOG</a></li>
+                <li><a href="pemesanan.html">PEMESANAN</a></li>
+                <li><a href="tentang.html">TENTANG KAMI</a></li>
+                
+            </ul>
+            <div class="mobile-address">
+                <p><i class="fa-solid fa-location-dot"></i> Sleman, Yogyakarta</p>
+                <p><i class="fa-solid fa-phone"></i> 085231092020</p>
+                <p><i class="fa-solid fa-envelope"></i> cv.rawmedia@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER KATALOG (Putih Bersih) -->
+    <section class="katalog-header-section">
+        <div class="katalog-header-container">
+            <nav class="katalog-breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Katalog Buku</span>
+            </nav>
+            <h1 class="katalog-header-title">Katalog Buku</h1>
+            <p class="katalog-header-subtitle">Buku-buku terbitan RAW Media Indonesia</p>
+        </div>
+    </section>
+
+    <!-- KATALOG BUKU -->
+    <section class="katalog-buku-section">
+        <div class="katalog-buku-container">
+
+        
+            <!-- Grid Buku -->
+            <div class="katalog-buku-grid" id="katalogGrid">
+
+                <!-- BUKU 1 -->
+                <article class="buku-card" data-kategori="panduan">
+                    <div class="buku-card-cover">
+                        <img src="img/katalog/panduan-cetak-buku.jpg" alt="Panduan Lengkap Cetak Buku untuk Pemula" loading="lazy">
+                    </div>
+                    <div class="buku-card-info">
+                        <span class="buku-kategori">Buku Panduan</span>
+                        <h3 class="buku-title">Panduan Lengkap Cetak Buku untuk Pemula</h3>
+                        <p class="buku-penulis">Tim RAW Media</p>
+                        <ul class="buku-meta">
+                            <li><i class="fa-solid fa-calendar"></i> 2026</li>
+                            <li><i class="fa-solid fa-book"></i> 120 hal</li>
+                        </ul>
+                        <div class="buku-actions">
+                            <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20tanya%20buku%20Panduan%20Cetak%20Buku" 
+                               target="_blank" rel="noopener" class="buku-btn buku-btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> Tanya
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BUKU 2 -->
+                <article class="buku-card" data-kategori="buku-ajar">
+                    <div class="buku-card-cover">
+                        <img src="img/katalog/buku-ajar-sd.jpg" alt="Buku Ajar Sekolah Dasar" loading="lazy">
+                    </div>
+                    <div class="buku-card-info">
+                        <span class="buku-kategori">Buku Ajar</span>
+                        <h3 class="buku-title">Buku Ajar Tematik Sekolah Dasar</h3>
+                        <p class="buku-penulis">Tim Guru</p>
+                        <ul class="buku-meta">
+                            <li><i class="fa-solid fa-calendar"></i> 2026</li>
+                            <li><i class="fa-solid fa-book"></i> 180 hal</li>
+                        </ul>
+                        <div class="buku-actions">
+                            <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20tanya%20Buku%20Ajar%20SD" 
+                               target="_blank" rel="noopener" class="buku-btn buku-btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> Tanya
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BUKU 3 -->
+                <article class="buku-card" data-kategori="pesantren">
+                    <div class="buku-card-cover">
+                        <img src="img/katalog/kitab-pesantren.jpg" alt="Kitab Pesantren" loading="lazy">
+                    </div>
+                    <div class="buku-card-info">
+                        <span class="buku-kategori">Kitab Pesantren</span>
+                        <h3 class="buku-title">Kumpulan Doa & Hafalan Santri</h3>
+                        <p class="buku-penulis">Pengurus Pesantren</p>
+                        <ul class="buku-meta">
+                            <li><i class="fa-solid fa-calendar"></i> 2026</li>
+                            <li><i class="fa-solid fa-book"></i> 96 hal</li>
+                        </ul>
+                        <div class="buku-actions">
+                            <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20tanya%20Kumpulan%20Doa%20Santri" 
+                               target="_blank" rel="noopener" class="buku-btn buku-btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> Tanya
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BUKU 4 -->
+                <article class="buku-card" data-kategori="novel">
+                    <div class="buku-card-cover">
+                        <img src="img/katalog/novel-1.jpg" alt="Novel Pertama" loading="lazy">
+                    </div>
+                    <div class="buku-card-info">
+                        <span class="buku-kategori">Novel</span>
+                        <h3 class="buku-title">Jejak di Ujung Senja</h3>
+                        <p class="buku-penulis">Penulis Muda</p>
+                        <ul class="buku-meta">
+                            <li><i class="fa-solid fa-calendar"></i> 2026</li>
+                            <li><i class="fa-solid fa-book"></i> 240 hal</li>
+                        </ul>
+                        <div class="buku-actions">
+                            <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20tanya%20Novel%20Jejak%20di%20Ujung%20Senja" 
+                               target="_blank" rel="noopener" class="buku-btn buku-btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> Tanya
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BUKU 5 -->
+                <article class="buku-card" data-kategori="panduan">
+                    <div class="buku-card-cover">
+                        <img src="img/katalog/self-publishing.jpg" alt="Panduan Self Publishing" loading="lazy">
+                    </div>
+                    <div class="buku-card-info">
+                        <span class="buku-kategori">Buku Panduan</span>
+                        <h3 class="buku-title">Sukses Self Publishing di Indonesia</h3>
+                        <p class="buku-penulis">Tim RAW Media</p>
+                        <ul class="buku-meta">
+                            <li><i class="fa-solid fa-calendar"></i> 2026</li>
+                            <li><i class="fa-solid fa-book"></i> 150 hal</li>
+                        </ul>
+                        <div class="buku-actions">
+                            <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20tanya%20buku%20Self%20Publishing" 
+                               target="_blank" rel="noopener" class="buku-btn buku-btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> Tanya
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BUKU 6 -->
+                <article class="buku-card" data-kategori="buku-ajar">
+                    <div class="buku-card-cover">
+                        <img src="img/katalog/modul-sma.jpg" alt="Modul Pembelajaran SMA" loading="lazy">
+                    </div>
+                    <div class="buku-card-info">
+                        <span class="buku-kategori">Buku Ajar</span>
+                        <h3 class="buku-title">Modul Pembelajaran SMA</h3>
+                        <p class="buku-penulis">Tim Guru SMA</p>
+                        <ul class="buku-meta">
+                            <li><i class="fa-solid fa-calendar"></i> 2026</li>
+                            <li><i class="fa-solid fa-book"></i> 200 hal</li>
+                        </ul>
+                        <div class="buku-actions">
+                            <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20tanya%20Modul%20SMA" 
+                               target="_blank" rel="noopener" class="buku-btn buku-btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> Tanya
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BUKU 7 -->
+                <article class="buku-card" data-kategori="pesantren">
+                    <div class="buku-card-cover">
+                        <img src="img/katalog/juz-amma.jpg" alt="Juz Amma" loading="lazy">
+                    </div>
+                    <div class="buku-card-info">
+                        <span class="buku-kategori">Kitab Pesantren</span>
+                        <h3 class="buku-title">Juz Amma & Terjemahan</h3>
+                        <p class="buku-penulis">Tim RAW Media</p>
+                        <ul class="buku-meta">
+                            <li><i class="fa-solid fa-calendar"></i> 2026</li>
+                            <li><i class="fa-solid fa-book"></i> 80 hal</li>
+                        </ul>
+                        <div class="buku-actions">
+                            <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20tanya%20Juz%20Amma" 
+                               target="_blank" rel="noopener" class="buku-btn buku-btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> Tanya
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- BUKU 8 -->
+                <article class="buku-card" data-kategori="novel">
+                    <div class="buku-card-cover">
+                        <img src="img/katalog/novel-2.jpg" alt="Novel Kedua" loading="lazy">
+                    </div>
+                    <div class="buku-card-info">
+                        <span class="buku-kategori">Novel</span>
+                        <h3 class="buku-title">Rindu di Kota Tua</h3>
+                        <p class="buku-penulis">Penulis Muda</p>
+                        <ul class="buku-meta">
+                            <li><i class="fa-solid fa-calendar"></i> 2026</li>
+                            <li><i class="fa-solid fa-book"></i> 180 hal</li>
+                        </ul>
+                        <div class="buku-actions">
+                            <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20tanya%20Novel%20Rindu%20di%20Kota%20Tua" 
+                               target="_blank" rel="noopener" class="buku-btn buku-btn-wa">
+                                <i class="fa-brands fa-whatsapp"></i> Tanya
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- CTA -->
+            <div class="katalog-cta">
+                <h2 class="katalog-cta-title">Ingin Menerbitkan Buku?</h2>
+                <p class="katalog-cta-desc">
+                    RAW Media Indonesia membuka peluang untuk penulis dan instansi yang ingin 
+                    menerbitkan buku. Kami bantu dari editing, ISBN, desain cover, sampai cetak.
+                </p>
+                <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20menerbitkan%20buku" 
+                   target="_blank" rel="noopener" class="katalog-cta-btn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Konsultasi Penerbitan</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-modern">
+        <div class="footer-accent"></div>
+        <div class="footer-container">
+            <div class="footer-col footer-brand">
+                <div class="footer-logo">
+                    <img src="raw-media.svg" alt="Logo RAW Media Indonesia" class="footer-logo-img">
+                </div>
+                <p class="footer-desc">Solusi percetakan dan finishing berkualitas tinggi untuk kebutuhan bisnis, sekolah, dan personal. Berpengalaman lebih dari 10 tahun.</p>
+            </div>
+            <div class="footer-col footer-menu">
+                <h4 class="footer-heading">Perusahaan</h4>
+                <ul class="footer-links">
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="index.html#layanan">Layanan</a></li>
+                    <li><a href="katalog.html">Katalog Buku</a></li>
+                    <!--<li><a href="artikel.html">Artikel</a></li>-->
+                </ul>
+            </div>
+            <div class="footer-col footer-menu">
+                <h4 class="footer-heading">Layanan Kami</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#layanan">Cetak Buku</a></li>
+                    <li><a href="index.html#layanan">Buku Tahunan</a></li>
+                    <li><a href="index.html#layanan">Buku Pesantren</a></li>
+                    <li><a href="index.html#layanan">Finishing Premium</a></li>
+                    <li><a href="index.html#layanan">B2B & Korporat</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4 class="footer-heading">Alamat & Kontak</h4>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-location-dot"></i> Balangan, RT.02/RW.04, Sendangrejo, Kec. Minggir, Sleman, DIY 55562</li>
+                </ul>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282223191719">082223191719</a></li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:cv.rawmedia@gmail.com">cv.rawmedia@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-social-section">
+            <h4 class="footer-social-title">Ikuti Kami</h4>
+            <div class="footer-social-links">
+                <a href="https://instagram.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://tiktok.com/@rawmedia.id" target="_blank" rel="noopener" class="social-icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://facebook.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RAW Media Indonesia. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING WA -->
+    <a href="https://wa.me/6285231092020" class="floating-wa" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.katalog-filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.katalog-filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                document.querySelectorAll('.buku-card').forEach(card => {
+                    card.style.display = (filter === 'all' || card.dataset.kategori === filter) ? '' : 'none';
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

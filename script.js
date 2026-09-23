@@ -144,7 +144,7 @@
             finishing: ['Softcover', 'Hardcover', 'Spiral', 'Perfect Binding', 'Jahit Benang', 'Laminasi Doff', 'Laminasi Glossy', 'Spot UV'],
             deskripsi: 'Layanan cetak buku profesional untuk kebutuhan sekolah, kampus, penerbit, dan penulis independen. Kami menggunakan mesin cetak modern dengan hasil tajam dan warna akurat. Cocok untuk novel, buku ajar, modul, buku akademik, dan self publishing.',
             info: { minOrder: '50 buku', pengerjaan: '7-14 hari kerja', garansi: 'Garansi hasil cetak', pengiriman: 'Seluruh Indonesia' },
-            images: ['img/produk/buku-1.jpg', 'img/produk/buku-2.jpg', 'img/produk/buku-3.jpg', 'img/produk/buku-4.jpg']
+            images: ['img/fotoproduk/fopro7.jpg', 'img/fotoproduk/fopro8.jpg', 'img/fotoproduk/fopro9.jpg', 'img/produk/buku-4.jpg']
         },
         tahunan: {
             title: 'Buku Tahunan',
@@ -152,8 +152,8 @@
             ukuran: ['A4', 'B5', '20×25 cm', 'Custom'],
             finishing: ['Hardcover', 'Hardcover + Box', 'Laminasi Doff', 'Laminasi Glossy', 'Spot UV', 'Emboss', 'Deboss', 'Hot Print Emas/Silver'],
             deskripsi: 'Paket lengkap buku tahunan sekolah dengan layanan fotografi profesional, desain layout kreatif, dan cetak full color berkualitas tinggi. Membuat kenangan siswa lebih berkesan dan memorable. Termasuk sesi foto siswa, guru, dan kelas.',
-            info: { minOrder: '100 buku', pengerjaan: '21-45 hari kerja', garansi: 'Garansi hasil cetak', pengiriman: 'Seluruh Indonesia' },
-            images: ['img/produk/tahunan-1.jpg', 'img/produk/tahunan-2.jpg', 'img/produk/tahunan-3.jpg', 'img/produk/tahunan-4.jpg']
+            info: { minOrder: '100 buku', pengerjaan: '3-7 hari kerja', garansi: 'Garansi hasil cetak', pengiriman: 'Seluruh Indonesia' },
+            images: ['img/fotoproduk/fopro6.jpg', 'img/fotoproduk/fopro3.jpg', 'img/fotoproduk/fopro4.jpg', 'img/fotoproduk/fopro5.jpg']
         },
         pesantren: {
             title: 'Buku Pesantren',
