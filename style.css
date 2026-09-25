@@ -8384,3 +8384,70 @@ body.menu-open .floating-wa {
         font-size: 0.6rem;
     }
 }
+/* =========================================
+   ORDER BANNER — TANPA FOTO
+========================================= */
+.order-banner-card.order-banner-no-image {
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: auto;
+}
+
+.order-banner-card.order-banner-no-image .order-banner-content {
+    padding: 50px 50px 50px 50px;
+    text-align: center;
+    align-items: center;
+}
+
+.order-banner-card.order-banner-no-image .order-banner-features {
+    align-items: center;
+}
+
+.order-banner-card.order-banner-no-image .order-banner-features .order-banner-feature {
+    justify-content: center;
+}
+
+.order-banner-card.order-banner-no-image .order-banner-btn {
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    .order-banner-card.order-banner-no-image .order-banner-content {
+        padding: 32px 24px;
+    }
+
+    .order-banner-card.order-banner-no-image .order-banner-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* =========================================
+   SPLIT BANNER — TANPA FOTO
+========================================= */
+.split-banner-card.split-banner-no-image {
+    grid-template-columns: 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: auto;
+}
+
+.split-banner-card.split-banner-no-image .split-banner-content {
+    padding: 50px 50px 50px 50px;
+    text-align: center;
+    align-items: center;
+}
+
+.split-banner-card.split-banner-no-image .split-banner-btn {
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    .split-banner-card.split-banner-no-image .split-banner-content {
+        padding: 32px 24px;
+    }
+
+    .split-banner-card.split-banner-no-image .split-banner-title {
+        font-size: 1.4rem;
+    }
+}
