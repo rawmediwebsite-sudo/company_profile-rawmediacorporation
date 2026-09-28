@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAW Media Indonesia - Percetakan Profesional & Terpercaya</title>
-    <meta name="description" content="Butuh cetak buku berkualitas? RAW Media Indonesia solusinya. Buku ajar, novel, kitab pesantren, buku tahunan. Harga kompetitif, hasil premium. Konsultasi gratis!">
-    <meta name="keywords" content="percetakan buku yogyakarta, jasa cetak buku, cetak buku tahunan, cetak kitab pesantren, percetakan buku murah">
+    <title>RAW Media Indonesia - Percetakan & Penerbitan Profesional</title>
+    <meta name="description" content="Jasa cetak buku dan penerbitan ber-ISBN. Buku ajar, novel, kitab pesantren, buku tahunan, self publishing. Harga kompetitif, hasil premium. Konsultasi gratis!">
+    <meta name="keywords" content="percetakan buku yogyakarta, jasa cetak buku, penerbitan buku ISBN, self publishing, cetak buku tahunan, cetak kitab pesantren">
     <meta name="author" content="CV.RAW Media Indonesia">
     <meta name="publisher" content="RAW Media Indonesia">
-    <meta name= "copyright" content="Raw Media Indonesia">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="shortcut icon" href="favicon.ico">
-<meta name="theme-color" content="#BE1A1A">
+    <meta name="copyright" content="Raw Media Indonesia">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="theme-color" content="#BE1A1A">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- =========================================
+
+<!-- =========================================
      NAVBAR
 ========================================= -->
 <nav class="navbar">
@@ -37,8 +38,6 @@
         <li><a href="katalog.html">KATALOG</a></li>
         <li><a href="pemesanan.html">PEMESANAN</a></li>
         <li><a href="tentang.html">TENTANG KAMI</a></li>
-    <!-- <li><a href="artikel.html">ARTIKEL</a></li> -->
-     
     </ul>
     <div class="nav-right">
         <div class="hamburger" id="hamburger">
@@ -68,7 +67,6 @@
             <li><a href="katalog.html">KATALOG</a></li>
             <li><a href="pemesanan.html">PEMESANAN</a></li>
             <li><a href="tentang.html">TENTANG KAMI</a></li>
-            <li><a href="artikel.html">ARTIKEL</a></li>
         </ul>
         <div class="mobile-address">
             <p><i class="fa-solid fa-location-dot"></i> Sleman, Yogyakarta</p>
@@ -77,769 +75,835 @@
         </div>
     </div>
 </div>
-    <header id="home" class="hero-bri-style">
-        <div class="hero-overlay-dark"></div>
-        <div class="hero-bri-content">
-            <h1 class="hero-bri-title">Percetakan Profesional & Terpercaya di Indonesia</h1>
-            <p class="hero-bri-subtitle">Solusi cetak buku self publishing, buku ajar sekolah, kitab pesantren, dan buku tahunan dengan kualitas premium.</p>
-            <a href="pemesanan.html" class="btn-bri-primary">Pesan Sekarang</a>
-        </div>
-    </header>
-    <section id="layanan" class="katalog-section">
-        <div class="katalog-header">
-            <h2 class="katalog-title">
-                <span class="katalog-title-white">Daftar</span> <span class="katalog-title-red">Layanan Kami</span>
-            </h2>
-            <p class="katalog-subtitle">Klik setiap layanan untuk melihat detail spesifikasi dan konsultasi gratis</p>
-        </div>
 
-        <div class="katalog-grid">
+<!-- =========================================
+     HERO
+========================================= -->
+<header id="home" class="hero-bri-style">
+    <div class="hero-overlay-dark"></div>
+    <div class="hero-bri-content">
+        <h1 class="hero-bri-title">Cetak Buku Apapun, Terbitkan Kapanpun — Kami Solusinya</h1>
+        <p class="hero-bri-subtitle">Buku ajar, novel, modul, kitab pesantren, juz amma, buku tahunan sekolah, sampai buku ber-ISBN. Semua bisa dicetak dan diterbitkan di RAW Media Indonesia. Hasil premium, harga jujur, pengerjaan cepat.</p>
+        <a href="pemesanan.html" class="btn-bri-primary">Pesan Sekarang</a>
+    </div>
+</header>
 
-            <div class="produk-card" onclick="openProdukModal('buku')" data-produk="buku" role="button" tabindex="0">
-                <div class="produk-image">
-                    <img src="img/fotoproduk/fopro10.jpeg" alt="Cetak Buku Ajar dan Novel" loading="lazy" decoding="async">
-                </div>
-                <div class="produk-info">
-                    <h3 class="produk-title">Cetak Buku</h3>
-                    <p class="produk-kategori">BUKU AJAR · NOVEL · MODUL · AKADEMIK</p>
-                </div>
-            </div>
+<!-- =========================================
+     LAYANAN (PERCETAKAN SAJA)
+========================================= -->
+<section id="layanan" class="katalog-section">
+    <div class="katalog-header">
+        <h2 class="katalog-title">
+            <span class="katalog-title-white">Layanan</span>
+            <span class="katalog-title-red">Percetakan Kami</span>
+        </h2>
+        <p class="katalog-subtitle">
+            Cetak buku ajar, novel, kitab pesantren, buku tahunan, sampai finishing premium.
+            Klik setiap layanan untuk lihat detail & konsultasi gratis.
+        </p>
+    </div>
 
-            <div class="produk-card" onclick="openProdukModal('tahunan')" data-produk="tahunan" role="button" tabindex="0">
-                <div class="produk-image">
-                    <img src="img/fotoproduk/fopro2.jpg" alt="Cetak Buku Tahunan Sekolah" loading="lazy" decoding="async">
-                </div>
-                <div class="produk-info">
-                    <h3 class="produk-title">Buku Tahunan</h3>
-                    <p class="produk-kategori">YEARBOOK SEKOLAH · FOTO · DESAIN</p>
-                </div>
-            </div>
+    <div class="katalog-grid">
 
-            <div class="produk-card" onclick="openProdukModal('pesantren')" data-produk="pesantren" role="button" tabindex="0">
-                <div class="produk-image">
-                    <img src="img/fotoproduk/fopro7.jpg" alt="Cetak Kitab dan Buku Pesantren" loading="lazy" decoding="async">
-                </div>
-                <div class="produk-info">
-                    <h3 class="produk-title">Buku Pesantren</h3>
-                    <p class="produk-kategori">KITAB · DOA · HAFALAN · JUZ AMMA</p>
-                </div>
+        <div class="produk-card" onclick="openProdukModal('buku')" data-produk="buku" role="button" tabindex="0">
+            <div class="produk-image">
+                <img src="img/fotoproduk/fopro10.jpeg" alt="Cetak Buku Ajar dan Novel" loading="lazy" decoding="async">
             </div>
-
-            <div class="produk-card" onclick="openProdukModal('finishing')" data-produk="finishing" role="button" tabindex="0">
-                <div class="produk-image">
-                    <img src="img/fotoproduk/finpree.jpeg" alt="Finishing dan Jilid Buku Premium" loading="lazy" decoding="async">
-                </div>
-                <div class="produk-info">
-                    <h3 class="produk-title">Finishing Premium</h3>
-                    <p class="produk-kategori">JILID · LAMINASI · SPOT UV · EMBOSS</p>
-                </div>
-            </div>
-
-            <div class="produk-card" onclick="openProdukModal('b2b')" data-produk="b2b" role="button" tabindex="0">
-                <div class="produk-image">
-                    <img src="img/fotoproduk/instansi.webp" alt="Pengadaan Cetak Ins" loading="lazy" decoding="async">
-                </div>
-                <div class="produk-info">
-                    <h3 class="produk-title">B2B & Korporat</h3>
-                    <p class="produk-kategori">PENGADAAN · INSTANSI · KONTRAK</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <section id="mengapa" class="mengapa-section">
-        <div class="mengapa-header">
-            <h2 class="mengapa-title">
-                <span class="mengapa-title-white">Mengapa Memilih</span> <span class="mengapa-title-red">RAW Media?</span>
-            </h2>
-            <p class="mengapa-subtitle">Bukan sekadar percetakan biasa — kami partner cetak buku Anda</p>
-        </div>
-
-        <div class="mengapa-trust-bar">
-            <div class="mengapa-trust-item">
-                <div class="mengapa-trust-number">10+</div>
-                <div class="mengapa-trust-label">Tahun Pengalaman</div>
-            </div>
-            <div class="mengapa-trust-item">
-                <div class="mengapa-trust-number">5.000+</div>
-                <div class="mengapa-trust-label">Klien Terselesaikan</div>
-            </div>
-            <div class="mengapa-trust-item">
-                <div class="mengapa-trust-number">100+</div>
-                <div class="mengapa-trust-label">Klien Langganan</div>
-            </div>
-            <div class="mengapa-trust-item">
-                <div class="mengapa-trust-number">4.9/5</div>
-                <div class="mengapa-trust-label">Rating Kepuasan</div>
+            <div class="produk-info">
+                <span class="produk-badge">PERCETAKAN</span>
+                <h3 class="produk-title">Cetak Buku</h3>
+                <p class="produk-kategori">BUKU AJAR · NOVEL · MODUL · AKADEMIK</p>
             </div>
         </div>
 
-        <div class="mengapa-grid">
-
-            <div class="mengapa-card">
-                <div class="mengapa-icon">
-                    <img src="img/icons/courier.png" alt="Pengerjaan Cepat" width="40" height="40" loading="lazy">
-                </div>
-                <h3 class="mengapa-card-title">Pengerjaan Cepat</h3>
-                <p class="mengapa-card-desc">Selesai 3-7 hari kerja. Layanan express 24 jam tersedia untuk kebutuhan mendesak.</p>
+        <div class="produk-card" onclick="openProdukModal('tahunan')" data-produk="tahunan" role="button" tabindex="0">
+            <div class="produk-image">
+                <img src="img/fotoproduk/fopro2.jpg" alt="Cetak Buku Tahunan Sekolah" loading="lazy" decoding="async">
             </div>
-
-            <div class="mengapa-card">
-                <div class="mengapa-icon">
-                    <img src="img/icons/price-tag.png" alt="Harga Lebih Murah" width="40" height="40" loading="lazy">
-                </div>
-                <h3 class="mengapa-card-title">Harga Lebih Murah</h3>
-                <p class="mengapa-card-desc">Harga sangat terjangkau untuk Customer. Berbeda dengan vendor yang lain</p>
+            <div class="produk-info">
+                <span class="produk-badge">PERCETAKAN</span>
+                <h3 class="produk-title">Buku Tahunan</h3>
+                <p class="produk-kategori">YEARBOOK SEKOLAH · FOTO · DESAIN</p>
             </div>
-
-            <div class="mengapa-card">
-                <div class="mengapa-icon">
-                    <img src="img/icons/quality.png" alt="Kualitas Premium" width="40" height="40" loading="lazy">
-                </div>
-                <h3 class="mengapa-card-title">Kualitas Premium</h3>
-                <p class="mengapa-card-desc">Mesin cetak modern, hasil tajam, warna akurat, dan finishing rapi untuk setiap produk.</p>
-            </div>
-
-            <div class="mengapa-card">
-                <div class="mengapa-icon">
-                    <img src="img/icons/shipped.png" alt="Pengiriman seluruh indonesia" width="40" height="40" loading="lazy">
-                </div>
-                <h3 class="mengapa-card-title">Kirim Seluruh Indonesia</h3>
-                <p class="mengapa-card-desc">Pengiriman aman ke seluruh nusantara. Gratis ongkir untuk order di atas 100 pcs.</p>
-            </div>
-
-            <div class="mengapa-card">
-                <div class="mengapa-icon">
-                    <img src="img/icons/people-group.png" alt="Tim Berpengalaman" width="40" height="40" loading="lazy">
-                </div>
-                <h3 class="mengapa-card-title">Tim Berpengalaman</h3>
-                <p class="mengapa-card-desc">10+ tahun melayani sekolah, pesantren, kampus, penerbit, dan korporat di Indonesia.</p>
-            </div>
-
-            <div class="mengapa-card">
-                <div class="mengapa-icon">
-                    <img src="img/icons/transaction.png" alt="Garansi Cetak Ulang" width="40" height="40" loading="lazy">
-                </div>
-                <h3 class="mengapa-card-title">Garansi Cetak Ulang</h3>
-                <p class="mengapa-card-desc">Jika ada kesalahan produksi dari pihak kami, kami ganti gratis tanpa biaya tambahan.</p>
-            </div>
-
-        </div>
-    </section>
-    <section id="proses" class="proses-section">
-        <div class="proses-header">
-            <h2 class="proses-title">
-                <span class="proses-title-white">Proses</span> <span class="proses-title-red">Pemesanan Mudah</span>
-            </h2>
-            <p class="proses-subtitle">Hanya 4 langkah sederhana dari konsultasi sampai buku tiba di tangan Anda</p>
         </div>
 
-        <div class="proses-grid">
-
-            <div class="proses-step">
-                <div class="proses-number">1</div>
-                <div class="proses-icon">
-                    <i class="fa-solid fa-comments"></i>
-                </div>
-                <h3 class="proses-step-title">Konsultasi</h3>
-                <p class="proses-step-desc">Chat WhatsApp, ceritakan kebutuhan cetak Anda. Tim kami siap membantu.</p>
+        <div class="produk-card" onclick="openProdukModal('pesantren')" data-produk="pesantren" role="button" tabindex="0">
+            <div class="produk-image">
+                <img src="img/fotoproduk/fopro7.jpg" alt="Cetak Kitab dan Buku Pesantren" loading="lazy" decoding="async">
             </div>
-
-            <div class="proses-arrow">
-                <i class="fa-solid fa-arrow-right"></i>
+            <div class="produk-info">
+                <span class="produk-badge">PERCETAKAN</span>
+                <h3 class="produk-title">Buku Pesantren</h3>
+                <p class="produk-kategori">KITAB · DOA · HAFALAN · JUZ AMMA</p>
             </div>
-
-            <div class="proses-step">
-                <div class="proses-number">2</div>
-                <div class="proses-icon">
-                    <i class="fa-solid fa-file-pen"></i>
-                </div>
-                <h3 class="proses-step-title">Desain & Approval</h3>
-                <p class="proses-step-desc">Kami buat preview 3D untuk persetujuan sebelum masuk produksi.</p>
-            </div>
-
-            <div class="proses-arrow">
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-
-            <div class="proses-step">
-                <div class="proses-number">3</div>
-                <div class="proses-icon">
-                    <i class="fa-solid fa-print"></i>
-                </div>
-                <h3 class="proses-step-title">Cetak & Finishing</h3>
-                <p class="proses-step-desc">Produksi dengan mesin modern dan quality control ketat.</p>
-            </div>
-
-            <div class="proses-arrow">
-                <i class="fa-solid fa-arrow-right"></i>
-            </div>
-
-            <div class="proses-step">
-                <div class="proses-number">4</div>
-                <div class="proses-icon">
-                    <i class="fa-solid fa-box-open"></i>
-                </div>
-                <h3 class="proses-step-title">Kirim</h3>
-                <p class="proses-step-desc">Packing rapi, tracking nomor resi, sampai ke alamat Anda.</p>
-            </div>
-
         </div>
-    </section>
-    <section id="tentang-singkat" class="tentang-singkat-section">
-        <div class="tentang-singkat-container">
-            <div class="tentang-singkat-text">
-                <span class="tentang-singkat-label">Tentang Kami</span>
-                <h2 class="tentang-singkat-title">RAW Media Indonesia</h2>
-                <p class="tentang-singkat-desc">
-                    CV. RAW Media Indonesia adalah perusahaan percetakan dan finishing dengan pengalaman lebih dari 10 tahun. 
-                    Kami melayani kebutuhan cetak buku untuk sekolah, kampus, pesantren, penerbit, dan korporat di seluruh Indonesia.
-                </p>
-                <a href="tentang.html" class="tentang-singkat-btn">
-                    Selengkapnya tentang kami
-                    <i class="fa-solid fa-arrow-right"></i>
+
+        <div class="produk-card" onclick="openProdukModal('finishing')" data-produk="finishing" role="button" tabindex="0">
+            <div class="produk-image">
+                <img src="img/fotoproduk/finpree.jpeg" alt="Finishing dan Jilid Buku Premium" loading="lazy" decoding="async">
+            </div>
+            <div class="produk-info">
+                <span class="produk-badge">PERCETAKAN</span>
+                <h3 class="produk-title">Finishing Premium</h3>
+                <p class="produk-kategori">JILID · LAMINASI · SPOT UV · EMBOSS</p>
+            </div>
+        </div>
+
+        <div class="produk-card" onclick="openProdukModal('b2b')" data-produk="b2b" role="button" tabindex="0">
+            <div class="produk-image">
+                <img src="img/fotoproduk/instansi.webp" alt="Pengadaan Cetak Instansi" loading="lazy" decoding="async">
+            </div>
+            <div class="produk-info">
+                <span class="produk-badge">PERCETAKAN</span>
+                <h3 class="produk-title">B2B & Korporat</h3>
+                <p class="produk-kategori">PENGADAAN · INSTANSI · KONTRAK</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================
+     PAKET PENERBITAN
+========================================= -->
+<section id="paket-penerbitan" class="paket-section">
+    <div class="paket-header">
+        <span class="paket-label">Pilihan Paket</span>
+        <h2 class="paket-title">
+            <span class="paket-title-dark">Paket</span>
+            <span class="paket-title-red">Penerbitan Buku</span>
+        </h2>
+        <p class="paket-subtitle">
+            Pilih paket sesuai kebutuhan Anda. Semua paket sudah termasuk ISBN resmi,
+            editing, layout, dan desain cover. Konsultasi gratis sebelum memesan.
+        </p>
+    </div>
+
+    <div class="paket-grid">
+
+        <div class="paket-card">
+            <div class="paket-image">
+                <img src="img/penerbit.jpg" alt="Paket Penerbitan MULAI RAW Media" loading="lazy" decoding="async">
+                <span class="paket-image-badge">PAKET 1 · MULAI</span>
+            </div>
+            <div class="paket-card-body">
+                <h3 class="paket-name">PAKET MULAI</h3>
+                <p class="paket-tagline">Cocok untuk penulis pemula yang ingin bukunya terbit resmi.</p>
+                <ul class="paket-fitur">
+                    <li><i class="fa-solid fa-check"></i> ISBN &amp; QRCBN Resmi</li>
+                    <li><i class="fa-solid fa-check"></i> Editing &amp; Proofreading</li>
+                    <li><i class="fa-solid fa-check"></i> Layout &amp; Desain Cover</li>
+                    <li><i class="fa-solid fa-check"></i> E-Sertifikat Penulis</li>
+                    <li><i class="fa-solid fa-check"></i> 5 Eksemplar Buku</li>
+                    <li><i class="fa-solid fa-check"></i> 1 Iklan Promosi</li>
+                </ul>
+                <div class="paket-harga-wrap">
+                    <span class="paket-harga-label">Mulai dari</span>
+                    <div class="paket-harga">Rp6XX.XXX</div>
+                    <span class="paket-harga-note">Estimasi 21 hari kerja</span>
+                </div>
+                <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20konsultasi%20Paket%20MULAI%20RAW%20Media" target="_blank" rel="noopener" class="paket-btn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Konsultasi Paket Ini</span>
                 </a>
             </div>
-            <div class="tentang-singkat-image">
-                <img src="SVN00729 ok.JPG" alt="Tim RAW Media Indonesia" loading="lazy" decoding="async">
-            </div>
         </div>
-    </section>
-    <section id="galeri" class="galeri-section">
-        <div class="galeri-container">
-            
-            <div class="galeri-header">
-                <span class="galeri-label">Portofolio</span>
-                <h2 class="galeri-title">
-                    <span class="galeri-title-white">Galeri</span> <span class="galeri-title-red">Produksi Kami</span>
-                </h2>
-                <p class="galeri-subtitle">Ini proses Pengerjaan pesanan yang kami terima. Prosesnya seperti ini</p>
-                <div class="galeri-divider"></div>
+
+        <div class="paket-card paket-card-populer">
+            <div class="paket-image">
+                <img src="img/penerbit3.jpeg" alt="Paket Penerbitan BERKEMBANG RAW Media" loading="lazy" decoding="async">
+                <span class="paket-image-badge paket-badge-populer">PALING DIMINATI</span>
             </div>
-
-            <div class="coverflow-wrap">
-                <div class="coverflow" id="coverflow">
-
-                    <div class="coverflow-item" data-index="0">
-                        <img src="galeri/production.jpeg" alt="Hasil produksi RAW Media 1" loading="lazy" decoding="async">
-                    </div>
-
-                    <div class="coverflow-item" data-index="1">
-                        <img src="galeri/production2.jpeg" alt="Hasil produksi RAW Media 2" loading="lazy" decoding="async">
-                    </div>
-
-                    <div class="coverflow-item" data-index="2">
-                        <img src="galeri/production3.jpeg" alt="Hasil produksi RAW Media 3" loading="lazy" decoding="async">
-                    </div>
-
-                    <div class="coverflow-item" data-index="3">
-                        <img src="galeri/production4.jpeg" alt="Hasil produksi RAW Media 4" loading="lazy" decoding="async">
-                    </div>
-
-                    <div class="coverflow-item" data-index="4">
-                        <img src="galeri/production5.jpeg" alt="Hasil produksi RAW Media 5" loading="lazy" decoding="async">
-                    </div>
-
+            <div class="paket-card-body">
+                <h3 class="paket-name">PAKET BERKEMBANG</h3>
+                <p class="paket-tagline">Pilihan favorit dosen, guru, dan penulis yang ingin bukunya lebih dikenal.</p>
+                <ul class="paket-fitur">
+                    <li><i class="fa-solid fa-check"></i> Semua Fitur Paket MULAI</li>
+                    <li><i class="fa-solid fa-check"></i> 10 Eksemplar Buku</li>
+                    <li><i class="fa-solid fa-check"></i> 3 Iklan Promosi</li>
+                    <li><i class="fa-solid fa-check"></i> Desain Feed Instagram</li>
+                    <li><i class="fa-solid fa-check"></i> 1 Banner Cetak</li>
+                    <li><i class="fa-solid fa-check"></i> Prioritas Pengerjaan</li>
+                </ul>
+                <div class="paket-harga-wrap">
+                    <span class="paket-harga-label">Mulai dari</span>
+                    <div class="paket-harga">Rp9XX.XXX</div>
+                    <span class="paket-harga-note">Estimasi 18 hari kerja</span>
                 </div>
-
-                <button class="coverflow-nav coverflow-prev" onclick="coverflowPrev()" aria-label="Sebelumnya">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button class="coverflow-nav coverflow-next" onclick="coverflowNext()" aria-label="Selanjutnya">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-
-            <div class="coverflow-dots" id="coverflowDots">
-                <span class="coverflow-dot active" data-index="0"></span>
-                <span class="coverflow-dot" data-index="1"></span>
-                <span class="coverflow-dot" data-index="2"></span>
-                <span class="coverflow-dot" data-index="3"></span>
-                <span class="coverflow-dot" data-index="4"></span>
-            </div>
-
-            <div class="galeri-cta">
-                <p class="galeri-cta-text">Ingin melihat lebih banyak hasil produksi kami?</p>
-                <div class="galeri-cta-buttons">
-                    <a href="https://instagram.com/cetakbukuindonesia" target="_blank" rel="noopener" class="galeri-cta-btn galeri-cta-instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                        <span>Follow Instagram</span>
-                    </a>
-                    <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20lihat%20portofolio%20lengkap" target="_blank" rel="noopener" class="galeri-cta-btn galeri-cta-wa">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>Minta Portofolio</span>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <section id="client" class="client-section">
-        <div class="client-title-wrap">
-            <h2 class="client-title">
-                <span class="client-title-white">Our</span> <span class="client-title-red">Client</span>
-            </h2>
-            <p class="section-description">Dipercaya oleh berbagai instansi, sekolah, dan perusahaan di seluruh Indonesia.</p>
-            <div class="client-divider"></div>
-        </div>
-
-        <div class="client-stats">
-            <div class="client-stat-item">
-                <div class="client-stat-number">5.000+</div>
-                <div class="client-stat-label">ProyekTerselesaikan</div>
-            </div>
-            <div class="client-stat-divider"></div>
-            <div class="client-stat-item">
-                <div class="client-stat-number">200+</div>
-                <div class="client-stat-label">Klien Langganan</div>
+                <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20konsultasi%20Paket%20BERKEMBANG%20RAW%20Media" target="_blank" rel="noopener" class="paket-btn paket-btn-solid">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Konsultasi Paket Ini</span>
+                </a>
             </div>
         </div>
 
-        <div class="client-marquee">
-            <div class="client-marquee-track">
-                <div class="client-logo"><img src="img/Logo Client/Akmil.png" alt="Akmil"></div>
-                <div class="client-logo"><img src="img/Logo Client/Cahaya Quran.png" alt="Cahaya Quran"></div>
-                <div class="client-logo"><img src="img/Logo Client/Coretan Pena.png" alt="Coretan Pena"></div>
-                <div class="client-logo"><img src="img/Logo Client/Divif 2.svg" alt="Divif 2"></div>
-                <div class="client-logo"><img src="img/Logo Client/DIY.svg" alt="DIY"></div>
-                <div class="client-logo"><img src="img/Logo Client/DMH Academy.webp" alt="DMH Academy"></div>
-                <div class="client-logo"><img src="img/Logo Client/Kab Magelang.svg" alt="Kab Magelang"></div>
-                <div class="client-logo"><img src="img/Logo Client/Kelas Bimbel.png" alt="Kelas Bimbel"></div>
-                <div class="client-logo"><img src="img/Logo Client/Kepri.svg" alt="Kepri"></div>
-                <div class="client-logo"><img src="img/Logo Client/Kota Magelang.svg" alt="Kota Magelang"></div>
-                <div class="client-logo"><img src="img/Logo Client/MA Daarul 'Ulum.jpg" alt="MA Daarul 'Ulum"></div>
-                <div class="client-logo"><img src="img/Logo Client/Mediko.webp" alt="Mediko"></div>
-                <div class="client-logo"><img src="img/Logo Client/NTB.svg" alt="NTB"></div>
-                <div class="client-logo"><img src="img/Logo Client/PT ABA.png" alt="PT ABA"></div>
-                <div class="client-logo"><img src="img/Logo Client/SD N Percobaan 2 Depok.png" alt="SD N Percobaan 2 Depok"></div>
-                <div class="client-logo"><img src="img/Logo Client/Sleman.svg" alt="Sleman"></div>
-                <div class="client-logo"><img src="img/Logo Client/SMK N 1 Magelang.png" alt="SMK N 1 Magelang"></div>
-                <div class="client-logo"><img src="img/Logo Client/Tangerang Selatan.svg" alt="Tangerang Selatan"></div>
-                <div class="client-logo"><img src="img/Logo Client/UGM.svg" alt="UGM"></div>
-                <div class="client-logo"><img src="img/Logo Client/Umeds.png" alt="Umeds"></div>
+        <div class="paket-card">
+            <div class="paket-image">
+                <img src="img/penerbit1.jpg" alt="Paket Penerbitan PROFESIONAL RAW Media" loading="lazy" decoding="async">
+                <span class="paket-image-badge">PAKET 3 · PRO</span>
             </div>
-            <div class="client-marquee-track" aria-hidden="true">
-                <div class="client-logo"><img src="img/Logo Client/Akmil.png" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/Cahaya Quran.png" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/Coretan Pena.png" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/Divif 2.svg" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/DIY.svg" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/DMH Academy.webp" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/Kab Magelang.svg" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/Kelas Bimbel.png" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/Kepri.svg" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/Kota Magelang.svg" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/MA Daarul 'Ulum.jpg" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/Mediko.webp" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/NTB.svg" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/PT ABA.png" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/SD N Percobaan 2 Depok.png" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/Sleman.svg" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/SMK N 1 Magelang.png" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/Tangerang Selatan.svg" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/UGM.svg" alt=""></div>
-                <div class="client-logo"><img src="img/Logo Client/Umeds.png" alt=""></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====  TESTIMONI======= -->
-    <section id="testimoni" class="testimoni-section">
-        <div class="testimoni-title-wrap">
-            <h2 class="testimoni-title">Testimoni</h2>
-            <p class="testimoni-subtitle">Tanggapan pelanggan tentang kami</p>
-        </div>
-
-        <div class="testimoni-grid">
-            <div class="testimoni-card">
-                <p class="testimoni-text">Kualitas buku tahunan kami sangat bagus. Hasilnya rapi, warna akurat, dan selesai tepat waktu. Sangat direkomendasikan!</p>
-                <div class="testimoni-footer">
-                    <div class="testimoni-info">
-                        <h4 class="testimoni-name">Kepala Sekolah</h4>
-                        <div class="testimoni-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimoni-avatar">
-                        <img src="img/testimoni/smk.jpg" alt="SMK N 1 Magelang"
-                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=SMK&background=c1272d&color=fff&size=100'">
-                    </div>
+            <div class="paket-card-body">
+                <h3 class="paket-name">PAKET PROFESIONAL</h3>
+                <p class="paket-tagline">Untuk Anda yang serius membangun nama sebagai penulis profesional.</p>
+                <ul class="paket-fitur">
+                    <li><i class="fa-solid fa-check"></i> Semua Fitur Paket BERKEMBANG</li>
+                    <li><i class="fa-solid fa-check"></i> HKI / Hak Cipta</li>
+                    <li><i class="fa-solid fa-check"></i> 20 Eksemplar Buku</li>
+                    <li><i class="fa-solid fa-check"></i> 5 Iklan Promosi</li>
+                    <li><i class="fa-solid fa-check"></i> Video Promosi Buku</li>
+                    <li><i class="fa-solid fa-check"></i> Konsultasi Marketing</li>
+                </ul>
+                <div class="paket-harga-wrap">
+                    <span class="paket-harga-label">Mulai dari</span>
+                    <div class="paket-harga">Rp1.XXX.XXX</div>
+                    <span class="paket-harga-note">Estimasi 14 hari kerja</span>
                 </div>
-            </div>
-
-            <div class="testimoni-card">
-                <p class="testimoni-text">Kami sudah 3 tahun bekerja sama. Hasil cetak selalu konsisten dan harganya sangat kompetitif untuk skala korporat.</p>
-                <div class="testimoni-footer">
-                    <div class="testimoni-info">
-                        <h4 class="testimoni-name">Manajer <Mediko class="ID">Mediko</Mediko></h4>
-                        <div class="testimoni-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimoni-avatar">
-                        <img src="img/testimoni/ptaba.jpg" alt="PT ABA"
-                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=PT&background=c1272d&color=fff&size=100'">
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimoni-card">
-                <p class="testimoni-text">Pesan buku pelajaran untuk 500 siswa, hasilnya luar biasa. Kertas tebal dan jilidan kuat. Terima kasih RAW Media!</p>
-                <div class="testimoni-footer">
-                    <div class="testimoni-info">
-                        <h4 class="testimoni-name">SDN Alam</h4>
-                        <div class="testimoni-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimoni-avatar">
-                        <img src="img/testimoni/sdn.jpg" alt="SDN Percobaan 2"
-                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=SDN&background=c1272d&color=fff&size=100'">
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimoni-card">
-                <p class="testimoni-text">Proses pemesanan sangat mudah. Kami hanya kirim file, dan hasilnya sudah jadi. Sangat membantu tim kami.</p>
-                <div class="testimoni-footer">
-                    <div class="testimoni-info">
-                        <h4 class="testimoni-name">Staf Administrasi UGM</h4>
-                        <div class="testimoni-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimoni-avatar">
-                        <img src="img/testimoni/kota.jpg" alt="Kota Magelang"
-                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=KM&background=c1272d&color=fff&size=100'">
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimoni-card">
-                <p class="testimoni-text">Kami memesan kitab dan buku keagamaan. Hasilnya rapi dan sesuai dengan spesifikasi. Sangat puas dengan pelayanannya.</p>
-                <div class="testimoni-footer">
-                    <div class="testimoni-info">
-                        <h4 class="testimoni-name">Pengurus Pondok Pesantren</h4>
-                        <div class="testimoni-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimoni-avatar">
-                        <img src="img/testimoni/pesantren.jpg" alt="MA Daarul Ulum"
-                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=MA&background=c1272d&color=fff&size=100'">
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimoni-card">
-                <p class="testimoni-text">Kualitas jilid hard cover sangat premium. Cocok untuk buku referensi yang sering dipakai. Harga juga masuk akal.</p>
-                <div class="testimoni-footer">
-                    <div class="testimoni-info">
-                        <h4 class="testimoni-name">Dosen</h4>
-                        <div class="testimoni-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="testimoni-avatar">
-                        <img src="img/testimoni/ugm.jpg" alt="UGM"
-                             onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=UGM&background=c1272d&color=fff&size=100'">
-                    </div>
-                </div>
+                <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20konsultasi%20Paket%20PROFESIONAL%20RAW%20Media" target="_blank" rel="noopener" class="paket-btn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Konsultasi Paket Ini</span>
+                </a>
             </div>
         </div>
 
-        <div class="testimoni-cta">
-            <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20tahu%20lebih%20banyak%20tentang%20layanan%20RAW%20Media" 
-               target="_blank" rel="noopener" class="testimoni-btn">
-                View More Rate
+        <div class="paket-card">
+            <div class="paket-image">
+                <img src="img/penerbit2.jpg" alt="Paket Penerbitan PREMIUM RAW Media" loading="lazy" decoding="async">
+                <span class="paket-image-badge">PAKET 4 · PREMIUM</span>
+            </div>
+            <div class="paket-card-body">
+                <h3 class="paket-name">PAKET PREMIUM</h3>
+                <p class="paket-tagline">Solusi lengkap untuk instansi, komunitas, atau penulis yang ingin hasil maksimal.</p>
+                <ul class="paket-fitur">
+                    <li><i class="fa-solid fa-check"></i> Semua Fitur Paket PROFESIONAL</li>
+                    <li><i class="fa-solid fa-check"></i> 50 Eksemplar Buku</li>
+                    <li><i class="fa-solid fa-check"></i> 10 Iklan Promosi</li>
+                    <li><i class="fa-solid fa-check"></i> Peluncuran Buku Online</li>
+                    <li><i class="fa-solid fa-check"></i> Pendampingan Penulis</li>
+                    <li><i class="fa-solid fa-check"></i> Cetak Ulang Diskon</li>
+                </ul>
+                <div class="paket-harga-wrap">
+                    <span class="paket-harga-label">Mulai dari</span>
+                    <div class="paket-harga">Rp1.XXX.XXX</div>
+                    <span class="paket-harga-note">Estimasi 12 hari kerja</span>
+                </div>
+                <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20konsultasi%20Paket%20PREMIUM%20RAW%20Media" target="_blank" rel="noopener" class="paket-btn">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Konsultasi Paket Ini</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="paket-footer-note">
+        Belum yakin paket mana yang cocok?
+        <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20konsultasi%20paket%20penerbitan%20RAW%20Media" target="_blank" rel="noopener">Konsultasi gratis di sini</a>.
+    </p>
+</section>
+
+<!-- =========================================
+     MENGAPA MEMILIH KAMI
+========================================= -->
+<section id="mengapa" class="mengapa-section">
+    <div class="mengapa-header">
+        <h2 class="mengapa-title">
+            <span class="mengapa-title-white">Mengapa Memilih</span> <span class="mengapa-title-red">RAW Media?</span>
+        </h2>
+        <p class="mengapa-subtitle">Bukan sekadar percetakan biasa — kami partner cetak buku Anda</p>
+    </div>
+
+    <div class="mengapa-trust-bar">
+        <div class="mengapa-trust-item">
+            <div class="mengapa-trust-number">10+</div>
+            <div class="mengapa-trust-label">Tahun Pengalaman</div>
+        </div>
+        <div class="mengapa-trust-item">
+            <div class="mengapa-trust-number">5.000+</div>
+            <div class="mengapa-trust-label">Klien Terselesaikan</div>
+        </div>
+        <div class="mengapa-trust-item">
+            <div class="mengapa-trust-number">100+</div>
+            <div class="mengapa-trust-label">Klien Langganan</div>
+        </div>
+        <div class="mengapa-trust-item">
+            <div class="mengapa-trust-number">4.9/5</div>
+            <div class="mengapa-trust-label">Rating Kepuasan</div>
+        </div>
+    </div>
+
+    <div class="mengapa-grid">
+        <div class="mengapa-card">
+            <div class="mengapa-icon"><img src="img/icons/courier.png" alt="Pengerjaan Cepat" width="40" height="40" loading="lazy"></div>
+            <h3 class="mengapa-card-title">Pengerjaan Cepat</h3>
+            <p class="mengapa-card-desc">Selesai 3-7 hari kerja. Layanan express 24 jam tersedia untuk kebutuhan mendesak.</p>
+        </div>
+        <div class="mengapa-card">
+            <div class="mengapa-icon"><img src="img/icons/price-tag.png" alt="Harga Lebih Murah" width="40" height="40" loading="lazy"></div>
+            <h3 class="mengapa-card-title">Harga Lebih Murah</h3>
+            <p class="mengapa-card-desc">Harga sangat terjangkau untuk customer. Berbeda dengan vendor yang lain.</p>
+        </div>
+        <div class="mengapa-card">
+            <div class="mengapa-icon"><img src="img/icons/quality.png" alt="Kualitas Premium" width="40" height="40" loading="lazy"></div>
+            <h3 class="mengapa-card-title">Kualitas Premium</h3>
+            <p class="mengapa-card-desc">Mesin cetak modern, hasil tajam, warna akurat, dan finishing rapi untuk setiap produk.</p>
+        </div>
+        <div class="mengapa-card">
+            <div class="mengapa-icon"><img src="img/icons/shipped.png" alt="Pengiriman seluruh indonesia" width="40" height="40" loading="lazy"></div>
+            <h3 class="mengapa-card-title">Kirim Seluruh Indonesia</h3>
+            <p class="mengapa-card-desc">Pengiriman aman ke seluruh nusantara. Gratis ongkir untuk order di atas 100 pcs.</p>
+        </div>
+        <div class="mengapa-card">
+            <div class="mengapa-icon"><img src="img/icons/people-group.png" alt="Tim Berpengalaman" width="40" height="40" loading="lazy"></div>
+            <h3 class="mengapa-card-title">Tim Berpengalaman</h3>
+            <p class="mengapa-card-desc">10+ tahun melayani sekolah, pesantren, kampus, penerbit, dan korporat di Indonesia.</p>
+        </div>
+        <div class="mengapa-card">
+            <div class="mengapa-icon"><img src="img/icons/transaction.png" alt="Garansi Cetak Ulang" width="40" height="40" loading="lazy"></div>
+            <h3 class="mengapa-card-title">Garansi Cetak Ulang</h3>
+            <p class="mengapa-card-desc">Jika ada kesalahan produksi dari pihak kami, kami ganti gratis tanpa biaya tambahan.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+     PROSES
+========================================= -->
+<section id="proses" class="proses-section">
+    <div class="proses-header">
+        <h2 class="proses-title">
+            <span class="proses-title-white">Proses</span> <span class="proses-title-red">Pemesanan Mudah</span>
+        </h2>
+        <p class="proses-subtitle">Hanya 4 langkah sederhana dari konsultasi sampai buku tiba di tangan Anda</p>
+    </div>
+
+    <div class="proses-grid">
+        <div class="proses-step">
+            <div class="proses-number">1</div>
+            <div class="proses-icon"><i class="fa-solid fa-comments"></i></div>
+            <h3 class="proses-step-title">Konsultasi</h3>
+            <p class="proses-step-desc">Chat WhatsApp, ceritakan kebutuhan cetak Anda. Tim kami siap membantu.</p>
+        </div>
+        <div class="proses-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="proses-step">
+            <div class="proses-number">2</div>
+            <div class="proses-icon"><i class="fa-solid fa-file-pen"></i></div>
+            <h3 class="proses-step-title">Desain & Approval</h3>
+            <p class="proses-step-desc">Kami buat preview 3D untuk persetujuan sebelum masuk produksi.</p>
+        </div>
+        <div class="proses-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="proses-step">
+            <div class="proses-number">3</div>
+            <div class="proses-icon"><i class="fa-solid fa-print"></i></div>
+            <h3 class="proses-step-title">Cetak & Finishing</h3>
+            <p class="proses-step-desc">Produksi dengan mesin modern dan quality control ketat.</p>
+        </div>
+        <div class="proses-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="proses-step">
+            <div class="proses-number">4</div>
+            <div class="proses-icon"><i class="fa-solid fa-box-open"></i></div>
+            <h3 class="proses-step-title">Kirim</h3>
+            <p class="proses-step-desc">Packing rapi, tracking nomor resi, sampai ke alamat Anda.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+     TENTANG SINGKAT
+========================================= -->
+<section id="tentang-singkat" class="tentang-singkat-section">
+    <div class="tentang-singkat-container">
+        <div class="tentang-singkat-text">
+            <span class="tentang-singkat-label">Tentang Kami</span>
+            <h2 class="tentang-singkat-title">RAW Media Indonesia</h2>
+            <p class="tentang-singkat-desc">
+                CV. RAW Media Indonesia adalah perusahaan percetakan dan penerbitan dengan pengalaman lebih dari 10 tahun.
+                Kami melayani kebutuhan cetak dan terbit buku untuk sekolah, kampus, pesantren, penerbit, dan korporat di seluruh Indonesia.
+            </p>
+            <a href="tentang.html" class="tentang-singkat-btn">
+                Selengkapnya tentang kami
+                <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
-    </section>
+        <div class="tentang-singkat-image">
+            <img src="SVN00729 ok.JPG" alt="Tim RAW Media Indonesia" loading="lazy" decoding="async">
+        </div>
+    </div>
+</section>
 
-    <!-- =========================================
-         FAQ - PERTANYAAN UMUM
-    ========================================= -->
-    <section id="faq" class="faq-section">
-        <div class="faq-header">
-            <h2 class="faq-title">
-                <span class="faq-title-white">Pertanyaan</span> <span class="faq-title-red">Umum</span>
+<!-- =========================================
+     GALERI
+========================================= -->
+<section id="galeri" class="galeri-section">
+    <div class="galeri-container">
+        <div class="galeri-header">
+            <span class="galeri-label">Portofolio</span>
+            <h2 class="galeri-title">
+                <span class="galeri-title-white">Galeri</span> <span class="galeri-title-red">Produksi Kami</span>
             </h2>
-            <p class="faq-subtitle">Beberapa pertanyaan yang sering ditanyakan pelanggan kami</p>
+            <p class="galeri-subtitle">Ini proses pengerjaan pesanan yang kami terima. Prosesnya seperti ini.</p>
+            <div class="galeri-divider"></div>
         </div>
 
-        <div class="faq-list">
-
-            <details class="faq-item">
-                <summary class="faq-question">
-                    <span>Berapa minimal order cetak buku?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </summary>
-                <div class="faq-answer">
-                    <p>Minimal order 30 pcs untuk cetak buku umum. Untuk buku tahunan minimal 100 pcs. Untuk order dalam jumlah besar, kami berikan harga khusus yang lebih kompetitif.</p>
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary class="faq-question">
-                    <span>Berapa lama waktu pengerjaan?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </summary>
-                <div class="faq-answer">
-                    <p>Standar 2-4 hari kerja setelah approval desain. Untuk kebutuhan mendesak, tersedia layanan express 24 jam dengan biaya tambahan. Waktu pengerjaan bisa berbeda tergantung jumlah dan kompleksitas pesanan.</p>
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary class="faq-question">
-                    <span>Apakah bisa custom ukuran buku?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </summary>
-                <div class="faq-answer">
-                    <p>Ya, kami melayani custom ukuran A5, A4, B5, Unesco, A4+, dan ukuran khusus sesuai kebutuhan Anda. Konsultasikan ukuran yang diinginkan dengan tim kami untuk hasil terbaik.</p>
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary class="faq-question">
-                    <span>Bagaimana cara pembayaran?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </summary>
-                <div class="faq-answer">
-                    <p>DP 50% saat order untuk memulai produksi, pelunasan sebelum pengiriman. Kami menerima transfer bank (BCA, Mandiri, BNI, BRI).</p>
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary class="faq-question">
-                    <span>Apakah bisa kirim ke luar kota?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </summary>
-                <div class="faq-answer">
-                    <p>Ya, kami kirim ke seluruh Indonesia via Lion Parcel, J&T, SiCepat, atau ekspedisi pilihan Anda. Untuk order di atas 200 pcs, Kita akan berikan diskon prngiriman. Packing menggunakan kardus tebal dan bubble wrap untuk keamanan.</p>
-                </div>
-            </details>
-
-            <details class="faq-item">
-                <summary class="faq-question">
-                    <span>Apakah ada garansi jika hasil tidak sesuai?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </summary>
-                <div class="faq-answer">
-                    <p>Ya, kami memberikan garansi cetak ulang gratis jika ada kesalahan produksi dari pihak kami (salah cetak, warna tidak sesuai, jilidan rusak, dll). Klaim garansi maksimal 7 hari setelah barang diterima.</p>
-                </div>
-            </details>
-
+        <div class="coverflow-wrap">
+            <div class="coverflow" id="coverflow">
+                <div class="coverflow-item" data-index="0"><img src="galeri/production.jpeg" alt="Hasil produksi RAW Media 1" loading="lazy" decoding="async"></div>
+                <div class="coverflow-item" data-index="1"><img src="galeri/production2.jpeg" alt="Hasil produksi RAW Media 2" loading="lazy" decoding="async"></div>
+                <div class="coverflow-item" data-index="2"><img src="galeri/production3.jpeg" alt="Hasil produksi RAW Media 3" loading="lazy" decoding="async"></div>
+                <div class="coverflow-item" data-index="3"><img src="galeri/production4.jpeg" alt="Hasil produksi RAW Media 4" loading="lazy" decoding="async"></div>
+                <div class="coverflow-item" data-index="4"><img src="galeri/production5.jpeg" alt="Hasil produksi RAW Media 5" loading="lazy" decoding="async"></div>
+            </div>
+            <button class="coverflow-nav coverflow-prev" onclick="coverflowPrev()" aria-label="Sebelumnya"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="coverflow-nav coverflow-next" onclick="coverflowNext()" aria-label="Selanjutnya"><i class="fa-solid fa-chevron-right"></i></button>
         </div>
-    </section>
 
-   <!-- =========================================
-     CTA ORDER - SIAP MEMESAN
+        <div class="coverflow-dots" id="coverflowDots">
+            <span class="coverflow-dot active" data-index="0"></span>
+            <span class="coverflow-dot" data-index="1"></span>
+            <span class="coverflow-dot" data-index="2"></span>
+            <span class="coverflow-dot" data-index="3"></span>
+            <span class="coverflow-dot" data-index="4"></span>
+        </div>
+
+        <div class="galeri-cta">
+            <p class="galeri-cta-text">Ingin melihat lebih banyak hasil produksi kami?</p>
+            <div class="galeri-cta-buttons">
+                <a href="https://instagram.com/cetakbukuindonesia" target="_blank" rel="noopener" class="galeri-cta-btn galeri-cta-instagram">
+                    <i class="fa-brands fa-instagram"></i><span>Follow Instagram</span>
+                </a>
+                <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20lihat%20portofolio%20lengkap" target="_blank" rel="noopener" class="galeri-cta-btn galeri-cta-wa">
+                    <i class="fa-brands fa-whatsapp"></i><span>Minta Portofolio</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+     CLIENT
+========================================= -->
+<section id="client" class="client-section">
+    <div class="client-title-wrap">
+        <h2 class="client-title">
+            <span class="client-title-white">Our</span> <span class="client-title-red">Client</span>
+        </h2>
+        <p class="section-description">Dipercaya oleh berbagai instansi, sekolah, dan perusahaan di seluruh Indonesia.</p>
+        <div class="client-divider"></div>
+    </div>
+
+    <div class="client-stats">
+        <div class="client-stat-item">
+            <div class="client-stat-number">5.000+</div>
+            <div class="client-stat-label">Proyek Terselesaikan</div>
+        </div>
+        <div class="client-stat-divider"></div>
+        <div class="client-stat-item">
+            <div class="client-stat-number">200+</div>
+            <div class="client-stat-label">Klien Langganan</div>
+        </div>
+    </div>
+
+    <div class="client-marquee">
+        <div class="client-marquee-track">
+            <div class="client-logo"><img src="img/Logo Client/Akmil.png" alt="Akmil"></div>
+            <div class="client-logo"><img src="img/Logo Client/Cahaya Quran.png" alt="Cahaya Quran"></div>
+            <div class="client-logo"><img src="img/Logo Client/Coretan Pena.png" alt="Coretan Pena"></div>
+            <div class="client-logo"><img src="img/Logo Client/Divif 2.svg" alt="Divif 2"></div>
+            <div class="client-logo"><img src="img/Logo Client/DIY.svg" alt="DIY"></div>
+            <div class="client-logo"><img src="img/Logo Client/DMH Academy.webp" alt="DMH Academy"></div>
+            <div class="client-logo"><img src="img/Logo Client/Kab Magelang.svg" alt="Kab Magelang"></div>
+            <div class="client-logo"><img src="img/Logo Client/Kelas Bimbel.png" alt="Kelas Bimbel"></div>
+            <div class="client-logo"><img src="img/Logo Client/Kepri.svg" alt="Kepri"></div>
+            <div class="client-logo"><img src="img/Logo Client/Kota Magelang.svg" alt="Kota Magelang"></div>
+            <div class="client-logo"><img src="img/Logo Client/MA Daarul 'Ulum.jpg" alt="MA Daarul 'Ulum"></div>
+            <div class="client-logo"><img src="img/Logo Client/Mediko.webp" alt="Mediko"></div>
+            <div class="client-logo"><img src="img/Logo Client/NTB.svg" alt="NTB"></div>
+            <div class="client-logo"><img src="img/Logo Client/PT ABA.png" alt="PT ABA"></div>
+            <div class="client-logo"><img src="img/Logo Client/SD N Percobaan 2 Depok.png" alt="SD N Percobaan 2 Depok"></div>
+            <div class="client-logo"><img src="img/Logo Client/Sleman.svg" alt="Sleman"></div>
+            <div class="client-logo"><img src="img/Logo Client/SMK N 1 Magelang.png" alt="SMK N 1 Magelang"></div>
+            <div class="client-logo"><img src="img/Logo Client/Tangerang Selatan.svg" alt="Tangerang Selatan"></div>
+            <div class="client-logo"><img src="img/Logo Client/UGM.svg" alt="UGM"></div>
+            <div class="client-logo"><img src="img/Logo Client/Umeds.png" alt="Umeds"></div>
+        </div>
+        <div class="client-marquee-track" aria-hidden="true">
+            <div class="client-logo"><img src="img/Logo Client/Akmil.png" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/Cahaya Quran.png" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/Coretan Pena.png" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/Divif 2.svg" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/DIY.svg" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/DMH Academy.webp" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/Kab Magelang.svg" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/Kelas Bimbel.png" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/Kepri.svg" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/Kota Magelang.svg" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/MA Daarul 'Ulum.jpg" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/Mediko.webp" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/NTB.svg" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/PT ABA.png" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/SD N Percobaan 2 Depok.png" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/Sleman.svg" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/SMK N 1 Magelang.png" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/Tangerang Selatan.svg" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/UGM.svg" alt=""></div>
+            <div class="client-logo"><img src="img/Logo Client/Umeds.png" alt=""></div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================
+     TESTIMONI
+========================================= -->
+<section id="testimoni" class="testimoni-section">
+    <div class="testimoni-title-wrap">
+        <h2 class="testimoni-title">Testimoni</h2>
+        <p class="testimoni-subtitle">Tanggapan pelanggan tentang kami</p>
+    </div>
+
+    <div class="testimoni-grid">
+        <div class="testimoni-card">
+            <p class="testimoni-text">Kualitas buku tahunan kami sangat bagus. Hasilnya rapi, warna akurat, dan selesai tepat waktu. Sangat direkomendasikan!</p>
+            <div class="testimoni-footer">
+                <div class="testimoni-info">
+                    <h4 class="testimoni-name">Kepala Sekolah</h4>
+                    <div class="testimoni-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimoni-avatar">
+                    <img src="img/testimoni/smk.jpg" alt="SMK N 1 Magelang" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=SMK&background=c1272d&color=fff&size=100'">
+                </div>
+            </div>
+        </div>
+
+        <div class="testimoni-card">
+            <p class="testimoni-text">Kami sudah 3 tahun bekerja sama. Hasil cetak selalu konsisten dan harganya sangat kompetitif untuk skala korporat.</p>
+            <div class="testimoni-footer">
+                <div class="testimoni-info">
+                    <h4 class="testimoni-name">Manajer Mediko</h4>
+                    <div class="testimoni-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimoni-avatar">
+                    <img src="img/testimoni/ptaba.jpg" alt="PT ABA" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=PT&background=c1272d&color=fff&size=100'">
+                </div>
+            </div>
+        </div>
+
+        <div class="testimoni-card">
+            <p class="testimoni-text">Pesan buku pelajaran untuk 500 siswa, hasilnya luar biasa. Kertas tebal dan jilidan kuat. Terima kasih RAW Media!</p>
+            <div class="testimoni-footer">
+                <div class="testimoni-info">
+                    <h4 class="testimoni-name">SDN Alam</h4>
+                    <div class="testimoni-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimoni-avatar">
+                    <img src="img/testimoni/sdn.jpg" alt="SDN Percobaan 2" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=SDN&background=c1272d&color=fff&size=100'">
+                </div>
+            </div>
+        </div>
+
+        <div class="testimoni-card">
+            <p class="testimoni-text">Proses pemesanan sangat mudah. Kami hanya kirim file, dan hasilnya sudah jadi. Sangat membantu tim kami.</p>
+            <div class="testimoni-footer">
+                <div class="testimoni-info">
+                    <h4 class="testimoni-name">Staf Administrasi UGM</h4>
+                    <div class="testimoni-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimoni-avatar">
+                    <img src="img/testimoni/kota.jpg" alt="Kota Magelang" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=KM&background=c1272d&color=fff&size=100'">
+                </div>
+            </div>
+        </div>
+
+        <div class="testimoni-card">
+            <p class="testimoni-text">Kami memesan kitab dan buku keagamaan. Hasilnya rapi dan sesuai dengan spesifikasi. Sangat puas dengan pelayanannya.</p>
+            <div class="testimoni-footer">
+                <div class="testimoni-info">
+                    <h4 class="testimoni-name">Pengurus Pondok Pesantren</h4>
+                    <div class="testimoni-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimoni-avatar">
+                    <img src="img/testimoni/pesantren.jpg" alt="MA Daarul Ulum" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=MA&background=c1272d&color=fff&size=100'">
+                </div>
+            </div>
+        </div>
+
+        <div class="testimoni-card">
+            <p class="testimoni-text">Kualitas jilid hard cover sangat premium. Cocok untuk buku referensi yang sering dipakai. Harga juga masuk akal.</p>
+            <div class="testimoni-footer">
+                <div class="testimoni-info">
+                    <h4 class="testimoni-name">Dosen</h4>
+                    <div class="testimoni-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimoni-avatar">
+                    <img src="img/testimoni/ugm.jpg" alt="UGM" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=UGM&background=c1272d&color=fff&size=100'">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimoni-cta">
+        <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20tahu%20lebih%20banyak%20tentang%20layanan%20RAW%20Media" target="_blank" rel="noopener" class="testimoni-btn">
+            View More Rate
+        </a>
+    </div>
+</section>
+
+<!-- =========================================
+     FAQ
+========================================= -->
+<section id="faq" class="faq-section">
+    <div class="faq-header">
+        <h2 class="faq-title">
+            <span class="faq-title-white">Pertanyaan</span> <span class="faq-title-red">Umum</span>
+        </h2>
+        <p class="faq-subtitle">Beberapa pertanyaan yang sering ditanyakan pelanggan kami</p>
+    </div>
+
+    <div class="faq-list">
+
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span>Berapa minimal order cetak buku?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </summary>
+            <div class="faq-answer">
+                <p>Minimal order 30 pcs untuk cetak buku umum. Untuk buku tahunan minimal 100 pcs. Untuk order dalam jumlah besar, kami berikan harga khusus yang lebih kompetitif.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span>Berapa lama waktu pengerjaan?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </summary>
+            <div class="faq-answer">
+                <p>Standar 2-4 hari kerja setelah approval desain. Untuk kebutuhan mendesak, tersedia layanan express 24 jam dengan biaya tambahan. Waktu pengerjaan bisa berbeda tergantung jumlah dan kompleksitas pesanan.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span>Apakah bisa custom ukuran buku?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </summary>
+            <div class="faq-answer">
+                <p>Ya, kami melayani custom ukuran A5, A4, B5, Unesco, A4+, dan ukuran khusus sesuai kebutuhan Anda. Konsultasikan ukuran yang diinginkan dengan tim kami untuk hasil terbaik.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span>Bagaimana cara pembayaran?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </summary>
+            <div class="faq-answer">
+                <p>DP 50% saat order untuk memulai produksi, pelunasan sebelum pengiriman. Kami menerima transfer bank (BCA, Mandiri, BNI, BRI).</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span>Apakah bisa kirim ke luar kota?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </summary>
+            <div class="faq-answer">
+                <p>Ya, kami kirim ke seluruh Indonesia via Lion Parcel, J&T, SiCepat, atau ekspedisi pilihan Anda. Untuk order di atas 200 pcs, kami berikan diskon pengiriman. Packing menggunakan kardus tebal dan bubble wrap untuk keamanan.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary class="faq-question">
+                <span>Apakah ada garansi jika hasil tidak sesuai?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </summary>
+            <div class="faq-answer">
+                <p>Ya, kami memberikan garansi cetak ulang gratis jika ada kesalahan produksi dari pihak kami (salah cetak, warna tidak sesuai, jilidan rusak, dll). Klaim garansi maksimal 7 hari setelah barang diterima.</p>
+            </div>
+        </details>
+
+    </div>
+</section>
+
+<!-- =========================================
+     CTA ORDER
 ========================================= -->
 <section id="pemesanan" class="cta-banner-section">
     <div class="cta-banner-container">
-        
         <div class="cta-banner-card">
-            
-            <!-- KIRI: FOTO -->
             <div class="cta-banner-image">
-                <img src="img/banner/rawmedorder.png" 
-                     alt="Customer Service RAW Media Indonesia" 
-                     loading="lazy" 
-                     decoding="async">
+                <img src="img/banner/rawmedorder.png" alt="Customer Service RAW Media Indonesia" loading="lazy" decoding="async">
             </div>
-            
-            <!-- KANAN: TEKS -->
             <div class="cta-banner-content">
                 <span class="cta-banner-label">Siap Memesan?</span>
-                
-                <h2 class="cta-banner-title">
-                    Mulai Cetak keperluan Anda Sekarang
-                </h2>
-                
+                <h2 class="cta-banner-title">Mulai Cetak Keperluan Anda Sekarang</h2>
                 <p class="cta-banner-desc">
-                    Isi form pemesanan di halaman khusus, tim kami akan segera 
-                    memproses pesanan Anda via WhatsApp. Konsultasi gratis, 
+                    Isi form pemesanan di halaman khusus, tim kami akan segera
+                    memproses pesanan Anda via WhatsApp. Konsultasi gratis,
                     tanpa biaya tambahan.
                 </p>
-                
                 <a href="pemesanan.html" class="cta-banner-btn">
                     <i class="fa-solid fa-paper-plane"></i>
                     <span>Buka Halaman Pemesanan</span>
                 </a>
             </div>
-            
         </div>
-        
     </div>
 </section>
 
-    <!-- =========================================
-         FOOTER
-    ========================================= -->
-    <footer class="footer-modern">
-        <div class="footer-accent"></div>
-        <div class="footer-container">
-            <div class="footer-col footer-brand">
-                <div class="footer-logo">
-                    <img src="raw-media.svg" alt="Logo RAW Media Indonesia" class="footer-logo-img">
-                </div>
-                <p class="footer-desc">Solusi percetakan dan finishing berkualitas tinggi untuk kebutuhan bisnis, sekolah, dan personal. Berpengalaman lebih dari 10 tahun.</p>
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="footer-modern">
+    <div class="footer-accent"></div>
+    <div class="footer-container">
+        <div class="footer-col footer-brand">
+            <div class="footer-logo">
+                <img src="raw-media.svg" alt="Logo RAW Media Indonesia" class="footer-logo-img">
             </div>
-            <div class="footer-col footer-menu">
-                <h4 class="footer-heading">Perusahaan</h4>
-                <ul class="footer-links">
-                    <li><a href="tentang.html">Tentang Kami</a></li>
-                    <li><a href="index.html#layanan">Layanan</a></li>
-                    <li><a href="index.html#galeri">Galeri</a></li>
-                    <li><a href="index.html#testimoni">Testimoni</a></li>
-                    <li><a href="index.html#faq">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col footer-menu">
-                <h4 class="footer-heading">Layanan Kami</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html#layanan">Cetak Buku</a></li>
-                    <li><a href="index.html#layanan">Buku Tahunan</a></li>
-                    <li><a href="index.html#layanan">Buku Pesantren</a></li>
-                    <li><a href="index.html#layanan">Finishing Premium</a></li>
-                    <li><a href="index.html#layanan">Desain Grafis</a></li>
-                    <li><a href="index.html#layanan">B2B & Korporat</a></li>
-                </ul>
-            </div>
-            <div class="footer-col footer-contact">
-                <h4 class="footer-heading">Alamat & Kontak</h4>
-                <ul class="footer-contact-list">
-                    <li><i class="fa-solid fa-location-dot"></i> Balangan, RT.02/RW.04, Sendangrejo, Kec. Minggir, Sleman, DIY 55562</li>
-                </ul>
-                <p class="contact-description">Hubungi Customer Service Kami</p>
-                <ul class="footer-contact-list">
-                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282223191719" target="_blank" rel="noopener">082223191719</a></li>
-                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282342974320" target="_blank" rel="noopener">082342974320</a></li>
-                    <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6285232232500" target="_blank" rel="noopener">085232232500</a></li>
-                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:cv.rawmedia@gmail.com">cv.rawmedia@gmail.com</a></li>
-                </ul>
-                <div class="footer-hours">
-                    <h5>Jam Operasional</h5>
-                    <p>Senin - Sabtu: 09.00 - 17.00</p>
-                </div>
-            </div>
+            <p class="footer-desc">Solusi percetakan, penerbitan, dan finishing berkualitas tinggi untuk kebutuhan bisnis, sekolah, dan personal. Berpengalaman lebih dari 10 tahun.</p>
         </div>
-        <div class="footer-social-section">
-            <h4 class="footer-social-title">Ikuti Kami</h4>
-            <div class="footer-social-links">
-                <a href="https://instagram.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://tiktok.com/@rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-                <a href="https://facebook.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-            </div>
+        <div class="footer-col footer-menu">
+            <h4 class="footer-heading">Perusahaan</h4>
+            <ul class="footer-links">
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="index.html#layanan">Layanan</a></li>
+                <li><a href="index.html#paket-penerbitan">Paket Penerbitan</a></li>
+                <li><a href="index.html#galeri">Galeri</a></li>
+                <li><a href="index.html#testimoni">Testimoni</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 RAW Media Indonesia. Semua Hak Dilindungi.</p>
+        <div class="footer-col footer-menu">
+            <h4 class="footer-heading">Layanan Kami</h4>
+            <ul class="footer-links">
+                <li><a href="index.html#layanan">Penerbitan Buku</a></li>
+                <li><a href="index.html#layanan">Self Publishing</a></li>
+                <li><a href="index.html#layanan">Editing &amp; Layout</a></li>
+                <li><a href="index.html#layanan">Cetak Buku</a></li>
+                <li><a href="index.html#layanan">Buku Tahunan</a></li>
+                <li><a href="index.html#layanan">Buku Pesantren</a></li>
+                <li><a href="index.html#layanan">Finishing Premium</a></li>
+                <li><a href="index.html#layanan">B2B &amp; Korporat</a></li>
+            </ul>
         </div>
-    </footer>
-
-    <!-- =========================================
-         MODAL DETAIL PRODUK
-    ========================================= -->
-    <div class="produk-modal" id="produkModal">
-        <div class="produk-modal-overlay" onclick="closeProdukModal()"></div>
-        <div class="produk-modal-content">
-            <button class="produk-modal-close" onclick="closeProdukModal()" aria-label="Tutup">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div class="produk-modal-layout">
-
-                <div class="produk-galeri-wrap">
-                    <div class="produk-thumbnails" id="produkThumbnails"></div>
-                    <div class="produk-main-image">
-                        <img id="produkMainImage" src="" alt="Produk">
-                    </div>
-                </div>
-
-                <div class="produk-detail">
-                    <h2 class="produk-detail-title" id="produkTitle">Judul Produk</h2>
-
-                    <div class="produk-section">
-                        <h3 class="produk-section-title">Bahan</h3>
-                        <div class="produk-chips" id="produkBahan"></div>
-                    </div>
-
-                    <div class="produk-section">
-                        <h3 class="produk-section-title">Ukuran Tersedia</h3>
-                        <div class="produk-chips" id="produkUkuran"></div>
-                    </div>
-
-                    <div class="produk-section">
-                        <h3 class="produk-section-title">Teknik Cetak / Finishing</h3>
-                        <div class="produk-chips" id="produkFinishing"></div>
-                    </div>
-
-                    <div class="produk-section">
-                        <h3 class="produk-section-title">Keterangan</h3>
-                        <p class="produk-deskripsi" id="produkDeskripsi"></p>
-                    </div>
-
-                    <div class="produk-info-extra" id="produkInfoExtra"></div>
-
-                    <div class="produk-detail-cta">
-                        <a href="#" target="_blank" rel="noopener" class="produk-btn-wa" id="produkWA">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>Konsultasi & Tanya Harga</span>
-                        </a>
-                    </div>
-                </div>
-
+        <div class="footer-col footer-contact">
+            <h4 class="footer-heading">Alamat &amp; Kontak</h4>
+            <ul class="footer-contact-list">
+                <li><i class="fa-solid fa-location-dot"></i> Balangan, RT.02/RW.04, Sendangrejo, Kec. Minggir, Sleman, DIY 55562</li>
+            </ul>
+            <p class="contact-description">Hubungi Customer Service Kami</p>
+            <ul class="footer-contact-list">
+                <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282223191719" target="_blank" rel="noopener">082223191719</a></li>
+                <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6282342974320" target="_blank" rel="noopener">082342974320</a></li>
+                <li><i class="fa-solid fa-phone"></i> <a href="https://wa.me/6285232232500" target="_blank" rel="noopener">085232232500</a></li>
+                <li><i class="fa-solid fa-envelope"></i> <a href="mailto:cv.rawmedia@gmail.com">cv.rawmedia@gmail.com</a></li>
+            </ul>
+            <div class="footer-hours">
+                <h5>Jam Operasional</h5>
+                <p>Senin - Sabtu: 09.00 - 17.00</p>
             </div>
         </div>
     </div>
-
-    <!-- =========================================
-         LIGHTBOX
-    ========================================= -->
-    <div class="lightbox" id="lightbox">
-        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
-        <img class="lightbox-image" id="lightboxImage" src="" alt="Foto Diperbesar">
+    <div class="footer-social-section">
+        <h4 class="footer-social-title">Ikuti Kami</h4>
+        <div class="footer-social-links">
+            <a href="https://instagram.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com/@rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://facebook.com/rawmedia.id" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+        </div>
     </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 RAW Media Indonesia. Semua Hak Dilindungi.</p>
+    </div>
+</footer>
 
-    <!-- =========================================
-         FLOATING WHATSAPP
-    ========================================= -->
-    <a href="https://wa.me/6285231092020" class="floating-wa" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-        <span class="floating-wa-text">Hotline</span>
-    </a>
+<!-- =========================================
+     MODAL DETAIL PRODUK
+========================================= -->
+<div class="produk-modal" id="produkModal">
+    <div class="produk-modal-overlay" onclick="closeProdukModal()"></div>
+    <div class="produk-modal-content">
+        <button class="produk-modal-close" onclick="closeProdukModal()" aria-label="Tutup">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
 
-    <script src="script.js"></script>
+        <div class="produk-modal-layout">
+            <div class="produk-galeri-wrap">
+                <div class="produk-thumbnails" id="produkThumbnails"></div>
+                <div class="produk-main-image">
+                    <img id="produkMainImage" src="" alt="Produk">
+                </div>
+            </div>
+
+            <div class="produk-detail">
+                <h2 class="produk-detail-title" id="produkTitle">Judul Produk</h2>
+
+                <div class="produk-section">
+                    <h3 class="produk-section-title">Bahan</h3>
+                    <div class="produk-chips" id="produkBahan"></div>
+                </div>
+
+                <div class="produk-section">
+                    <h3 class="produk-section-title">Ukuran Tersedia</h3>
+                    <div class="produk-chips" id="produkUkuran"></div>
+                </div>
+
+                <div class="produk-section">
+                    <h3 class="produk-section-title">Teknik Cetak / Finishing</h3>
+                    <div class="produk-chips" id="produkFinishing"></div>
+                </div>
+
+                <div class="produk-section">
+                    <h3 class="produk-section-title">Keterangan</h3>
+                    <p class="produk-deskripsi" id="produkDeskripsi"></p>
+                </div>
+
+                <div class="produk-info-extra" id="produkInfoExtra"></div>
+
+                <div class="produk-detail-cta">
+                    <a href="#" target="_blank" rel="noopener" class="produk-btn-wa" id="produkWA">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Konsultasi &amp; Tanya Harga</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =========================================
+     LIGHTBOX
+========================================= -->
+<div class="lightbox" id="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-image" id="lightboxImage" src="" alt="Foto Diperbesar">
+</div>
+
+<!-- =========================================
+     FLOATING WHATSAPP
+========================================= -->
+<a href="https://wa.me/6285231092020" class="floating-wa" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="floating-wa-text">Hotline</span>
+</a>
+
+<script src="script.js"></script>
 
 </body>
 </html>
