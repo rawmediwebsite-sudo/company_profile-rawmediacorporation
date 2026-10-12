@@ -9888,3 +9888,318 @@ body.menu-open .floating-wa {
         font-size: 1.4rem;
     }
 }
+/* =========================================
+   RESELLER — FIX RESPONSIVE MOBILE
+========================================= */
+
+/* === HERO === */
+@media (max-width: 640px) {
+    .reseller-hero {
+        padding: 100px 16px 60px 16px !important;
+    }
+
+    .reseller-hero-title {
+        font-size: 1.6rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 12px !important;
+    }
+
+    .reseller-hero-subtitle {
+        font-size: 0.9rem !important;
+        margin-bottom: 24px !important;
+    }
+
+    .reseller-hero-btn {
+        padding: 12px 28px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .reseller-hero-wave svg {
+        height: 40px !important;
+    }
+}
+
+/* === PAIN POINTS === */
+@media (max-width: 768px) {
+    .reseller-pain-section {
+        padding: 40px 16px !important;
+    }
+
+    .reseller-pain-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        align-items: center !important;
+    }
+
+    .reseller-pain-image {
+        width: 100% !important;
+        max-width: 280px !important;
+        order: 1 !important;
+    }
+
+    .reseller-pain-image img {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .reseller-pain-content {
+        width: 100% !important;
+        order: 2 !important;
+    }
+
+    .reseller-pain-title {
+        font-size: 1.4rem !important;
+        text-align: center !important;
+        margin-bottom: 20px !important;
+    }
+
+    .reseller-pain-list {
+        gap: 10px !important;
+    }
+
+    .reseller-pain-list li {
+        font-size: 0.88rem !important;
+        gap: 10px !important;
+    }
+
+    .reseller-pain-list li i {
+        font-size: 1rem !important;
+        margin-top: 2px !important;
+    }
+}
+
+/* === CTA FULL WIDTH === */
+@media (max-width: 768px) {
+    .reseller-cta-full {
+        padding: 0 16px !important;
+    }
+
+    .reseller-cta-full-btn {
+        font-size: 0.9rem !important;
+        padding: 14px 16px !important;
+        letter-spacing: 1px !important;
+        line-height: 1.3 !important;
+    }
+}
+
+/* === SOLUSI === */
+@media (max-width: 768px) {
+    .reseller-solusi-section {
+        padding: 50px 16px !important;
+    }
+
+    .reseller-solusi-header {
+        margin-bottom: 30px !important;
+    }
+
+    .reseller-solusi-label {
+        font-size: 1.2rem !important;
+    }
+
+    .reseller-solusi-title {
+        font-size: 1.4rem !important;
+        line-height: 1.25 !important;
+    }
+
+    .reseller-solusi-subtitle {
+        font-size: 0.88rem !important;
+    }
+
+    .reseller-solusi-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        align-items: center !important;
+    }
+
+    .reseller-solusi-image {
+        width: 100% !important;
+        max-width: 260px !important;
+        order: 1 !important;
+    }
+
+    .reseller-solusi-image img {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .reseller-solusi-content {
+        width: 100% !important;
+        order: 2 !important;
+    }
+
+    .reseller-solusi-list {
+        gap: 14px !important;
+    }
+
+    .reseller-solusi-list li {
+        font-size: 0.88rem !important;
+        gap: 10px !important;
+    }
+
+    .reseller-solusi-list li strong {
+        font-size: 0.92rem !important;
+    }
+
+    .reseller-solusi-list li span {
+        font-size: 0.82rem !important;
+    }
+}
+
+/* === FORM === */
+@media (max-width: 768px) {
+    .reseller-form-section {
+        padding: 50px 16px !important;
+    }
+
+    .reseller-form-title {
+        font-size: 1.5rem !important;
+    }
+
+    .reseller-form-subtitle {
+        font-size: 0.88rem !important;
+    }
+
+    .reseller-form {
+        padding: 24px 18px !important;
+        border-radius: 16px !important;
+    }
+
+    .reseller-form-row {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 14px !important;
+    }
+
+    .reseller-form-group label {
+        font-size: 0.85rem !important;
+    }
+
+    .reseller-form-group input,
+    .reseller-form-group select,
+    .reseller-form-group textarea {
+        font-size: 0.9rem !important;
+        padding: 11px 14px !important;
+    }
+
+    .reseller-form-btn {
+        font-size: 0.9rem !important;
+        padding: 13px 20px !important;
+    }
+}
+
+/* === FAQ === */
+@media (max-width: 768px) {
+    .reseller-faq-section {
+        padding: 50px 16px !important;
+    }
+
+    .reseller-faq-title {
+        font-size: 1.5rem !important;
+    }
+
+    .reseller-faq-subtitle {
+        font-size: 0.88rem !important;
+    }
+
+    .reseller-faq-question {
+        padding: 16px 18px !important;
+        font-size: 0.9rem !important;
+        gap: 12px !important;
+    }
+
+    .reseller-faq-question i {
+        font-size: 0.85rem !important;
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    .reseller-faq-answer {
+        padding: 0 18px 18px 18px !important;
+    }
+
+    .reseller-faq-answer p {
+        font-size: 0.85rem !important;
+    }
+}
+
+/* === CTA FINAL (Kalau Masih Ada) === */
+@media (max-width: 768px) {
+    .reseller-cta-final {
+        padding: 40px 16px !important;
+    }
+
+    .reseller-cta-final-title {
+        font-size: 1.4rem !important;
+    }
+
+    .reseller-cta-final-desc {
+        font-size: 0.88rem !important;
+    }
+
+    .reseller-cta-final-buttons {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .reseller-cta-final-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        font-size: 0.88rem !important;
+        padding: 12px 20px !important;
+    }
+}
+
+/* === GLOBAL FIX === */
+@media (max-width: 768px) {
+    .reseller-hero-container,
+    .reseller-pain-container,
+    .reseller-solusi-container,
+    .reseller-form-container,
+    .reseller-faq-container,
+    .reseller-cta-final-container {
+        padding: 0 !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Prevent horizontal scroll */
+    .reseller-hero,
+    .reseller-pain-section,
+    .reseller-cta-full,
+    .reseller-solusi-section,
+    .reseller-form-section,
+    .reseller-faq-section,
+    .reseller-cta-final {
+        overflow-x: hidden !important;
+    }
+}
+
+/* === EXTRA SMALL === */
+@media (max-width: 400px) {
+    .reseller-hero-title {
+        font-size: 1.4rem !important;
+    }
+
+    .reseller-hero-subtitle {
+        font-size: 0.85rem !important;
+    }
+
+    .reseller-pain-title,
+    .reseller-solusi-title,
+    .reseller-form-title,
+    .reseller-faq-title {
+        font-size: 1.25rem !important;
+    }
+
+    .reseller-cta-full-btn {
+        font-size: 0.8rem !important;
+        padding: 12px 12px !important;
+    }
+
+    .reseller-pain-list li,
+    .reseller-solusi-list li {
+        font-size: 0.82rem !important;
+    }
+}
