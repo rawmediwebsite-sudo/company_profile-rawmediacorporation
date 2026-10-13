@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: rawmediwebsite-sudo/company_profile-rawmediacorporation
+  branch: main
+  base_url: https://rawmedia.id
+  auth_endpoint: /api/auth
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "artikel"
+    label: "Artikel"
+    folder: "content/artikel"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Tanggal", name: "date", widget: "datetime" }
+      - { label: "Gambar Utama", name: "image", widget: "image" }
+      - { label: "Isi Artikel", name: "body", widget: "markdown" }
