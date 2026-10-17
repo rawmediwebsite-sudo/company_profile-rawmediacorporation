@@ -316,12 +316,14 @@
 
                     <label>Spesifikasi Kertas:</label>
                     <select id="harga_kertas">
-                        <!-- Opsi BW -->
-                        <option value="A5_57" data-ukuran="A5" data-harga="55">A5 - Bookpaper 57 gsm</option>
+                        <!-- Opsi BW (Default) -->
+                        <option value="A5_57" data-ukuran="A5" data-harga="60">A5 - Bookpaper 57 gsm</option>
                         <option value="A5_72" data-ukuran="A5" data-harga="70">A5 - Bookpaper 72 gsm</option>
-                        <option value="UNESCO" data-ukuran="UNESCO" data-harga="125">Unesco - BP 72 gsm</option>
-                        <option value="B5" data-ukuran="B5" data-harga="125">B5 - BP 72 gsm</option>
-                        <option value="A4" data-ukuran="A4" data-harga="140">A4 - BP 72 gsm</option>
+                        <option value="A5_HVS75" data-ukuran="A5" data-harga="65">A5 - HVS 75 gsm</option>
+                        <option value="A5_HVS80" data-ukuran="A5" data-harga="70">A5 - HVS 80 gsm</option>
+                        <option value="A5_HVS100" data-ukuran="A5" data-harga="85">A5 - HVS 100 gsm</option>
+                        <option value="A4_BP150" data-ukuran="A4" data-harga="150">A4 - Bookpaper 150 gsm</option>
+                        <option value="A4_BP72" data-ukuran="A4" data-harga="140">A4 - Bookpaper 72 gsm</option>
                     </select>
 
                     <label>Jenis Cover:</label>
@@ -350,7 +352,7 @@
 
                     <!-- CATATAN & PERINGATAN -->
                     <div class="kalkulator-note">
-                        <i class="fa-solid fa-circle-info"></i> Harga di atas adalah estimasi POD (Print on Demand) Cetak di atas 200 eksemplar? Hubungi kami untuk harga .
+                        <i class="fa-solid fa-circle-info"></i> Harga di atas adalah estimasi POD (Print on Demand).
                     </div>
                     <div class="kalkulator-warning" id="warning_nego">
                         <i class="fa-solid fa-triangle-exclamation"></i> Cetak di atas 200 eksemplar? Hubungi kami untuk harga spesial (Nego)!
@@ -379,8 +381,11 @@
                     <select id="berat_kertas">
                         <option value="57">Bookpaper 57 gsm</option>
                         <option value="72" selected>Bookpaper 72 gsm</option>
+                        <option value="75">HVS 75 gsm</option>
                         <option value="80">HVS 80 gsm</option>
+                        <option value="100">HVS 100 gsm</option>
                         <option value="120">Artpaper 120 gsm</option>
+                        <option value="150">Bookpaper / Artpaper 150 gsm</option>
                     </select>
 
                     <label>Jumlah Halaman:</label>
@@ -462,19 +467,27 @@
         elHargaKertas.innerHTML = '';
         
         if (isBW) {
+            // Opsi BW (Sudah disesuaikan: A5 57 = 60, A4 BP 150 = 150)
             elHargaKertas.innerHTML = `
-                <option value="A5_57" data-ukuran="A5" data-harga="55">A5 - Bookpaper 57 gsm</option>
+                <option value="A5_57" data-ukuran="A5" data-harga="60">A5 - Bookpaper 57 gsm</option>
                 <option value="A5_72" data-ukuran="A5" data-harga="70">A5 - Bookpaper 72 gsm</option>
-                <option value="UNESCO" data-ukuran="UNESCO" data-harga="125">Unesco - BP 72 gsm</option>
-                <option value="B5" data-ukuran="B5" data-harga="125">B5 - BP 72 gsm</option>
-                <option value="A4" data-ukuran="A4" data-harga="140">A4 - BP 72 gsm</option>
+                <option value="A5_HVS75" data-ukuran="A5" data-harga="65">A5 - HVS 75 gsm</option>
+                <option value="A5_HVS80" data-ukuran="A5" data-harga="70">A5 - HVS 80 gsm</option>
+                <option value="A5_HVS100" data-ukuran="A5" data-harga="85">A5 - HVS 100 gsm</option>
+                <option value="A4_BP150" data-ukuran="A4" data-harga="150">A4 - Bookpaper 150 gsm</option>
+                <option value="A4_BP72" data-ukuran="A4" data-harga="140">A4 - Bookpaper 72 gsm</option>
             `;
         } else {
+            // Opsi Warna
             elHargaKertas.innerHTML = `
-                <option value="A5" data-ukuran="A5" data-harga="250">A5</option>
-                <option value="UNESCO" data-ukuran="UNESCO" data-harga="475">Unesco</option>
-                <option value="B5" data-ukuran="B5" data-harga="475">B5</option>
-                <option value="A4" data-ukuran="A4" data-harga="650">A4</option>
+                <option value="A5" data-ukuran="A5" data-harga="250">A5 - Artpaper 120 gsm</option>
+                <option value="UNESCO" data-ukuran="UNESCO" data-harga="475">Unesco - Artpaper 120 gsm</option>
+                <option value="B5" data-ukuran="B5" data-harga="475">B5 - Artpaper 120 gsm</option>
+                <option value="A4" data-ukuran="A4" data-harga="650">A4 - Artpaper 120 gsm</option>
+                <option value="A5_AP150" data-ukuran="A5" data-harga="280">A5 - Artpaper 150 gsm</option>
+                <option value="UNESCO_AP150" data-ukuran="UNESCO" data-harga="520">Unesco - Artpaper 150 gsm</option>
+                <option value="B5_AP150" data-ukuran="B5" data-harga="520">B5 - Artpaper 150 gsm</option>
+                <option value="A4_AP150" data-ukuran="A4" data-harga="720">A4 - Artpaper 150 gsm</option>
             `;
         }
         hitungHarga();
