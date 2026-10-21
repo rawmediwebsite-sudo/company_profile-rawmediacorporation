@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/rawmediwebsite-sudo/company_profile-rawmediacorporation/issues"
   },
-  "homepage": "https://github.com/rawmediwebsite-sudo/company_profile-rawmediacorporation#readme"
+  "homepage": "https://github.com/rawmediwebsite-sudo/company_profile-rawmediacorporation#readme",
+  "dependencies": {
+    "markdown-it": "^15.0.3"
+  }
 }
