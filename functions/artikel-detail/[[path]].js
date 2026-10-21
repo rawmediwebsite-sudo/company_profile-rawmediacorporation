@@ -15,14 +15,12 @@ export async function onRequest(context) {
   const SITE_URL = "https://rawmedia.id";
 
   try {
-    // 1. Ambil file Markdown
     const githubUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/content/artikel/${slug}.md`;
     const mdRes = await fetch(githubUrl);
     if (!mdRes.ok) throw new Error("Artikel tidak ditemukan");
     
     const mdText = await mdRes.text();
     
-    // 2. Parse Frontmatter
     const match = mdText.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
     let meta = {};
     let bodyMd = mdText;
@@ -36,11 +34,9 @@ export async function onRequest(context) {
       bodyMd = match[2];
     }
 
-    // 3. Konversi Markdown ke HTML (Menggunakan markdown-it)
     const md = markdownit();
     const bodyHtml = md.render(bodyMd);
 
-    // 4. Data Tampilan
     const title = meta.title || "Artikel RAW Media";
     const dateObj = new Date(meta.date);
     const dateFormatted = isNaN(dateObj.getTime()) ? "Tanggal tidak valid" : dateObj.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -53,7 +49,6 @@ export async function onRequest(context) {
     const encodedUrl = encodeURIComponent(currentUrl);
     const encodedTitle = encodeURIComponent(title);
 
-    // 5. Bangun HTML
     const htmlResponse = `<!DOCTYPE html>
 <html lang="id">
 <head>
@@ -62,18 +57,15 @@ export async function onRequest(context) {
     <title>${title} - RAW Media Indonesia</title>
     <meta name="description" content="${metaDesc}">
     <link rel="canonical" href="${currentUrl}">
-    
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="RAW Media Indonesia">
     <meta property="og:title" content="${title}">
     <meta property="og:description" content="${metaDesc}">
     <meta property="og:url" content="${currentUrl}">
     ${imageUrl ? `<meta property="og:image" content="${imageUrl}">` : ''}
-
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
     <style>
         .detail-page-wrapper { max-width: 850px; margin: 120px auto 80px auto; background: #ffffff; padding: 50px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); font-family: 'Nunito', sans-serif; color: #333; }
         .back-link { display: inline-block; margin-bottom: 30px; color: #666; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
@@ -81,21 +73,16 @@ export async function onRequest(context) {
         .article-title { font-size: 2.4rem; font-weight: 800; line-height: 1.3; margin: 0 0 15px 0; color: #1a1a1a; }
         .article-meta-data { display: flex; gap: 20px; color: #666; font-size: 0.95rem; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px dashed #eee; }
         .article-main-image { width: 100%; max-height: 500px; object-fit: cover; border-radius: 12px; margin-bottom: 35px; }
-        
         .article-content { font-size: 1.15rem; line-height: 1.9; }
         .article-content p { margin-bottom: 25px; }
         .article-content h1, .article-content h2, .article-content h3 { font-weight: 800; color: #1a1a1a; margin-top: 40px; margin-bottom: 15px; line-height: 1.3; }
         .article-content h2 { font-size: 1.8rem; }
         .article-content h3 { font-size: 1.4rem; }
-        
-        /* List dibuat rapi menjorok ke dalam */
         .article-content ul, .article-content ol { margin-bottom: 25px; padding-left: 40px !important; display: block; }
         .article-content li { margin-bottom: 12px; display: list-item; line-height: 1.8; }
-        
         .article-content blockquote { background: #f9f9f9; border-left: 5px solid #BE1A1A; padding: 20px 25px; margin: 30px 0; font-style: italic; color: #555; border-radius: 0 8px 8px 0; }
         .article-content a { color: #BE1A1A; font-weight: 600; text-decoration: underline; }
         .article-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
-
         .share-section { margin-top: 60px; padding-top: 30px; border-top: 2px dashed #eee; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
         .share-text { font-weight: 800; font-size: 1.1rem; color: #1a1a1a; }
         .share-buttons { display: flex; gap: 12px; }
@@ -104,7 +91,6 @@ export async function onRequest(context) {
         .bg-wa { background: #25D366; }
         .bg-fb { background: #1877F2; }
         .bg-copy { background: #666; }
-
         @media (max-width: 768px) { .detail-page-wrapper { margin: 80px 15px 40px 15px; padding: 30px 20px; } .article-title { font-size: 1.8rem; } .article-meta-data { flex-direction: column; gap: 10px; } }
     </style>
 </head>
@@ -116,23 +102,17 @@ export async function onRequest(context) {
             <li><a href="/artikel.html" style="color: #e67ce3; text-decoration: none; font-weight: 600;">ARTIKEL</a></li>
         </ul>
     </nav>
-
     <div class="detail-page-wrapper">
         <a href="/artikel.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Kembali ke Daftar Artikel</a>
-        
         <h1 class="article-title">${title}</h1>
-        
         <div class="article-meta-data">
             <span><i class="fa-regular fa-calendar"></i> ${dateFormatted}</span>
             <span><i class="fa-regular fa-user"></i> Tim Redaksi RAW Media</span>
         </div>
-
         ${imageUrl ? `<img src="${imageUrl}" alt="${title}" class="article-main-image">` : ''}
-        
         <div class="article-content">
             ${bodyHtml}
         </div>
-
         <div class="share-section">
             <span class="share-text"><i class="fa-solid fa-share-nodes"></i> Bagikan Artikel:</span>
             <div class="share-buttons">
