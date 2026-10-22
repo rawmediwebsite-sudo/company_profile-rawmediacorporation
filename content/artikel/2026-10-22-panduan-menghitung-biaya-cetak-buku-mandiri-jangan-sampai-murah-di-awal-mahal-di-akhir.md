@@ -2,6 +2,7 @@
 title: 'Panduan Menghitung Biaya Cetak Buku Mandiri: Jangan Sampai "Murah" di
   Awal, "Mahal" di Akhir'
 date: 2026-10-22T12:28:00.000+07:00
+image: /images/uploads/as.webp
 ---
 
 Saya sering melihat penulis pemula begitu semangat menyelesaikan naskah, lalu langsung terkejut saat tahu biaya cetak 100 eksemplar bisa tembus belasan juta rupiah. Bukan karena percetakan menipu, tapi karena ada beberapa komponen biaya yang sering luput dihitung. Artikel ini akan mengajak Anda menghitung dengan jujur—tanpa istilah pemasaran yang membingungkan—agar Anda bisa memutuskan langkah cetak dengan mata terbuka.
