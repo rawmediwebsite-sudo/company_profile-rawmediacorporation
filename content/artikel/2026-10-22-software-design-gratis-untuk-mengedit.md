@@ -1,6 +1,7 @@
 ---
 title: "Software Design Gratis Untuk Mengedit "
 date: 2026-10-22T12:33:00.000+07:00
+image: /images/uploads/tumbnail.webp
 ---
 Menulis naskah buku adalah satu hal, tetapi mengubah naskah tersebut menjadi tata letak (layout) buku yang rapi dan nyaman dibaca adalah tantangan tersendiri. Banyak penulis pemula yang akhirnya menyerah dan menyerahkan urusan layout ke percetakan karena bingung harus menggunakan software apa.
 
