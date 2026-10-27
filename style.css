@@ -8499,10 +8499,7 @@ body.menu-open .floating-wa {
     }
 }
 /* =========================================
-   PAKET PENERBITAN (dengan gambar)
-========================================= */
-/* =========================================
-   PAKET PENERBITAN — VERSI RINGKAS
+   PAKET PENERBITAN — VERSI BIRU
 ========================================= */
 .paket-section {
     width: 100%;
@@ -8525,7 +8522,7 @@ body.menu-open .floating-wa {
     font-family: var(--font-handwritten);
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-primary); /* Tetap biru */
     letter-spacing: 0.5px;
     transform: rotate(-2deg);
     margin-bottom: 4px;
@@ -8540,7 +8537,7 @@ body.menu-open .floating-wa {
 }
 
 .paket-title-dark { color: #2a2520; }
-.paket-title-red  { color: var(--color-accent); }
+.paket-title-red  { color: var(--color-accent); } /* Teks "Penerbitan Buku" jadi biru */
 
 .paket-subtitle {
     font-size: 0.92rem;
@@ -8560,7 +8557,7 @@ body.menu-open .floating-wa {
     align-items: stretch;
 }
 
-/* === CARD (lebih pendek) === */
+/* === CARD === */
 .paket-card {
     background: #ffffff;
     border-radius: 12px;
@@ -8575,15 +8572,15 @@ body.menu-open .floating-wa {
 
 .paket-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(190, 26, 26, 0.12);
+    box-shadow: 0 10px 24px rgba(30, 58, 138, 0.15); /* Shadow jadi biru */
     border-color: var(--color-accent);
 }
 
-/* === GAMBAR PAKET (dibuat lebih pendek) === */
+/* === GAMBAR PAKET === */
 .paket-image {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;     /* ← sebelumnya 4/3, sekarang lebih pendek */
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: #f4f1ea;
 }
@@ -8604,7 +8601,7 @@ body.menu-open .floating-wa {
     position: absolute;
     top: 8px;
     left: 8px;
-    background: #BE1A1A;
+    background: #2563EB; /* Badge jadi biru */
     color: #ffffff;
     font-size: 0.6rem;
     font-weight: 800;
@@ -8617,10 +8614,10 @@ body.menu-open .floating-wa {
 }
 
 .paket-badge-populer {
-    background: linear-gradient(135deg, #ff3b3b 0%, #BE1A1A 100%);
+    background: linear-gradient(135deg, #3B82F6 0%, #1E3A8A 100%); /* Gradient biru untuk paling diminati */
 }
 
-/* === CARD BODY (spacing dikecilkan) === */
+/* === CARD BODY === */
 .paket-card-body {
     padding: 14px 14px 16px 14px;
     display: flex;
@@ -8645,10 +8642,10 @@ body.menu-open .floating-wa {
     color: var(--color-text-muted);
     text-align: center;
     margin: 0;
-    min-height: 32px;          /* ← sebelumnya 48px, sekarang ringkas */
+    min-height: 32px;
 }
 
-/* === FITUR (dibatasi tampil 4 baris biar pendek) === */
+/* === FITUR === */
 .paket-fitur {
     list-style: none;
     padding: 10px 0;
@@ -8670,19 +8667,18 @@ body.menu-open .floating-wa {
     color: var(--color-text-soft);
 }
 
-/* Batasi tampil 4 fitur saja */
 .paket-fitur li:nth-child(n+5) {
     display: none;
 }
 
 .paket-fitur li i {
-    color: #BE1A1A;
+    color: #2563EB; /* Icon check jadi biru */
     font-size: 0.62rem;
     margin-top: 3px;
     flex-shrink: 0;
 }
 
-/* === HARGA (font dikecilkan) === */
+/* === HARGA === */
 .paket-harga-wrap {
     text-align: center;
     display: flex;
@@ -8702,7 +8698,7 @@ body.menu-open .floating-wa {
 .paket-harga {
     font-size: 1.2rem;
     font-weight: 800;
-    color: #BE1A1A;
+    color: #2563EB; /* Angka harga jadi biru */
     line-height: 1.1;
     letter-spacing: -0.02em;
 }
@@ -8721,8 +8717,8 @@ body.menu-open .floating-wa {
     gap: 6px;
     padding: 9px 12px;
     background: #ffffff;
-    color: #BE1A1A;
-    border: 1.5px solid #BE1A1A;
+    color: #2563EB; /* Tombol outline biru */
+    border: 1.5px solid #2563EB;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.01em;
@@ -8736,26 +8732,27 @@ body.menu-open .floating-wa {
 .paket-btn i { font-size: 0.85rem; }
 
 .paket-btn:hover {
-    background: #BE1A1A;
+    background: #2563EB;
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(190, 26, 26, 0.3);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
 }
 
 .paket-btn-solid {
-    background: #BE1A1A;
+    background: #2563EB; /* Tombol solid biru */
     color: #ffffff;
+    border-color: #2563EB;
 }
 
 .paket-btn-solid:hover {
-    background: #8a1212;
-    border-color: #8a1212;
+    background: #1D4ED8;
+    border-color: #1D4ED8;
 }
 
 /* === PAKET POPULER === */
 .paket-card-populer {
-    border: 2px solid #BE1A1A;
-    box-shadow: 0 8px 24px rgba(190, 26, 26, 0.15);
+    border: 2px solid #2563EB; /* Border card populer jadi biru */
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
     transform: translateY(-3px);
 }
 
@@ -8772,14 +8769,14 @@ body.menu-open .floating-wa {
 }
 
 .paket-footer-note a {
-    color: #BE1A1A;
+    color: #2563EB; /* Link teks bawah jadi biru */
     font-weight: 700;
     text-decoration: underline;
     text-underline-offset: 3px;
 }
 
 .paket-footer-note a:hover {
-    color: #8a1212;
+    color: #1D4ED8;
 }
 
 /* === RESPONSIVE === */
@@ -8817,7 +8814,7 @@ body.menu-open .floating-wa {
 
     .paket-card { border-radius: 10px; }
 
-    .paket-image { aspect-ratio: 1 / 1; }   /* di HP lebih kotak, ringkas */
+    .paket-image { aspect-ratio: 1 / 1; }
 
     .paket-image-badge {
         font-size: 0.55rem;
@@ -8850,7 +8847,6 @@ body.menu-open .floating-wa {
         line-height: 1.35;
     }
 
-    /* Di HP tampil 3 fitur saja biar makin pendek */
     .paket-fitur li:nth-child(n+4) {
         display: none;
     }
@@ -10585,4 +10581,52 @@ body.menu-open .floating-wa {
 /* 5. Garis Bawah & Border */
 .portal-divider {
     background-color: #2563EB !important;
+}
+
+/* =========================================
+   CANVA IMAGE BANNER
+========================================= */
+.canva-banner-section {
+    width: 100%;
+    background: var(--color-white);
+    padding: 60px 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.canva-banner-container {
+    max-width: 1200px; /* Samakan dengan lebar konten website kamu */
+    width: 100%;
+}
+
+.canva-banner-link {
+    display: block;
+    border-radius: 20px; /* Lengkungan sudut banner */
+    overflow: hidden; /* Memotong gambar agar ikut melengkung */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Efek bayangan elegan */
+    transition: all 0.3s ease;
+}
+
+/* Efek saat kursor diarahkan ke banner */
+.canva-banner-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.canva-banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .canva-banner-section {
+        padding: 40px 16px;
+    }
+    
+    .canva-banner-link {
+        border-radius: 12px; /* Lengkungan lebih kecil di HP */
+    }
 }
