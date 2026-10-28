@@ -114,9 +114,9 @@ export async function onRequest(context) {
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Khusus Halaman Daftar Artikel */
-        body { background-color: #f8f6f1; margin: 0; font-family: 'Nunito', sans-serif; }
-        .portal-main { max-width: 1200px; margin: 120px auto 60px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; }
+        /* CSS KHUSUS DAFTAR ARTIKEL AGAR TIDAK BENTROK DENGAN style.css */
+        .artikel-page-wrapper { background-color: #f8f6f1; padding: 120px 0 80px 0; }
+        .portal-main { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 320px; gap: 40px; align-items: start; }
         .portal-header { margin-bottom: 40px; border-bottom: 2px solid #BE1A1A; padding-bottom: 20px; }
         .portal-title { font-size: 2.5rem; font-weight: 800; color: #1a1a1a; margin: 0 0 10px 0; }
         .portal-desc { color: #666; font-size: 1.1rem; margin: 0; line-height: 1.6; }
@@ -151,42 +151,93 @@ export async function onRequest(context) {
     </style>
 </head>
 <body>
-    <nav class="navbar" style="position: fixed; top: 0; width: 100%; background: #1a0a1a; padding: 15px 20px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;">
-        <a href="/index.html" style="color: white; font-weight: bold; text-decoration: none;">RAW MEDIA</a>
-        <ul style="display: flex; gap: 20px; list-style: none; margin: 0; padding: 0;">
-            <li><a href="/index.html" style="color: white; text-decoration: none; font-weight: 600;">HOME</a></li>
-            <li><a href="/artikel" style="color: #e67ce3; text-decoration: none; font-weight: 600;">ARTIKEL</a></li>
-        </ul>
-    </nav>
 
-    <main class="portal-main">
-        <div class="portal-content">
-            <div class="portal-header">
-                <h1 class="portal-title">Artikel & Tips ${kategoriFilter ? `- ${kategoriFilter}` : ''}</h1>
-                <p class="portal-desc">Kumpulan tulisan menarik seputar dunia percetakan, self publishing, tips praktis, dan insight industri cetak.</p>
-            </div>
-            
-            <div class="artikel-grid">
-                ${artikelCardsHtml || "<p>Belum ada artikel di kategori ini.</p>"}
+    <!-- NAVBAR ASLI RAW MEDIA -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/raw-media.svg" alt="Logo RAW Media Indonesia" class="logo-img">
+            </a>
+        </div>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/index.html#layanan">LAYANAN</a></li>
+            <li><a href="/pemesanan.html">PEMESANAN</a></li>
+            <li><a href="/tentang.html">TENTANG KAMI</a></li>
+            <li><a href="/artikel" class="active">ARTIKEL</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="hamburger" id="hamburger">
+                <span class="hamburger-text">MENU</span>
+                <i class="fa-solid fa-bars"></i>
             </div>
         </div>
+    </nav>
 
-        <aside class="portal-sidebar">
-            <div class="sidebar-widget">
-                <h3 class="widget-title">Kategori</h3>
-                <ul class="kategori-list">
-                    <li><a href="/artikel" class="${!kategoriFilter ? 'active' : ''}">Semua Artikel</a></li>
-                    ${sidebarKategoriHtml}
+    <!-- KONTEN UTAMA -->
+    <div class="artikel-page-wrapper">
+        <main class="portal-main">
+            <div class="portal-content">
+                <div class="portal-header">
+                    <h1 class="portal-title">Artikel & Tips ${kategoriFilter ? `- ${kategoriFilter}` : ''}</h1>
+                    <p class="portal-desc">Kumpulan tulisan menarik seputar dunia percetakan, self publishing, tips praktis, dan insight industri cetak.</p>
+                </div>
+                
+                <div class="artikel-grid">
+                    ${artikelCardsHtml || "<p>Belum ada artikel di kategori ini.</p>"}
+                </div>
+            </div>
+
+            <aside class="portal-sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Kategori</h3>
+                    <ul class="kategori-list">
+                        <li><a href="/artikel" class="${!kategoriFilter ? 'active' : ''}">Semua Artikel</a></li>
+                        ${sidebarKategoriHtml}
+                    </ul>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Butuh Jasa Cetak Buku?</h3>
+                    <p>Konsultasi gratis dengan tim kami.</p>
+                    <a href="https://wa.me/6285231092020">Hubungi Kami</a>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- FOOTER ASLI RAW MEDIA -->
+    <footer class="footer-modern">
+        <div class="footer-accent"></div>
+        <div class="footer-container">
+            <div class="footer-col footer-brand">
+                <div class="footer-logo">
+                    <img src="/raw-media.svg" alt="Logo RAW Media Indonesia" class="footer-logo-img" loading="lazy">
+                </div>
+                <p class="footer-desc">Solusi percetakan, penerbitan, dan finishing berkualitas tinggi untuk kebutuhan bisnis, sekolah, dan personal. Berpengalaman lebih dari 10 tahun.</p>
+            </div>
+            <div class="footer-col footer-menu">
+                <h4 class="footer-heading">Perusahaan</h4>
+                <ul class="footer-links">
+                    <li><a href="/tentang.html">Tentang Kami</a></li>
+                    <li><a href="/index.html#layanan">Layanan</a></li>
+                    <li><a href="/artikel">Artikel</a></li>
                 </ul>
             </div>
-
-            <div class="cta-box">
-                <h3>Butuh Jasa Cetak Buku?</h3>
-                <p>Konsultasi gratis dengan tim kami.</p>
-                <a href="https://wa.me/6285231092020">Hubungi Kami</a>
+            <div class="footer-col footer-contact">
+                <h4 class="footer-heading">Alamat & Kontak</h4>
+                <ul class="footer-contact-list">
+                    <li><i class="fa-solid fa-location-dot"></i> Balangan, Sendangrejo, Minggir, Sleman, DIY 55562</li>
+                    <li><i class="fa-solid fa-envelope"></i> cv.rawmedia@gmail.com</li>
+                </ul>
             </div>
-        </aside>
-    </main>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RAW Media Indonesia. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
 </body>
 </html>`;
 
