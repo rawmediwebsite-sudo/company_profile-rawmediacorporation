@@ -218,9 +218,8 @@ export async function onRequest(context) {
     <style>
         /* ===== PORTAL BERITA STYLES ===== */
         :root {
-            --primary: #2373F4;
-            --primary-dark: #1a5bd0;
-            --primary-light: #e8f1fe;
+            --primary: #BE1A1A;
+            --primary-dark: #8a1212;
             --text-dark: #1a1a1a;
             --text-mid: #555;
             --text-light: #888;
@@ -295,7 +294,7 @@ export async function onRequest(context) {
         }
         .berita-card:hover { 
             transform: translateY(-5px); 
-            box-shadow: 0 12px 28px rgba(35, 115, 244, 0.15); 
+            box-shadow: 0 12px 28px rgba(0,0,0,0.1); 
         }
         
         /* Featured card (span 2 kolom) */
@@ -368,10 +367,6 @@ export async function onRequest(context) {
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            transition: color 0.2s;
-        }
-        .berita-card:hover .berita-title {
-            color: var(--primary);
         }
         .berita-excerpt {
             color: var(--text-mid);
@@ -411,7 +406,6 @@ export async function onRequest(context) {
             font-size: 3rem;
             margin-bottom: 15px;
             opacity: 0.4;
-            color: var(--primary);
         }
         .empty-state p { font-size: 1.1rem; margin: 0; }
 
@@ -509,11 +503,6 @@ export async function onRequest(context) {
             font-weight: 700;
             min-width: 26px;
             text-align: center;
-            transition: all 0.2s;
-        }
-        .kategori-list a:hover .badge {
-            background: var(--primary-light);
-            color: var(--primary);
         }
         .kategori-list a.active .badge {
             background: var(--primary);
