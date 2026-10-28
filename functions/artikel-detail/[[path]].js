@@ -38,7 +38,6 @@ export async function onRequest(context) {
 
     const md = markdownit({ html: true, linkify: true, typographer: true });
     const bodyHtml = md.render(bodyMd);
-
     const title = meta.title || "Artikel RAW Media Indonesia";
     const dateObj = new Date(meta.date);
     const isValidDate = !isNaN(dateObj.getTime());
@@ -222,7 +221,7 @@ export async function onRequest(context) {
         <li><a href="/pemesanan.html">PEMESANAN</a></li>
         <li><a href="/tentang.html">TENTANG KAMI</a></li>
         <li><a href="/reseller.html">RESELLER</a></li>
-        <li><a href="/artikel.html" class="active">ARTIKEL</a></li>
+        <li><a href="/artikel" class="active">ARTIKEL</a></li>
     </ul>
     <div class="nav-right">
         <div class="hamburger" id="hamburger">
@@ -250,7 +249,7 @@ export async function onRequest(context) {
             <li><a href="/reseller.html">RESELLER</a></li>
             <li><a href="/pemesanan.html">PEMESANAN</a></li>
             <li><a href="/tentang.html">TENTANG KAMI</a></li>
-            <li><a href="/artikel.html" class="active">ARTIKEL</a></li>
+            <li><a href="/artikel" class="active">ARTIKEL</a></li>
         </ul>
         <div class="mobile-address">
             <p><i class="fa-solid fa-location-dot"></i> Sleman, Yogyakarta</p>
@@ -263,7 +262,7 @@ export async function onRequest(context) {
 <main class="detail-page-wrapper">
     <nav class="breadcrumb-nav" aria-label="Breadcrumb">
         <a href="/index.html">Home</a> ›
-        <a href="/artikel.html">Artikel</a> ›
+        <a href="/artikel">Artikel</a> ›
         <span>${title}</span>
     </nav>
 
@@ -323,7 +322,7 @@ export async function onRequest(context) {
             <ul class="footer-links">
                 <li><a href="/tentang.html">Tentang Kami</a></li>
                 <li><a href="/index.html#layanan">Layanan</a></li>
-                <li><a href="/artikel.html">Artikel</a></li>
+                <li><a href="/artikel">Artikel</a></li>
                 <li><a href="/index.html#galeri">Galeri</a></li>
                 <li><a href="/index.html#faq">FAQ</a></li>
             </ul>
