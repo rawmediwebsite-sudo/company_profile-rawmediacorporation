@@ -1,4 +1,4 @@
-export async function onRequest(context) {
+ export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const kategoriFilter = url.searchParams.get("kategori");
