@@ -10,19 +10,30 @@ export async function onRequest(context) {
   const GITHUB_USER = "rawmediwebsite-sudo";
   const GITHUB_REPO = "company_profile-rawmediacorporation";
   const GITHUB_BRANCH = "main";
-  const GITHUB_TOKEN = env.GITHUB_TOKEN;
+  const GITHUB_TOKEN = typeof env?.GITHUB_TOKEN === "string"
+    ? env.GITHUB_TOKEN.trim().replace(/^Bearer\s+/i, "")
+    : "";
 
   try {
     const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/artikel?ref=${GITHUB_BRANCH}`;
     
-    const headers = { "User-Agent": "RAW-Media-List-Article" };
+    const headers = {
+      "User-Agent": "RAW-Media-List-Article",
+      "Accept": "application/vnd.github+json"
+    };
     if (GITHUB_TOKEN) {
-      headers["Authorization"] = `token ${GITHUB_TOKEN}`;
+      headers["Authorization"] = `Bearer ${GITHUB_TOKEN}`;
     }
 
-    const response = await fetch(apiUrl, { headers });
+    let response = await fetch(apiUrl, { headers });
+    if (response.status === 401 && GITHUB_TOKEN) {
+      delete headers["Authorization"];
+      response = await fetch(apiUrl, { headers });
+    }
     
-    if (!response.ok) throw new Error("Gagal mengambil daftar dari GitHub");
+    if (!response.ok) {
+      throw new Error(`Gagal mengambil daftar dari GitHub (HTTP ${response.status})`);
+    }
     const files = await response.json();
     
     if (!Array.isArray(files)) throw new Error("Format response GitHub tidak valid");
