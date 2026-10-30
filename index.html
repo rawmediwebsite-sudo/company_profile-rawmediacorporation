@@ -285,268 +285,134 @@
 <!-- =========================================
      LAYANAN
 ========================================= -->
-<section id="layanan" class="katalog-section">
-    <div class="katalog-header">
-        <h2 class="katalog-title">
-            <span class="katalog-title-white">Layanan</span>
-            <span class="katalog-title-red">Percetakan Kami</span>
-        </h2>
-        <p class="katalog-subtitle">
-            Cetak buku ajar, novel, kitab pesantren, buku tahunan, sampai finishing premium.
-            Klik setiap layanan untuk lihat detail & konsultasi gratis.
-        </p>
-    </div>
+<!-- =========================================
+     LAYANAN — GRID STYLE PERCETAKAN.CO.ID
+========================================= -->
+<section id="layanan" class="layanan-grid-section">
 
-    <div class="katalog-grid">
+    <div class="layanan-grid-container">
 
-        <div class="produk-card" onclick="openProdukModal('buku')" data-produk="buku" role="button" tabindex="0">
-            <div class="produk-image">
-                <img src="img/fotoproduk/fopro10.jpeg" alt="Cetak buku ajar dan novel di Sleman Yogyakarta - RAW Media" loading="lazy" decoding="async">
-            </div>
-            <div class="produk-info">
-                <span class="produk-badge">PERCETAKAN</span>
-                <h3 class="produk-title">Cetak Buku</h3>
-                <p class="produk-kategori">BUKU AJAR · NOVEL · MODUL · AKADEMIK</p>
-            </div>
+        <!-- HEADER -->
+        <div class="layanan-grid-head">
+            <span class="layanan-grid-label">Layanan Percetakan</span>
+            <h2 class="layanan-grid-title">Layanan Percetakan Lengkap Proses Cepat</h2>
+            <p class="layanan-grid-subtitle">Pilih produk yang Anda butuhkan, kami kerjakan dengan spesifikasi terbaik.</p>
         </div>
 
-        <div class="produk-card" onclick="openProdukModal('tahunan')" data-produk="tahunan" role="button" tabindex="0">
-            <div class="produk-image">
-                <img src="img/fotoproduk/fopro2.jpg" alt="Cetak buku tahunan sekolah premium Yogyakarta - RAW Media" loading="lazy" decoding="async">
-            </div>
-            <div class="produk-info">
-                <span class="produk-badge">PERCETAKAN</span>
-                <h3 class="produk-title">Buku Tahunan</h3>
-                <p class="produk-kategori">YEARBOOK SEKOLAH · FOTO · DESAIN</p>
-            </div>
+        <!-- 3 CARD BESAR -->
+        <div class="layanan-grid-big">
+
+            <a href="layanan-cetak-buku.html" class="layanan-big-card">
+                <div class="layanan-big-img">
+                    <img src="img/fotoproduk/fopro10.jpeg" alt="Cetak Buku" loading="lazy">
+                </div>
+                <div class="layanan-big-body">
+                    <h3>Cetak Buku</h3>
+                    <p>Cetak buku ajar, novel, modul, dan buku akademik full color.</p>
+                    <ul class="layanan-big-specs">
+                        <li>Ukuran: A5, A4, B5, Unesco</li>
+                        <li>Bahan: HVS, Book Paper, Art Paper</li>
+                        <li>Cetak: Full Color, soft/hard cover</li>
+                    </ul>
+                    <span class="layanan-big-btn">
+                        <i class="fas fa-external-link-alt"></i> LIHAT DETAIL
+                    </span>
+                </div>
+            </a>
+
+            <a href="layanan-buku-tahunan.html" class="layanan-big-card">
+                <div class="layanan-big-img">
+                    <img src="img/fotoproduk/fopro2.jpg" alt="Buku Tahunan" loading="lazy">
+                </div>
+                <div class="layanan-big-body">
+                    <h3>Buku Tahunan</h3>
+                    <p>Yearbook sekolah premium dengan sesi foto dan desain kreatif.</p>
+                    <ul class="layanan-big-specs">
+                        <li>Ukuran: A4, B5, 20×25 cm</li>
+                        <li>Bahan: Art Paper, Matte, Linen</li>
+                        <li>Finishing: Hardcover, spot UV, emboss</li>
+                    </ul>
+                    <span class="layanan-big-btn">
+                        <i class="fas fa-external-link-alt"></i> LIHAT DETAIL
+                    </span>
+                </div>
+            </a>
+
+            <a href="layanan-buku-pesantren.html" class="layanan-big-card">
+                <div class="layanan-big-img">
+                    <img src="img/fotoproduk/fopro7.jpg" alt="Buku Pesantren" loading="lazy">
+                </div>
+                <div class="layanan-big-body">
+                    <h3>Buku Pesantren</h3>
+                    <p>Kitab kuning, doa, hafalan, juz amma, dan administrasi pesantren.</p>
+                    <ul class="layanan-big-specs">
+                        <li>Ukuran: A5, Unesco, B5</li>
+                        <li>Bahan: HVS, Book Paper, kertas kuning</li>
+                        <li>Finishing: Jahit, lem, hard cover</li>
+                    </ul>
+                    <span class="layanan-big-btn">
+                        <i class="fas fa-external-link-alt"></i> LIHAT DETAIL
+                    </span>
+                </div>
+            </a>
+
         </div>
 
-        <div class="produk-card" onclick="openProdukModal('pesantren')" data-produk="pesantren" role="button" tabindex="0">
-            <div class="produk-image">
-                <img src="img/fotoproduk/fopro7.jpg" alt="Cetak kitab pesantren dan juz amma di Yogyakarta - RAW Media" loading="lazy" decoding="async">
-            </div>
-            <div class="produk-info">
-                <span class="produk-badge">PERCETAKAN</span>
-                <h3 class="produk-title">Buku Pesantren</h3>
-                <p class="produk-kategori">KITAB · DOA · HAFALAN · JUZ AMMA</p>
-            </div>
-        </div>
+      
 
-        <div class="produk-card" onclick="openProdukModal('finishing')" data-produk="finishing" role="button" tabindex="0">
-            <div class="produk-image">
-                <img src="img/fotoproduk/finpree.jpeg" alt="Finishing jilid hard cover dan laminasi buku premium - RAW Media" loading="lazy" decoding="async">
-            </div>
-            <div class="produk-info">
-                <span class="produk-badge">PERCETAKAN</span>
-                <h3 class="produk-title">Finishing Premium</h3>
-                <p class="produk-kategori">JILID · LAMINASI · SPOT UV · EMBOSS</p>
-            </div>
-        </div>
-
-        <div class="produk-card" onclick="openProdukModal('b2b')" data-produk="b2b" role="button" tabindex="0">
-            <div class="produk-image">
-                <img src="img/fotoproduk/instansi.webp" alt="Pengadaan cetak buku instansi dan korporat Yogyakarta - RAW Media" loading="lazy" decoding="async">
-            </div>
-            <div class="produk-info">
-                <span class="produk-badge">PERCETAKAN</span>
-                <h3 class="produk-title">B2B & Korporat</h3>
-                <p class="produk-kategori">PENGADAAN · INSTANSI · KONTRAK</p>
-            </div>
+        <!-- TOMBOL BAWAH -->
+        <div class="layanan-grid-cta">
+            <a href="pemesanan.html" class="layanan-grid-cta-btn">
+                <i class="fas fa-arrow-right"></i> CEK PERCETAKAN LENGKAP
+            </a>
         </div>
 
     </div>
 </section>
-<section id="paket-penerbitan" class="paket-section">
-    <div class="paket-header">
-        <span class="paket-label">Pilihan Paket</span>
-        <h2 class="paket-title">
-            <span class="paket-title-dark">Paket</span>
-            <span class="paket-title-red">Penerbitan Buku</span>
-        </h2>
-        <p class="paket-subtitle">
-            Pilih paket sesuai kebutuhan Anda. Semua paket mencakup proses kurasi naskah,
-            editing, layout, dan desain cover. Konsultasi gratis bersama kami sebelum memesan
-        </p>
-    </div>
 
-    <div class="paket-grid">
+<!-- =========================================
+     MENGAPA MEMILIH KAMI — CMYK STYLE
+========================================= -->
+<section id="mengapa" class="why-cmyk-section">
+    <div class="why-cmyk-container">
 
-        <div class="paket-card">
-            <div class="paket-image">
-                <img src="img/penerbit.jpg" alt="Paket Penerbitan MULAI RAW Media - Self publishing Yogyakarta" loading="lazy" decoding="async">
-                <span class="paket-image-badge">PAKET 1 · MULAI</span>
-            </div>
-            <div class="paket-card-body">
-                <h3 class="paket-name">PAKET MULAI</h3>
-                <p class="paket-tagline">Cocok untuk penulis pemula yang ingin karyanya terbit secara profesional.</p>
-                <ul class="paket-fitur">
-                    <li><i class="fa-solid fa-check"></i> Kurasi Naskah &amp; Review Editor</li>
-                    <li><i class="fa-solid fa-check"></i> Editing &amp; Proofreading</li>
-                    <li><i class="fa-solid fa-check"></i> Layout &amp; Desain Cover</li>
-                    <li><i class="fa-solid fa-check"></i> E-Sertifikat Penulis</li>
-                    <li><i class="fa-solid fa-check"></i> 5 Eksemplar Buku</li>
-                    <li><i class="fa-solid fa-check"></i> 1 Iklan Promosi</li>
-                </ul>
-                <div class="paket-harga-wrap">
-                    <span class="paket-harga-label">Mulai dari</span>
-                    <div class="paket-harga">Rp6XX.XXX</div>
-                    <span class="paket-harga-note">Estimasi 21 hari kerja</span>
+        <div class="why-cmyk-head">
+            <h2 class="why-cmyk-title">
+                Kenapa Memilih <span>RAW Media?</span>
+            </h2>
+            <p class="why-cmyk-subtitle">
+                Kami menyeimbangkan harga yang kompetitif dengan standar kualitas tinggi.
+                RAW Media menggunakan mesin produksi efisiensi tinggi untuk menekan biaya
+                tanpa mengorbankan hasil akhir.
+            </p>
+        </div>
+
+        <div class="why-cmyk-grid">
+
+            <div class="why-cmyk-card why-card-cyan">
+                <div class="why-cmyk-icon">
+                    <i class="fas fa-gem"></i>
                 </div>
-                <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20konsultasi%20Paket%20MULAI%20RAW%20Media" target="_blank" rel="noopener" class="paket-btn">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>Konsultasi Paket Ini</span>
-                </a>
+                <h3>Kualitas Terjamin</h3>
+                <p>Quality control ketat di setiap tahap produksi. Warna sesuai desain dan finishing rapi sebelum barang dikirim.</p>
             </div>
-        </div>
 
-        <div class="paket-card paket-card-populer">
-            <div class="paket-image">
-                <img src="img/penerbit3.jpeg" alt="Paket Penerbitan BERKEMBANG RAW Media - Paling diminati penulis" loading="lazy" decoding="async">
-                <span class="paket-image-badge paket-badge-populer">PALING DIMINATI</span>
-            </div>
-            <div class="paket-card-body">
-                <h3 class="paket-name">PAKET BERKEMBANG</h3>
-                <p class="paket-tagline">Pilihan favorit dosen, guru, dan penulis yang ingin bukunya lebih dikenal.</p>
-                <ul class="paket-fitur">
-                    <li><i class="fa-solid fa-check"></i> Semua Fitur Paket MULAI</li>
-                    <li><i class="fa-solid fa-check"></i> 10 Eksemplar Buku</li>
-                    <li><i class="fa-solid fa-check"></i> 3 Iklan Promosi</li>
-                    <li><i class="fa-solid fa-check"></i> Desain Feed Instagram</li>
-                    <li><i class="fa-solid fa-check"></i> 1 Banner Cetak</li>
-                    <li><i class="fa-solid fa-check"></i> Prioritas Pengerjaan</li>
-                </ul>
-                <div class="paket-harga-wrap">
-                    <span class="paket-harga-label">Mulai dari</span>
-                    <div class="paket-harga">Rp9XX.XXX</div>
-                    <span class="paket-harga-note">Estimasi 18 hari kerja</span>
+            <div class="why-cmyk-card why-card-magenta">
+                <div class="why-cmyk-icon">
+                    <i class="fas fa-shipping-fast"></i>
                 </div>
-                <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20konsultasi%20Paket%20BERKEMBANG%20RAW%20Media" target="_blank" rel="noopener" class="paket-btn paket-btn-solid">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>Konsultasi Paket Ini</span>
-                </a>
+                <h3>Proses Cepat &amp; Tepat</h3>
+                <p>Sistem produksi terintegrasi memungkinkan kami bekerja cepat. Tersedia layanan express untuk kebutuhan mendesak.</p>
             </div>
-        </div>
 
-        <div class="paket-card">
-            <div class="paket-image">
-                <img src="img/penerbit1.jpg" alt="Paket Penerbitan PROFESIONAL RAW Media - Pendampingan HKI" loading="lazy" decoding="async">
-                <span class="paket-image-badge">PAKET 3 · PRO</span>
-            </div>
-            <div class="paket-card-body">
-                <h3 class="paket-name">PAKET PROFESIONAL</h3>
-                <p class="paket-tagline">Untuk Anda yang serius membangun nama sebagai penulis profesional.</p>
-                <ul class="paket-fitur">
-                    <li><i class="fa-solid fa-check"></i> Semua Fitur Paket BERKEMBANG</li>
-                    <li><i class="fa-solid fa-check"></i> Pendampingan Hak Cipta (HKI)</li>
-                    <li><i class="fa-solid fa-check"></i> 20 Eksemplar Buku</li>
-                    <li><i class="fa-solid fa-check"></i> 5 Iklan Promosi</li>
-                    <li><i class="fa-solid fa-check"></i> Video Promosi Buku</li>
-                    <li><i class="fa-solid fa-check"></i> Konsultasi Marketing</li>
-                </ul>
-                <div class="paket-harga-wrap">
-                    <span class="paket-harga-label">Mulai dari</span>
-                    <div class="paket-harga">Rp1.XXX.XXX</div>
-                    <span class="paket-harga-note">Estimasi 14 hari kerja</span>
+            <div class="why-cmyk-card why-card-yellow">
+                <div class="why-cmyk-icon">
+                    <i class="fas fa-tags"></i>
                 </div>
-                <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20konsultasi%20Paket%20PROFESIONAL%20RAW%20Media" target="_blank" rel="noopener" class="paket-btn">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>Konsultasi Paket Ini</span>
-                </a>
+                <h3>Pemesanan Online</h3>
+                <p>Tanpa antri, anti ribet! Pemesanan bisa melalui WhatsApp kami dengan klik tombol hubungi kami.</p>
             </div>
-        </div>
 
-        <div class="paket-card">
-            <div class="paket-image">
-                <img src="img/penerbit2.jpg" alt="Paket Penerbitan PREMIUM RAW Media - Solusi lengkap instansi" loading="lazy" decoding="async">
-                <span class="paket-image-badge">PAKET 4 · PREMIUM</span>
-            </div>
-            <div class="paket-card-body">
-                <h3 class="paket-name">PAKET PREMIUM</h3>
-                <p class="paket-tagline">Solusi lengkap untuk instansi, komunitas, atau penulis yang ingin hasil maksimal.</p>
-                <ul class="paket-fitur">
-                    <li><i class="fa-solid fa-check"></i> Semua Fitur Paket PROFESIONAL</li>
-                    <li><i class="fa-solid fa-check"></i> 50 Eksemplar Buku</li>
-                    <li><i class="fa-solid fa-check"></i> 10 Iklan Promosi</li>
-                    <li><i class="fa-solid fa-check"></i> Peluncuran Buku Online</li>
-                    <li><i class="fa-solid fa-check"></i> Pendampingan Penulis</li>
-                    <li><i class="fa-solid fa-check"></i> Cetak Ulang Diskon</li>
-                </ul>
-                <div class="paket-harga-wrap">
-                    <span class="paket-harga-label">Mulai dari</span>
-                    <div class="paket-harga">Rp1.XXX.XXX</div>
-                    <span class="paket-harga-note">Estimasi 12 hari kerja</span>
-                </div>
-                <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20konsultasi%20Paket%20PREMIUM%20RAW%20Media" target="_blank" rel="noopener" class="paket-btn">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>Konsultasi Paket Ini</span>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <p class="paket-footer-note">
-        Belum yakin paket mana yang cocok?
-        <a href="https://wa.me/6285231092020?text=Halo%20saya%20ingin%20konsultasi%20paket%20penerbitan%20RAW%20Media" target="_blank" rel="noopener">Konsultasi gratis di sini</a>.
-    </p>
-</section>
-<section id="mengapa" class="mengapa-section">
-    <div class="mengapa-header">
-        <h2 class="mengapa-title">
-            <span class="mengapa-title-white">Mengapa Memilih</span> <span class="mengapa-title-red">RAW Media?</span>
-        </h2>
-        <p class="mengapa-subtitle">Bukan sekadar percetakan biasa — kami partner cetak buku Anda</p>
-    </div>
-
-    <div class="mengapa-trust-bar">
-        <div class="mengapa-trust-item">
-            <div class="mengapa-trust-number">10+</div>
-            <div class="mengapa-trust-label">Tahun Pengalaman</div>
-        </div>
-        <div class="mengapa-trust-item">
-            <div class="mengapa-trust-number">5.000+</div>
-            <div class="mengapa-trust-label">Klien Terselesaikan</div>
-        </div>
-        <div class="mengapa-trust-item">
-            <div class="mengapa-trust-number">100+</div>
-            <div class="mengapa-trust-label">Klien Langganan</div>
-        </div>
-        <div class="mengapa-trust-item">
-            <div class="mengapa-trust-number">4.9/5</div>
-            <div class="mengapa-trust-label">Rating Kepuasan</div>
-        </div>
-    </div>
-
-    <div class="mengapa-grid">
-        <div class="mengapa-card">
-            <div class="mengapa-icon"><img src="img/icons/courier.png" alt="Ikon pengerjaan cetak cepat" width="40" height="40" loading="lazy"></div>
-            <h3 class="mengapa-card-title">Pengerjaan Cepat</h3>
-            <p class="mengapa-card-desc">Selesai 3-7 hari kerja. Layanan express 24 jam tersedia untuk kebutuhan mendesak.</p>
-        </div>
-        <div class="mengapa-card">
-            <div class="mengapa-icon"><img src="img/icons/price-tag.png" alt="Ikon harga cetak kompetitif" width="40" height="40" loading="lazy"></div>
-            <h3 class="mengapa-card-title">Harga Lebih Murah</h3>
-            <p class="mengapa-card-desc">Harga sangat terjangkau untuk customer. Berbeda dengan vendor yang lain.</p>
-        </div>
-        <div class="mengapa-card">
-            <div class="mengapa-icon"><img src="img/icons/quality.png" alt="Ikon kualitas cetak premium" width="40" height="40" loading="lazy"></div>
-            <h3 class="mengapa-card-title">Kualitas Premium</h3>
-            <p class="mengapa-card-desc">Mesin cetak modern, hasil tajam, warna akurat, dan finishing rapi untuk setiap produk.</p>
-        </div>
-        <div class="mengapa-card">
-            <div class="mengapa-icon"><img src="img/icons/shipped.png" alt="Ikon pengiriman seluruh Indonesia" width="40" height="40" loading="lazy"></div>
-            <h3 class="mengapa-card-title">Kirim Seluruh Indonesia</h3>
-            <p class="mengapa-card-desc">Pengiriman aman ke seluruh nusantara. Gratis ongkir untuk order di atas 100 pcs.</p>
-        </div>
-        <div class="mengapa-card">
-            <div class="mengapa-icon"><img src="img/icons/people-group.png" alt="Ikon tim percetakan berpengalaman" width="40" height="40" loading="lazy"></div>
-            <h3 class="mengapa-card-title">Tim Berpengalaman</h3>
-            <p class="mengapa-card-desc">10+ tahun melayani sekolah, pesantren, kampus, penerbit, dan korporat di Indonesia.</p>
-        </div>
-        <div class="mengapa-card">
-            <div class="mengapa-icon"><img src="img/icons/transaction.png" alt="Ikon garansi cetak ulang gratis" width="40" height="40" loading="lazy"></div>
-            <h3 class="mengapa-card-title">Garansi Cetak Ulang</h3>
-            <p class="mengapa-card-desc">Jika ada kesalahan produksi dari pihak kami, kami ganti gratis tanpa biaya tambahan.</p>
         </div>
     </div>
 </section>
