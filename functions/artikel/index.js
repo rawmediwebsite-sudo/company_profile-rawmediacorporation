@@ -355,7 +355,10 @@
 </html>`;
 
     return new Response(htmlResponse, {
-      headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "public, max-age=3600" }
+      headers: {
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-store"
+      }
     });
 
   } catch (error) {
