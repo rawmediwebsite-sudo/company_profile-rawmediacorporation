@@ -1,4 +1,6 @@
 export async function onRequest(context) {
+  const { env } = context;
+
   const GITHUB_USER = "rawmediwebsite-sudo";
   const GITHUB_REPO = "company_profile-rawmediacorporation";
   const GITHUB_BRANCH = "main";
@@ -6,15 +8,23 @@ export async function onRequest(context) {
   const PUBLICATION_NAME = "RAW Media Indonesia";
   const PUBLICATION_LANG = "id";
 
+  // Ambil token dari environment variable Cloudflare
+  const GITHUB_TOKEN = typeof env?.GITHUB_TOKEN === "string"
+    ? env.GITHUB_TOKEN.trim().replace(/^Bearer\s+/i, "")
+    : "";
+
   try {
     const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/artikel?ref=${GITHUB_BRANCH}`;
     
-    const response = await fetch(apiUrl, {
-      headers: {
-        "User-Agent": "RAW-Media-News-Sitemap-Bot",
-        "Accept": "application/vnd.github.v3+json"
-      }
-    });
+    const headers = {
+      "User-Agent": "RAW-Media-News-Sitemap-Bot",
+      "Accept": "application/vnd.github.v3+json"
+    };
+    if (GITHUB_TOKEN) {
+      headers["Authorization"] = `Bearer ${GITHUB_TOKEN}`;
+    }
+
+    const response = await fetch(apiUrl, { headers });
 
     if (!response.ok) {
       return generateEmptySitemap(`GitHub API Error: ${response.status}`);
@@ -36,7 +46,7 @@ export async function onRequest(context) {
       if (!file.name.endsWith(".md")) continue;
 
       try {
-        const fileRes = await fetch(file.download_url);
+        const fileRes = await fetch(file.download_url, { headers });
         if (!fileRes.ok) continue;
         
         const text = await fileRes.text();
@@ -61,7 +71,9 @@ export async function onRequest(context) {
           .replace(/'/g, '&apos;');
 
         const slug = file.name.replace('.md', '');
-        const articleUrl = `${SITE_URL}/artikel-detail.html?slug=${slug}`;
+        
+        // FINAL: URL tanpa .html
+        const articleUrl = `${SITE_URL}/artikel-detail?slug=${slug}`;
         const pubDate = articleDate.toISOString();
 
         sitemapUrls += `
