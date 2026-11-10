@@ -1,11 +1,11 @@
- export async function onRequest(context) {
+export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const kategoriFilter = url.searchParams.get("kategori");
   const pageParam = url.searchParams.get("page");
   const currentPage = Math.max(1, parseInt(pageParam) || 1);
-  const ITEMS_PER_PAGE = 9; 
-  
+  const ITEMS_PER_PAGE = 9;
+
   const SITE_URL = "https://rawmedia.id";
   const GITHUB_USER = "rawmediwebsite-sudo";
   const GITHUB_REPO = "company_profile-rawmediacorporation";
@@ -16,7 +16,7 @@
 
   try {
     const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents/content/artikel?ref=${GITHUB_BRANCH}`;
-    
+
     const headers = {
       "User-Agent": "RAW-Media-List-Article",
       "Accept": "application/vnd.github+json"
@@ -30,12 +30,12 @@
       delete headers["Authorization"];
       response = await fetch(apiUrl, { headers });
     }
-    
+
     if (!response.ok) {
       throw new Error(`Gagal mengambil daftar dari GitHub (HTTP ${response.status})`);
     }
     const files = await response.json();
-    
+
     if (!Array.isArray(files)) throw new Error("Format response GitHub tidak valid");
 
     files.sort((a, b) => b.name.localeCompare(a.name));
@@ -46,26 +46,53 @@
         try {
           const res = await fetch(file.download_url, { headers });
           const text = await res.text();
-          
+
           const match = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
           let meta = {};
           if (match) {
             match[1].split('\n').forEach(line => {
-              const [key, ...value] = line.split(':');
-              if (key && value.length > 0) {
-                meta[key.trim()] = value.join(':').trim().replace(/^"|"$/g, '');
+              const colonIdx = line.indexOf(':');
+              if (colonIdx === -1) return;
+              const key = line.slice(0, colonIdx).trim();
+              let value = line.slice(colonIdx + 1).trim();
+              if (!key) return;
+              value = value.replace(/^["']|["']$/g, '');
+              if (value.startsWith('[') && value.endsWith(']')) {
+                value = value.slice(1, -1).split(',').map(v => v.trim()).filter(Boolean);
               }
+              meta[key] = value;
             });
+          }
+
+          let kategoriRaw = meta.categories || meta.category || 'Umum';
+          let kategoriArr;
+          if (Array.isArray(kategoriRaw)) {
+            kategoriArr = kategoriRaw;
+          } else if (typeof kategoriRaw === 'string') {
+            kategoriArr = kategoriRaw.split(',').map(s => s.trim()).filter(Boolean);
+          } else {
+            kategoriArr = ['Umum'];
+          }
+          if (kategoriArr.length === 0) kategoriArr = ['Umum'];
+
+          const seen = new Set();
+          const kategoriFinal = [];
+          for (const k of kategoriArr) {
+            const norm = k.toLowerCase();
+            if (!seen.has(norm)) {
+              seen.add(norm);
+              kategoriFinal.push(k);
+            }
           }
 
           return {
             slug: file.name.replace('.md', ''),
-            title: meta.title || "Tanpa Judul",
+            title: meta.title || 'Tanpa Judul',
             rawDate: meta.date || new Date().toISOString(),
-            kategori: meta.categories || meta.category || "Umum",
-            rawImage: meta.image || "",
-            excerpt: meta.description || meta.excerpt || "",
-            author: meta.author || "Tim RAW Media"
+            kategories: kategoriFinal,
+            rawImage: meta.image || '',
+            excerpt: meta.description || meta.excerpt || '',
+            author: meta.author || 'Tim RAW Media'
           };
         } catch (e) {
           return null;
@@ -74,16 +101,30 @@
 
     const allArticles = (await Promise.all(metaPromises)).filter(a => a !== null);
 
-    let kategoriCount = {};
+    const kategoriMap = new Map();
     allArticles.forEach(a => {
-      kategoriCount[a.kategori] = (kategoriCount[a.kategori] || 0) + 1;
+      a.kategories.forEach(k => {
+        const key = k.toLowerCase();
+        if (!kategoriMap.has(key)) {
+          kategoriMap.set(key, { label: k, count: 0 });
+        }
+        kategoriMap.get(key).count += 1;
+      });
     });
 
+    const kategoriFilterNorm = kategoriFilter ? kategoriFilter.trim().toLowerCase() : null;
+    const kategoriFilterValid = kategoriFilterNorm && kategoriMap.has(kategoriFilterNorm);
+    const kategoriFilterLabel = kategoriFilterValid
+      ? kategoriMap.get(kategoriFilterNorm).label
+      : null;
+
     let filteredArticles = allArticles;
-    if (kategoriFilter) {
-      filteredArticles = allArticles.filter(
-        a => a.kategori.toLowerCase() === kategoriFilter.toLowerCase()
+    if (kategoriFilterValid) {
+      filteredArticles = allArticles.filter(a =>
+        a.kategories.some(k => k.toLowerCase() === kategoriFilterNorm)
       );
+    } else if (kategoriFilterNorm) {
+      filteredArticles = [];
     }
 
     const totalArticles = filteredArticles.length;
@@ -94,22 +135,30 @@
 
     let artikelCardsHtml = "";
     if (paginatedArticles.length === 0) {
-      artikelCardsHtml = `<div class="empty-state"><i class="fa-regular fa-newspaper"></i><p>Belum ada artikel di kategori ini.</p></div>`;
+      const pesan = kategoriFilterNorm && !kategoriFilterValid
+        ? `Kategori "<strong>${kategoriFilter.replace(/</g, '&lt;')}</strong>" tidak ditemukan. <a href="/artikel">Lihat semua artikel</a>.`
+        : 'Belum ada artikel di kategori ini.';
+      artikelCardsHtml = `<div class="empty-state"><i class="fa-regular fa-newspaper"></i><p>${pesan}</p></div>`;
     } else {
       artikelCardsHtml = paginatedArticles.map((artikel, idx) => {
         const dateObj = new Date(artikel.rawDate);
-        const dateFormatted = isNaN(dateObj.getTime()) 
-          ? "Tanggal tidak valid" 
+        const dateFormatted = isNaN(dateObj.getTime())
+          ? "Tanggal tidak valid"
           : dateObj.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-        
-        const imageUrl = artikel.rawImage.startsWith('http') 
-            ? artikel.rawImage 
-            : `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${artikel.rawImage.replace(/^\//, '')}`;
 
-        const isFeatured = safePage === 1 && !kategoriFilter && idx === 0;
-        const excerptHtml = artikel.excerpt 
-          ? `<p class="berita-excerpt">${artikel.excerpt.substring(0, 120)}${artikel.excerpt.length > 120 ? '...' : ''}</p>` 
+        const imageUrl = artikel.rawImage.startsWith('http')
+          ? artikel.rawImage
+          : `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${artikel.rawImage.replace(/^\//, '')}`;
+
+        const isFeatured = safePage === 1 && !kategoriFilterValid && idx === 0;
+        const excerptHtml = artikel.excerpt
+          ? `<p class="berita-excerpt">${artikel.excerpt.substring(0, 120)}${artikel.excerpt.length > 120 ? '...' : ''}</p>`
           : '';
+
+        const kategoriBadges = artikel.kategories.map(k => {
+          const label = kategoriMap.get(k.toLowerCase())?.label || k;
+          return `<a href="/artikel?kategori=${encodeURIComponent(k.toLowerCase())}" class="berita-kategori" style="text-decoration:none">${label}</a>`;
+        }).join(' ');
 
         if (isFeatured) {
           return `
@@ -119,7 +168,7 @@
                         <img src="${imageUrl || 'https://via.placeholder.com/800x450?text=RAW+Media'}" alt="${artikel.title}" loading="lazy">
                     </div>
                     <div class="berita-content">
-                        <span class="berita-kategori">${artikel.kategori}</span>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">${kategoriBadges}</div>
                         <h2 class="berita-title">${artikel.title}</h2>
                         ${excerptHtml}
                         <div class="berita-meta">
@@ -139,7 +188,7 @@
                       <img src="${imageUrl || 'https://via.placeholder.com/400x250?text=RAW+Media'}" alt="${artikel.title}" loading="lazy">
                   </div>
                   <div class="berita-content">
-                      <span class="berita-kategori">${artikel.kategori}</span>
+                      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">${kategoriBadges}</div>
                       <h2 class="berita-title">${artikel.title}</h2>
                       ${excerptHtml}
                       <div class="berita-meta">
@@ -153,22 +202,25 @@
     }
 
     let sidebarKategoriHtml = "";
-    const sortedCategories = Object.entries(kategoriCount).sort((a, b) => b[1] - a[1]);
-    sortedCategories.forEach(([namaKat, jumlah]) => {
-        sidebarKategoriHtml += `
-            <li>
-                <a href="/artikel?kategori=${encodeURIComponent(namaKat.toLowerCase())}" class="${kategoriFilter && kategoriFilter.toLowerCase() === namaKat.toLowerCase() ? 'active' : ''}">
-                    <span>${namaKat}</span> <span class="badge">${jumlah}</span>
-                </a>
-            </li>
-        `;
+    const sortedCategories = Array.from(kategoriMap.entries())
+      .sort((a, b) => b[1].count - a[1].count);
+
+    sortedCategories.forEach(([key, { label, count }]) => {
+      const isActive = kategoriFilterValid && kategoriFilterNorm === key;
+      sidebarKategoriHtml += `
+        <li>
+          <a href="/artikel?kategori=${encodeURIComponent(key)}" class="${isActive ? 'active' : ''}">
+            <span>${label}</span> <span class="badge">${count}</span>
+          </a>
+        </li>
+      `;
     });
 
     let paginationHtml = "";
     if (totalPages > 1) {
       const buildUrl = (p) => {
         const params = new URLSearchParams();
-        if (kategoriFilter) params.set('kategori', kategoriFilter);
+        if (kategoriFilterValid) params.set('kategori', kategoriFilterNorm);
         if (p > 1) params.set('page', p);
         const qs = params.toString();
         return `/artikel${qs ? '?' + qs : ''}`;
@@ -205,19 +257,48 @@
     const showingFrom = totalArticles === 0 ? 0 : startIndex + 1;
     const showingTo = Math.min(startIndex + ITEMS_PER_PAGE, totalArticles);
 
+    const canonicalParams = new URLSearchParams();
+    if (kategoriFilterValid) canonicalParams.set('kategori', kategoriFilterNorm);
+    if (safePage > 1) canonicalParams.set('page', safePage);
+    const canonicalQs = canonicalParams.toString();
+    const canonicalUrl = `${SITE_URL}/artikel${canonicalQs ? '?' + canonicalQs : ''}`;
+
+    let prevUrl = "";
+    let nextUrl = "";
+    if (safePage > 1) {
+      const p = new URLSearchParams();
+      if (kategoriFilterValid) p.set('kategori', kategoriFilterNorm);
+      if (safePage - 1 > 1) p.set('page', safePage - 1);
+      const qs = p.toString();
+      prevUrl = `${SITE_URL}/artikel${qs ? '?' + qs : ''}`;
+    }
+    if (safePage < totalPages) {
+      const p = new URLSearchParams();
+      if (kategoriFilterValid) p.set('kategori', kategoriFilterNorm);
+      p.set('page', safePage + 1);
+      nextUrl = `${SITE_URL}/artikel?${p.toString()}`;
+    }
+
+    const robotsMeta = (kategoriFilterNorm && !kategoriFilterValid)
+      ? '<meta name="robots" content="noindex, follow">'
+      : '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">';
+
     const htmlResponse = `<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artikel & Tips ${kategoriFilter ? '- ' + kategoriFilter : ''}${safePage > 1 ? ' - Halaman ' + safePage : ''} - RAW Media Indonesia</title>
+    <title>Artikel & Tips ${kategoriFilterLabel ? '- ' + kategoriFilterLabel : ''}${safePage > 1 ? ' - Halaman ' + safePage : ''} - RAW Media Indonesia</title>
     <meta name="description" content="Kumpulan artikel, tips, dan panduan seputar percetakan buku, self publishing, dan industri cetak.">
-    <link rel="canonical" href="${SITE_URL}/artikel${kategoriFilter ? '?kategori=' + kategoriFilter : ''}">
-    
+    ${robotsMeta}
+    <link rel="canonical" href="${canonicalUrl}">
+    ${prevUrl ? `<link rel="prev" href="${prevUrl}">` : ''}
+    ${nextUrl ? `<link rel="next" href="${nextUrl}">` : ''}
+
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary: #BE1A1A;
@@ -249,7 +330,7 @@
         .berita-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
         .berita-card:hover .berita-image img { transform: scale(1.06); }
         .berita-content { padding: 20px; display: flex; flex-direction: column; flex: 1; }
-        .berita-kategori { color: var(--primary); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.5px; }
+        .berita-kategori { color: var(--primary); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; }
         .berita-title { margin: 0 0 12px 0; font-size: 1.15rem; font-weight: 700; color: var(--text-dark); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .berita-excerpt { color: var(--text-mid); font-size: 0.88rem; line-height: 1.6; margin: 0 0 15px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .berita-meta { margin-top: auto; display: flex; flex-wrap: wrap; gap: 14px; color: var(--text-light); font-size: 0.8rem; }
@@ -258,6 +339,7 @@
         .empty-state { grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--text-light); background: #fff; border-radius: 10px; }
         .empty-state i { font-size: 3rem; margin-bottom: 15px; opacity: 0.4; }
         .empty-state p { font-size: 1.1rem; margin: 0; }
+        .empty-state a { color: var(--primary); font-weight: 700; }
         .pagination { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 40px; padding: 20px 0; flex-wrap: wrap; }
         .page-numbers { display: flex; gap: 6px; align-items: center; }
         .page-btn, .page-num { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 8px; background: #fff; color: var(--text-mid); text-decoration: none; font-weight: 700; font-size: 0.9rem; border: 1px solid var(--border); transition: all 0.2s ease; min-width: 42px; justify-content: center; }
@@ -325,7 +407,7 @@
         <div class="portal-content">
             <div class="portal-header">
                 <div>
-                    <h1 class="portal-title">Artikel & Tips ${kategoriFilter ? `<span class="accent">${kategoriFilter}</span>` : ''}</h1>
+                    <h1 class="portal-title">Artikel & Tips ${kategoriFilterLabel ? `<span class="accent">${kategoriFilterLabel}</span>` : ''}</h1>
                     <p class="portal-desc">Kumpulan tulisan menarik seputar dunia percetakan, self publishing, tips praktis, dan insight industri cetak.</p>
                 </div>
                 <div class="portal-count">
@@ -340,7 +422,7 @@
             <div class="sidebar-widget">
                 <h3 class="widget-title">Kategori</h3>
                 <ul class="kategori-list">
-                    <li><a href="/artikel" class="${!kategoriFilter ? 'active' : ''}"><span>Semua Artikel</span> <span class="badge">${allArticles.length}</span></a></li>
+                    <li><a href="/artikel" class="${!kategoriFilterValid ? 'active' : ''}"><span>Semua Artikel</span> <span class="badge">${allArticles.length}</span></a></li>
                     ${sidebarKategoriHtml}
                 </ul>
             </div>
@@ -362,6 +444,9 @@
     });
 
   } catch (error) {
-    return new Response(`<h1>Error</h1><p>${error.message}</p>`, { status: 500, headers: { "Content-Type": "text/html" } });
+    return new Response(`<h1>Error</h1><p>${error.message}</p>`, {
+      status: 500,
+      headers: { "Content-Type": "text/html" }
+    });
   }
 }
