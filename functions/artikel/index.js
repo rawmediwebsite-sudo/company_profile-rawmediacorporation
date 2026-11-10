@@ -146,9 +146,14 @@ export async function onRequest(context) {
           ? "Tanggal tidak valid"
           : dateObj.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
 
-        const imageUrl = artikel.rawImage.startsWith('http')
-          ? artikel.rawImage
-          : `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${artikel.rawImage.replace(/^\//, '')}`;
+        let imageUrl = '';
+        if (artikel.rawImage && artikel.rawImage.trim() !== '') {
+          imageUrl = artikel.rawImage.startsWith('http')
+            ? artikel.rawImage
+            : `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${artikel.rawImage.replace(/^\//, '')}`;
+        }
+
+        const fallbackImage = 'https://rawmedia.id/img/fotoproduk/fopro2.jpg'; 
 
         const isFeatured = safePage === 1 && !kategoriFilterValid && idx === 0;
         const excerptHtml = artikel.excerpt
@@ -157,18 +162,18 @@ export async function onRequest(context) {
 
         const kategoriBadges = artikel.kategories.map(k => {
           const label = kategoriMap.get(k.toLowerCase())?.label || k;
-          return `<a href="/artikel?kategori=${encodeURIComponent(k.toLowerCase())}" class="berita-kategori" style="text-decoration:none">${label}</a>`;
-        }).join(' ');
+          return `<a href="/artikel?kategori=${encodeURIComponent(k.toLowerCase())}" class="berita-kategori">${label}</a>`;
+        }).join('');
 
         if (isFeatured) {
           return `
             <article class="berita-card berita-featured">
                 <a href="/artikel-detail?slug=${artikel.slug}" class="berita-link">
                     <div class="berita-image">
-                        <img src="${imageUrl || 'https://via.placeholder.com/800x450?text=RAW+Media'}" alt="${artikel.title}" loading="lazy">
+                        <img src="${imageUrl || fallbackImage}" alt="${artikel.title}" loading="lazy" onerror="this.src='${fallbackImage}'">
                     </div>
                     <div class="berita-content">
-                        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">${kategoriBadges}</div>
+                        <div class="berita-kategori-wrap">${kategoriBadges}</div>
                         <h2 class="berita-title">${artikel.title}</h2>
                         ${excerptHtml}
                         <div class="berita-meta">
@@ -185,10 +190,10 @@ export async function onRequest(context) {
           <article class="berita-card">
               <a href="/artikel-detail?slug=${artikel.slug}" class="berita-link">
                   <div class="berita-image">
-                      <img src="${imageUrl || 'https://via.placeholder.com/400x250?text=RAW+Media'}" alt="${artikel.title}" loading="lazy">
+                      <img src="${imageUrl || fallbackImage}" alt="${artikel.title}" loading="lazy" onerror="this.src='${fallbackImage}'">
                   </div>
                   <div class="berita-content">
-                      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px">${kategoriBadges}</div>
+                      <div class="berita-kategori-wrap">${kategoriBadges}</div>
                       <h2 class="berita-title">${artikel.title}</h2>
                       ${excerptHtml}
                       <div class="berita-meta">
@@ -317,25 +322,31 @@ export async function onRequest(context) {
         .portal-title .accent { color: var(--primary); }
         .portal-desc { color: var(--text-mid); font-size: 1rem; margin: 0; line-height: 1.6; max-width: 600px; }
         .portal-count { font-size: 0.9rem; color: var(--text-light); font-weight: 600; white-space: nowrap; }
-        .berita-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .berita-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; }
+        
+        .berita-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+        .berita-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .berita-card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(0,0,0,0.1); }
-        .berita-featured { grid-column: span 3; flex-direction: row; }
-        .berita-featured .berita-link { flex-direction: row; }
-        .berita-featured .berita-image { width: 55%; height: auto; min-height: 320px; }
-        .berita-featured .berita-content { width: 45%; justify-content: center; padding: 35px; }
-        .berita-featured .berita-title { font-size: 1.7rem; margin-bottom: 15px; }
         .berita-link { text-decoration: none; display: flex; flex-direction: column; height: 100%; width: 100%; color: inherit; }
         .berita-image { height: 190px; overflow: hidden; background: #eaeaea; position: relative; }
         .berita-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
         .berita-card:hover .berita-image img { transform: scale(1.06); }
         .berita-content { padding: 20px; display: flex; flex-direction: column; flex: 1; }
-        .berita-kategori { color: var(--primary); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        .berita-kategori-wrap { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+        .berita-kategori { color: var(--primary); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; background: #fff0f0; padding: 3px 8px; border-radius: 4px; display: inline-block; }
+        
         .berita-title { margin: 0 0 12px 0; font-size: 1.15rem; font-weight: 700; color: var(--text-dark); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .berita-excerpt { color: var(--text-mid); font-size: 0.88rem; line-height: 1.6; margin: 0 0 15px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         .berita-meta { margin-top: auto; display: flex; flex-wrap: wrap; gap: 14px; color: var(--text-light); font-size: 0.8rem; }
         .berita-date, .berita-author { display: flex; align-items: center; gap: 6px; }
         .berita-date i, .berita-author i { font-size: 0.75rem; }
+
+        .berita-featured { grid-column: span 3; }
+        .berita-featured .berita-link { flex-direction: row; }
+        .berita-featured .berita-image { width: 55%; height: auto; min-height: 320px; }
+        .berita-featured .berita-content { width: 45%; justify-content: center; padding: 35px; }
+        .berita-featured .berita-title { font-size: 1.7rem; }
+
         .empty-state { grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--text-light); background: #fff; border-radius: 10px; }
         .empty-state i { font-size: 3rem; margin-bottom: 15px; opacity: 0.4; }
         .empty-state p { font-size: 1.1rem; margin: 0; }
@@ -363,11 +374,12 @@ export async function onRequest(context) {
         .cta-box p { margin: 0; font-size: 0.88rem; opacity: 0.9; line-height: 1.5; }
         .cta-box a { display: inline-block; margin-top: 16px; padding: 11px 24px; background: #fff; color: var(--primary); font-weight: 800; border-radius: 6px; text-decoration: none; transition: all 0.2s; font-size: 0.9rem; }
         .cta-box a:hover { background: #f5f5f5; transform: translateY(-2px); }
+        
         @media (max-width: 1024px) {
             .berita-grid { grid-template-columns: repeat(2, 1fr); }
-            .berita-featured { grid-column: span 2; flex-direction: column; }
+            .berita-featured { grid-column: span 2; }
             .berita-featured .berita-link { flex-direction: column; }
-            .berita-featured .berita-image { width: 100%; min-height: 220px; height: 220px; }
+            .berita-featured .berita-image { width: 100%; height: 220px; min-height: 220px; }
             .berita-featured .berita-content { width: 100%; padding: 22px; }
             .berita-featured .berita-title { font-size: 1.4rem; }
         }
