@@ -1,7 +1,7 @@
 import markdownit from 'markdown-it';
 
 // ==========================================
-// FUNGSI HALAMAN ERROR (Diletakkan di atas agar aman)
+// FUNGSI HALAMAN ERROR
 // ==========================================
 function errorPage(status, title, message) {
   const html = `<!DOCTYPE html>
@@ -17,19 +17,21 @@ function errorPage(status, title, message) {
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         .error-wrap { min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; font-family: 'Nunito', sans-serif; background: #f2f4f7; }
-        .error-code { font-size: 6rem; font-weight: 900; color: #BE1A1A; margin: 0; line-height: 1; }
+        .error-code { font-size: 6rem; font-weight: 900; color: #1E3A8A; margin: 0; line-height: 1; }
         .error-title { font-size: 1.8rem; font-weight: 800; color: #1a1a1a; margin: 20px 0 10px; text-shadow: none; }
         .error-message { font-size: 1.05rem; color: #666; margin-bottom: 30px; max-width: 500px; }
-        .error-btn { display: inline-block; background: #BE1A1A; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.3s; margin: 5px; }
-        .error-btn:hover { background: #8B0000; }
+        .error-btn { display: inline-block; background: #1E3A8A; color: #fff; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: background 0.3s; margin: 5px; }
+        .error-btn:hover { background: #152a66; }
+        .error-btn.secondary { background: #fff; color: #1E3A8A; border: 2px solid #1E3A8A; }
+        .error-btn.secondary:hover { background: #e8edf9; }
     </style>
 </head>
 <body>
-    <nav class="navbar" style="position: fixed; top: 0; width: 100%; background: #1a0a1a; padding: 15px 20px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;">
+    <nav class="navbar" style="position: fixed; top: 0; width: 100%; background: #1E3A8A; padding: 15px 20px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;">
         <div class="logo"><a href="/index.html"><img src="/raw-media.svg" alt="Logo RAW Media Indonesia" class="logo-img"></a></div>
         <ul class="nav-links" style="display: flex; gap: 20px; list-style: none; margin: 0; padding: 0;">
             <li><a href="/index.html" style="color: white; text-decoration: none; font-weight: 600;">HOME</a></li>
-            <li><a href="/artikel" style="color: #e67ce3; text-decoration: none; font-weight: 600;">ARTIKEL</a></li>
+            <li><a href="/artikel" style="color: #fff; text-decoration: none; font-weight: 600;">ARTIKEL</a></li>
         </ul>
     </nav>
     <div class="error-wrap">
@@ -38,7 +40,7 @@ function errorPage(status, title, message) {
         <p class="error-message">${message}</p>
         <div>
             <a href="/artikel" class="error-btn"><i class="fa-solid fa-arrow-left"></i> Kembali ke Artikel</a>
-            <a href="/index.html" class="error-btn"><i class="fa-solid fa-home"></i> Beranda</a>
+            <a href="/index.html" class="error-btn secondary"><i class="fa-solid fa-home"></i> Beranda</a>
         </div>
     </div>
 </body>
@@ -70,9 +72,9 @@ export async function onRequest(context) {
   try {
     const githubUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/content/artikel/${slug}.md`;
     const mdRes = await fetch(githubUrl);
-    
+
     if (!mdRes.ok) {
-        return errorPage(404, 'Artikel Tidak Ditemukan', 'Artikel yang Anda cari tidak tersedia atau telah dihapus.');
+      return errorPage(404, 'Artikel Tidak Ditemukan', 'Artikel yang Anda cari tidak tersedia atau telah dihapus.');
     }
 
     const mdText = await mdRes.text();
@@ -81,7 +83,7 @@ export async function onRequest(context) {
     const match = mdText.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
     let meta = {};
     let bodyMd = mdText;
-    
+
     if (match) {
       match[1].split('\n').forEach(line => {
         const [key, ...value] = line.split(':');
@@ -96,6 +98,26 @@ export async function onRequest(context) {
     const md = markdownit({ html: true, linkify: true, typographer: true });
     const bodyHtml = md.render(bodyMd);
 
+    // ====== SISIPKAN SLOT IKLAN DI DALAM ARTIKEL (setelah paragraf ke-3) ======
+    const inArticleAd = `
+      <div class="ad-slot ad-in-article" aria-label="Iklan">
+        <span class="ad-label">Iklan</span>
+        <div class="ad-placeholder">
+          <i class="fa-solid fa-rectangle-ad"></i>
+          <p>Slot Iklan In-Article</p>
+          <small>Pasang script iklan Anda di sini</small>
+        </div>
+      </div>
+    `;
+    // Sisipkan setelah paragraf ke-3 (atau setelah paragraf terakhir jika kurang)
+    let bodyHtmlWithAd = bodyHtml;
+    let count = 0;
+    bodyHtmlWithAd = bodyHtml.replace(/<\/p>/g, (matchP) => {
+      count++;
+      if (count === 3) return matchP + inArticleAd;
+      return matchP;
+    });
+
     // SEO & Tampilan
     const title = meta.title || "Artikel RAW Media Indonesia";
     const dateObj = new Date(meta.date);
@@ -109,7 +131,7 @@ export async function onRequest(context) {
 
     const currentUrl = `${SITE_URL}/artikel-detail?slug=${slug}`;
     const metaDesc = (meta.description || bodyMd.replace(/^#+\s+/gm, '').replace(/!\[.*?\]\(.*?\)/g, '').replace(/\[(.*?)\]\(.*?\)/g, '$1').replace(/[*_`~>#-]/g, '').replace(/\n+/g, ' ').trim().substring(0, 155)).trim() + (meta.description ? '' : '...');
-    const kategori = meta.kategori || 'Artikel';
+    const kategori = meta.kategori || meta.categories || 'Artikel';
     const penulis = meta.author || 'Tim Redaksi RAW Media';
     const encodedUrl = encodeURIComponent(currentUrl);
     const encodedTitle = encodeURIComponent(title);
@@ -140,10 +162,10 @@ export async function onRequest(context) {
     <meta name="description" content="${metaDesc}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="${currentUrl}">
-    
+
     <meta name="author" content="${penulis}">
     <meta name="publisher" content="RAW Media Indonesia">
-    <meta name="theme-color" content="#BE1A1A">
+    <meta name="theme-color" content="#1E3A8A">
 
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="RAW Media Indonesia">
@@ -176,50 +198,172 @@ export async function onRequest(context) {
     <script type="application/ld+json">${JSON.stringify(schemaBreadcrumb)}</script>
 
     <style>
-        /* CSS Portal Berita - TANPA SHADOW PADA JUDUL */
-        body { background-color: #f2f4f7; margin: 0; font-family: 'Nunito', sans-serif; color: #333; }
-        .artikel-wrapper { max-width: 850px; margin: 120px auto 80px auto; background: #ffffff; padding: 50px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        
+        :root {
+            --primary: #1E3A8A;
+            --primary-dark: #152a66;
+            --primary-light: #e8edf9;
+            --text-dark: #1a1a1a;
+            --text-mid: #555;
+            --text-light: #888;
+            --bg-light: #f2f4f7;
+            --border: #e5e7eb;
+        }
+        * { box-sizing: border-box; }
+        body { background-color: var(--bg-light); margin: 0; font-family: 'Nunito', sans-serif; color: #333; }
+
+        /* ====== LAYOUT: KONTEN + SIDEBAR IKLAN ====== */
+        .artikel-layout {
+            max-width: 1200px;
+            margin: 120px auto 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 300px;
+            gap: 32px;
+            align-items: start;
+        }
+        .artikel-wrapper {
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            min-width: 0;
+        }
+
+        /* ====== SIDEBAR IKLAN ====== */
+        .artikel-sidebar {
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .ad-slot {
+            background: #fff;
+            border: 2px dashed var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+            position: relative;
+        }
+        .ad-label {
+            position: absolute;
+            top: -10px;
+            left: 12px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 10px;
+            border-radius: 4px;
+        }
+        .ad-placeholder {
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            gap: 8px;
+        }
+        .ad-placeholder i { font-size: 2.4rem; color: var(--primary); opacity: 0.5; }
+        .ad-placeholder p { margin: 0; font-weight: 800; font-size: 0.95rem; color: var(--text-mid); }
+        .ad-placeholder small { font-size: 0.75rem; }
+        .ad-placeholder.tall { min-height: 520px; }
+        .ad-placeholder.square { min-height: 250px; }
+        .ad-placeholder.in-article { min-height: 180px; }
+
+        /* Iklan in-article (di dalam artikel) */
+        .ad-in-article {
+            margin: 35px 0;
+            border-style: solid;
+            border-color: var(--primary-light);
+            background: #f8faff;
+        }
+
+        /* ====== BREADCRUMB ====== */
         .breadcrumb-nav { font-size: 0.9rem; color: #666; margin-bottom: 25px; }
-        .breadcrumb-nav a { color: #BE1A1A; text-decoration: none; font-weight: 600; }
+        .breadcrumb-nav a { color: var(--primary); text-decoration: none; font-weight: 600; }
         .breadcrumb-nav a:hover { text-decoration: underline; }
-        
-        .article-kategori-badge { display: inline-block; background: #BE1A1A; color: #fff; padding: 6px 14px; border-radius: 4px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; }
-        
-        /* Judul tanpa bayangan (text-shadow) */
-        .article-title { font-size: 2.4rem; font-weight: 800; line-height: 1.3; margin: 0 0 15px 0; color: #1a1a1a; text-shadow: none; }
-        
-        .article-meta-data { display: flex; gap: 20px; color: #666; font-size: 0.95rem; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #eee; flex-wrap: wrap; }
+
+        .article-kategori-badge { display: inline-block; background: var(--primary); color: #fff; padding: 6px 14px; border-radius: 4px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; }
+
+        .article-title { font-size: 2.4rem; font-weight: 800; line-height: 1.3; margin: 0 0 15px 0; color: var(--text-dark); text-shadow: none; }
+
+        .article-meta-data { display: flex; gap: 20px; color: #666; font-size: 0.95rem; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
         .article-meta-data span { display: inline-flex; align-items: center; gap: 6px; }
-        
+
         .article-main-image { width: 100%; max-height: 500px; object-fit: cover; border-radius: 8px; margin-bottom: 35px; }
-        
+
+        /* ====== KONTEN ARTIKEL ====== */
         .article-content { font-size: 1.15rem; line-height: 1.9; color: #333; }
         .article-content p { margin-bottom: 25px; }
-        .article-content h1, .article-content h2, .article-content h3 { font-weight: 800; color: #1a1a1a; margin-top: 40px; margin-bottom: 15px; line-height: 1.3; text-shadow: none; }
+        .article-content h1, .article-content h2, .article-content h3 { font-weight: 800; color: var(--text-dark); margin-top: 40px; margin-bottom: 15px; line-height: 1.3; text-shadow: none; }
         .article-content h2 { font-size: 1.8rem; }
         .article-content h3 { font-size: 1.4rem; }
         .article-content ul, .article-content ol { margin-bottom: 25px; padding-left: 40px; display: block; }
         .article-content li { margin-bottom: 12px; display: list-item; line-height: 1.8; }
-        .article-content blockquote { background: #f9f9f9; border-left: 4px solid #BE1A1A; padding: 20px 25px; margin: 30px 0; font-style: italic; color: #555; border-radius: 0 4px 4px 0; }
-        .article-content a { color: #BE1A1A; font-weight: 600; text-decoration: underline; }
+        .article-content blockquote { background: #f9f9f9; border-left: 4px solid var(--primary); padding: 20px 25px; margin: 30px 0; font-style: italic; color: #555; border-radius: 0 4px 4px 0; }
+        .article-content a { color: var(--primary); font-weight: 600; text-decoration: underline; }
         .article-content img { max-width: 100%; height: auto; border-radius: 6px; margin: 20px 0; }
+        .article-content table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 1rem; }
+        .article-content th, .article-content td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; }
+        .article-content th { background: var(--primary-light); color: var(--primary-dark); font-weight: 800; }
 
-        .share-section { margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-        .share-text { font-weight: 800; font-size: 1.1rem; color: #1a1a1a; }
+        /* ====== BACA SELENGKAPNYA / CTA BAWAH ARTIKEL ====== */
+        .read-more-box {
+            margin-top: 50px;
+            padding: 32px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 12px;
+            color: #fff;
+            text-align: center;
+        }
+        .read-more-box h3 { margin: 0 0 10px; font-size: 1.4rem; font-weight: 800; color: #fff; text-shadow: none; }
+        .read-more-box p { margin: 0 0 20px; font-size: 0.98rem; opacity: 0.92; line-height: 1.6; }
+        .read-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: var(--primary);
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1rem;
+            transition: all 0.25s ease;
+        }
+        .read-more-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); background: #f5f7ff; }
+
+        /* ====== SHARE ====== */
+        .share-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .share-text { font-weight: 800; font-size: 1.1rem; color: var(--text-dark); }
         .share-buttons { display: flex; gap: 12px; }
         .btn-share { display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; border-radius: 50%; color: white; font-size: 1.2rem; text-decoration: none; border: none; cursor: pointer; transition: transform 0.2s; }
         .btn-share:hover { transform: translateY(-4px); }
         .bg-wa { background: #25D366; }
         .bg-fb { background: #1877F2; }
         .bg-tw { background: #000; }
-        .bg-copy { background: #666; }
+        .bg-copy { background: var(--primary); }
 
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 1024px) {
+            .artikel-layout { grid-template-columns: 1fr; gap: 24px; }
+            .artikel-sidebar { position: static; flex-direction: row; flex-wrap: wrap; }
+            .artikel-sidebar .ad-slot { flex: 1 1 260px; }
+            .ad-placeholder.tall { min-height: 220px; }
+        }
         @media (max-width: 768px) {
-            .artikel-wrapper { margin: 80px 15px 40px 15px; padding: 30px 20px; }
+            .artikel-layout { margin: 80px 15px 40px 15px; padding: 0; }
+            .artikel-wrapper { padding: 30px 20px; }
             .article-title { font-size: 1.8rem; }
             .article-meta-data { flex-direction: column; gap: 10px; }
             .article-content { font-size: 1.05rem; }
+            .artikel-sidebar { flex-direction: column; }
+            .read-more-box { padding: 24px 20px; }
+            .read-more-box h3 { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -247,37 +391,87 @@ export async function onRequest(context) {
         </div>
     </nav>
 
-    <main class="artikel-wrapper">
-        <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-            <a href="/index.html">Home</a> › <a href="/artikel">Artikel</a> › <span>${title}</span>
-        </nav>
+    <!-- ====== LAYOUT: ARTIKEL + SIDEBAR IKLAN ====== -->
+    <div class="artikel-layout">
 
-        <article>
-            <header>
-                <span class="article-kategori-badge">${kategori}</span>
-                <h1 class="article-title">${title}</h1>
-                <div class="article-meta-data">
-                    <span><i class="fa-regular fa-calendar"></i> ${dateFormatted}</span>
-                    <span><i class="fa-regular fa-user"></i> ${penulis}</span>
+        <!-- KONTEN UTAMA -->
+        <main class="artikel-wrapper">
+            <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+                <a href="/index.html">Home</a> › <a href="/artikel">Artikel</a> › <span>${title}</span>
+            </nav>
+
+            <article>
+                <header>
+                    <span class="article-kategori-badge">${kategori}</span>
+                    <h1 class="article-title">${title}</h1>
+                    <div class="article-meta-data">
+                        <span><i class="fa-regular fa-calendar"></i> ${dateFormatted}</span>
+                        <span><i class="fa-regular fa-user"></i> ${penulis}</span>
+                    </div>
+                    ${imageUrl ? `<img src="${imageUrl}" alt="${title}" class="article-main-image" loading="eager">` : ''}
+                </header>
+
+                <div class="article-content">
+                    ${bodyHtmlWithAd}
                 </div>
-                ${imageUrl ? `<img src="${imageUrl}" alt="${title}" class="article-main-image" loading="eager">` : ''}
-            </header>
 
-            <div class="article-content">
-                ${bodyHtml}
+                <!-- ====== BACA SELENGKAPNYA / CTA ====== -->
+                <div class="read-more-box">
+                    <h3>Baca Selengkapnya</h3>
+                    <p>Temukan lebih banyak artikel, tips percetakan, dan panduan self publishing lainnya di portal artikel RAW Media Indonesia.</p>
+                    <a href="/artikel" class="read-more-btn">
+                        <i class="fa-solid fa-newspaper"></i> Lihat Semua Artikel
+                    </a>
+                </div>
+
+                <!-- ====== SHARE ====== -->
+                <div class="share-section">
+                    <span class="share-text"><i class="fa-solid fa-share-nodes"></i> Bagikan Artikel:</span>
+                    <div class="share-buttons">
+                        <a href="https://wa.me/?text=${encodedTitle}%20${encodedUrl}" target="_blank" rel="noopener" class="btn-share bg-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" target="_blank" rel="noopener" class="btn-share bg-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" target="_blank" rel="noopener" class="btn-share bg-tw" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <button onclick="navigator.clipboard.writeText('${currentUrl}').then(() => { alert('Link artikel berhasil disalin!'); })" class="btn-share bg-copy" title="Salin Link"><i class="fa-solid fa-link"></i></button>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <!-- ====== SIDEBAR IKLAN (DI PINGGIR) ====== -->
+        <aside class="artikel-sidebar" aria-label="Slot iklan">
+
+            <!-- Iklan Atas: 300x250 -->
+            <div class="ad-slot">
+                <span class="ad-label">Iklan</span>
+                <div class="ad-placeholder square">
+                    <i class="fa-solid fa-rectangle-ad"></i>
+                    <p>Slot Iklan 300×250</p>
+                    <small>Pasang script iklan di sini</small>
+                </div>
             </div>
 
-            <div class="share-section">
-                <span class="share-text"><i class="fa-solid fa-share-nodes"></i> Bagikan Artikel:</span>
-                <div class="share-buttons">
-                    <a href="https://wa.me/?text=${encodedTitle}%20${encodedUrl}" target="_blank" rel="noopener" class="btn-share bg-wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" target="_blank" rel="noopener" class="btn-share bg-fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" target="_blank" rel="noopener" class="btn-share bg-tw" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
-                    <button onclick="navigator.clipboard.writeText('${currentUrl}').then(() => { alert('Link artikel berhasil disalin!'); })" class="btn-share bg-copy" title="Salin Link"><i class="fa-solid fa-link"></i></button>
+            <!-- Iklan Tengah: 300x600 (sticky) -->
+            <div class="ad-slot">
+                <span class="ad-label">Iklan</span>
+                <div class="ad-placeholder tall">
+                    <i class="fa-solid fa-rectangle-ad"></i>
+                    <p>Slot Iklan 300×600</p>
+                    <small>Pasang script iklan di sini</small>
                 </div>
             </div>
-        </article>
-    </main>
+
+            <!-- Iklan Bawah: 300x250 -->
+            <div class="ad-slot">
+                <span class="ad-label">Iklan</span>
+                <div class="ad-placeholder square">
+                    <i class="fa-solid fa-rectangle-ad"></i>
+                    <p>Slot Iklan 300×250</p>
+                    <small>Pasang script iklan di sini</small>
+                </div>
+            </div>
+
+        </aside>
+    </div>
 
 </body>
 </html>`;
