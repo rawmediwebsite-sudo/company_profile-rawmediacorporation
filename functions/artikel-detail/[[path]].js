@@ -99,10 +99,11 @@ export async function onRequest(context) {
     const bodyHtml = md.render(bodyMd);
 
     // ====== SISIPKAN SLOT IKLAN DI DALAM ARTIKEL (setelah paragraf ke-3) ======
+    // Anda bisa mengganti isi div.ad-placeholder di bawah dengan script HilltopAds In-Article nanti
     const inArticleAd = `
       <div class="ad-slot ad-in-article" aria-label="Iklan">
         <span class="ad-label">Iklan</span>
-        <div class="ad-placeholder">
+        <div class="ad-placeholder in-article">
           <i class="fa-solid fa-rectangle-ad"></i>
           <p>Slot Iklan In-Article</p>
           <small>Pasang script iklan Anda di sini</small>
@@ -257,6 +258,7 @@ export async function onRequest(context) {
             letter-spacing: 0.5px;
             padding: 2px 10px;
             border-radius: 4px;
+            z-index: 10;
         }
         .ad-placeholder {
             min-height: 220px;
@@ -440,14 +442,22 @@ export async function onRequest(context) {
         <!-- ====== SIDEBAR IKLAN (DI PINGGIR) ====== -->
         <aside class="artikel-sidebar" aria-label="Slot iklan">
 
-            <!-- Iklan Atas: 300x250 -->
+            <!-- Iklan Atas: 300x250 (SUDAH TERPASANG SCRIPT HILLTOPADS) -->
             <div class="ad-slot">
                 <span class="ad-label">Iklan</span>
-                <div class="ad-placeholder square">
-                    <i class="fa-solid fa-rectangle-ad"></i>
-                    <p>Slot Iklan 300×250</p>
-                    <small>Pasang script iklan di sini</small>
-                </div>
+                <!-- Script dari HilltopAds Anda -->
+                <script>
+                (function(emyr){
+                var d = document,
+                    s = d.createElement('script'),
+                    l = d.currentScript || d.scripts[d.scripts.length - 1];
+                s.settings = emyr || {};
+                s.src = "\/\/simplistic-walk.com\/buXTV.sudXGwlj0\/Y\/Wrcb\/Ue\/mI9tuSZLU\/lIk\/PITMcD2QMmTdcix\/NMDBUDtWNNzxY\/x_Nvz\/Eh0qOkQh";
+                s.async = true;
+                s.referrerPolicy = 'no-referrer-when-downgrade';
+                l.parentNode.insertBefore(s, l);
+                })({})
+                </script>
             </div>
 
             <!-- Iklan Tengah: 300x600 (sticky) -->
