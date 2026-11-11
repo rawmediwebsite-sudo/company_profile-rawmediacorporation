@@ -153,7 +153,7 @@ export async function onRequest(context) {
             : `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${artikel.rawImage.replace(/^\//, '')}`;
         }
 
-        const fallbackImage = 'https://rawmedia.id/img/fotoproduk/fopro2.jpg'; 
+        const fallbackImage = 'https://rawmedia.id/img/fotoproduk/fopro2.jpg';
 
         const isFeatured = safePage === 1 && !kategoriFilterValid && idx === 0;
         const excerptHtml = artikel.excerpt
@@ -306,8 +306,9 @@ export async function onRequest(context) {
 
     <style>
         :root {
-            --primary: #BE1A1A;
-            --primary-dark: #8a1212;
+            --primary: #1E3A8A;
+            --primary-dark: #152a66;
+            --primary-light: #e8edf9;
             --text-dark: #1a1a1a;
             --text-mid: #555;
             --text-light: #888;
@@ -333,7 +334,7 @@ export async function onRequest(context) {
         .berita-content { padding: 20px; display: flex; flex-direction: column; flex: 1; }
         
         .berita-kategori-wrap { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-        .berita-kategori { color: var(--primary); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; background: #fff0f0; padding: 3px 8px; border-radius: 4px; display: inline-block; }
+        .berita-kategori { color: var(--primary); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; background: var(--primary-light); padding: 3px 8px; border-radius: 4px; display: inline-block; }
         
         .berita-title { margin: 0 0 12px 0; font-size: 1.15rem; font-weight: 700; color: var(--text-dark); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .berita-excerpt { color: var(--text-mid); font-size: 0.88rem; line-height: 1.6; margin: 0 0 15px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
