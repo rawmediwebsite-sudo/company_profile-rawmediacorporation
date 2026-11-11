@@ -102,7 +102,7 @@ export async function onRequest(context) {
     const inArticleAd = `
       <div class="ad-slot ad-in-article" aria-label="Iklan">
         <span class="ad-label">Iklan</span>
-        <div class="ad-placeholder">
+        <div class="ad-placeholder in-article">
           <i class="fa-solid fa-rectangle-ad"></i>
           <p>Slot Iklan In-Article</p>
           <small>Pasang script iklan Anda di sini</small>
@@ -118,8 +118,11 @@ export async function onRequest(context) {
       return matchP;
     });
 
-    // SEO & Tampilan
-    const title = meta.title || "Artikel RAW Media Indonesia";
+    // ====== SEO & TAMPILAN DATA (Disesuaikan dengan config.yml) ======
+    const pageTitle = meta.seo_title || meta.title || "Artikel RAW Media Indonesia";
+    const h1Title = meta.title || "Artikel RAW Media Indonesia"; 
+    const metaKeywords = meta.keywords ? `<meta name="keywords" content="${meta.keywords}">` : '';
+    
     const dateObj = new Date(meta.date);
     const isValidDate = !isNaN(dateObj.getTime());
     const dateFormatted = isValidDate ? dateObj.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) : "Tanggal tidak tersedia";
@@ -127,19 +130,23 @@ export async function onRequest(context) {
 
     const rawImageUrl = meta.image || "";
     const imageUrl = rawImageUrl.startsWith('http') ? rawImageUrl : rawImageUrl ? `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${rawImageUrl.replace(/^\//, '')}` : '';
-    const ogImage = imageUrl || `${SITE_URL}/img/og-image.jpg`;
+    const ogImage = imageUrl || `${SITE_URL}/img/fotoproduk/fopro2.jpg`;
 
     const currentUrl = `${SITE_URL}/artikel-detail?slug=${slug}`;
-    const metaDesc = (meta.description || bodyMd.replace(/^#+\s+/gm, '').replace(/!\[.*?\]\(.*?\)/g, '').replace(/\[(.*?)\]\(.*?\)/g, '$1').replace(/[*_`~>#-]/g, '').replace(/\n+/g, ' ').trim().substring(0, 155)).trim() + (meta.description ? '' : '...');
-    const kategori = meta.kategori || meta.categories || 'Artikel';
+    
+    const metaDesc = meta.description || (bodyMd.replace(/^#+\s+/gm, '').replace(/!\[.*?\]\(.*?\)/g, '').replace(/\[(.*?)\]\(.*?\)/g, '$1').replace(/[*_`~>#-]/g, '').replace(/\n+/g, ' ').trim().substring(0, 155) + '...');
+    
+    // Membaca meta.kategori dan meta.author dari config.yml
+    const kategori = meta.kategori || 'Artikel';
     const penulis = meta.author || 'Tim Redaksi RAW Media';
+    
     const encodedUrl = encodeURIComponent(currentUrl);
-    const encodedTitle = encodeURIComponent(title);
+    const encodedTitle = encodeURIComponent(h1Title);
 
     // Schema Markup
     const schemaBlogPosting = {
-      "@context": "https://schema.org", "@type": "BlogPosting", "headline": title, "description": metaDesc, "image": ogImage, "datePublished": dateISO, "dateModified": dateISO,
-      "author": { "@type": "Organization", "name": "RAW Media Indonesia", "url": SITE_URL },
+      "@context": "https://schema.org", "@type": "BlogPosting", "headline": h1Title, "description": metaDesc, "image": ogImage, "datePublished": dateISO, "dateModified": dateISO,
+      "author": { "@type": "Organization", "name": penulis, "url": SITE_URL },
       "publisher": { "@type": "Organization", "name": "RAW Media Indonesia", "logo": { "@type": "ImageObject", "url": `${SITE_URL}/raw-media.svg` } },
       "mainEntityOfPage": { "@type": "WebPage", "@id": currentUrl }
     };
@@ -149,7 +156,7 @@ export async function onRequest(context) {
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
         { "@type": "ListItem", "position": 2, "name": "Artikel", "item": `${SITE_URL}/artikel` },
-        { "@type": "ListItem", "position": 3, "name": title, "item": currentUrl }
+        { "@type": "ListItem", "position": 3, "name": h1Title, "item": currentUrl }
       ]
     };
 
@@ -158,8 +165,9 @@ export async function onRequest(context) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${title} - RAW Media Indonesia</title>
+    <title>${pageTitle} - RAW Media Indonesia</title>
     <meta name="description" content="${metaDesc}">
+    ${metaKeywords}
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="${currentUrl}">
 
@@ -170,18 +178,18 @@ export async function onRequest(context) {
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="RAW Media Indonesia">
     <meta property="og:locale" content="id_ID">
-    <meta property="og:title" content="${title}">
+    <meta property="og:title" content="${pageTitle}">
     <meta property="og:description" content="${metaDesc}">
     <meta property="og:url" content="${currentUrl}">
     <meta property="og:image" content="${ogImage}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="${title}">
+    <meta property="og:image:alt" content="${h1Title}">
     <meta property="article:published_time" content="${dateISO}">
     <meta property="article:modified_time" content="${dateISO}">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:title" content="${pageTitle}">
     <meta name="twitter:description" content="${metaDesc}">
     <meta name="twitter:image" content="${ogImage}">
 
@@ -397,18 +405,18 @@ export async function onRequest(context) {
         <!-- KONTEN UTAMA -->
         <main class="artikel-wrapper">
             <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-                <a href="/index.html">Home</a> › <a href="/artikel">Artikel</a> › <span>${title}</span>
+                <a href="/index.html">Home</a> › <a href="/artikel">Artikel</a> › <span>${h1Title}</span>
             </nav>
 
             <article>
                 <header>
                     <span class="article-kategori-badge">${kategori}</span>
-                    <h1 class="article-title">${title}</h1>
+                    <h1 class="article-title">${h1Title}</h1>
                     <div class="article-meta-data">
                         <span><i class="fa-regular fa-calendar"></i> ${dateFormatted}</span>
                         <span><i class="fa-regular fa-user"></i> ${penulis}</span>
                     </div>
-                    ${imageUrl ? `<img src="${imageUrl}" alt="${title}" class="article-main-image" loading="eager">` : ''}
+                    ${imageUrl ? `<img src="${imageUrl}" alt="${h1Title}" class="article-main-image" loading="eager">` : ''}
                 </header>
 
                 <div class="article-content">

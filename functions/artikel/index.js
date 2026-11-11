@@ -64,7 +64,7 @@ export async function onRequest(context) {
             });
           }
 
-          let kategoriRaw = meta.categories || meta.category || 'Umum';
+          let kategoriRaw = meta.kategori || meta.categories || meta.category || 'Umum';
           let kategoriArr;
           if (Array.isArray(kategoriRaw)) {
             kategoriArr = kategoriRaw;
@@ -87,7 +87,7 @@ export async function onRequest(context) {
 
           return {
             slug: file.name.replace('.md', ''),
-            title: meta.title || 'Tanpa Judul',
+            title: meta.seo_title || meta.title || 'Tanpa Judul',
             rawDate: meta.date || new Date().toISOString(),
             kategories: kategoriFinal,
             rawImage: meta.image || '',
