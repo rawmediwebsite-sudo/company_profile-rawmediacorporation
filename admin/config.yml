@@ -16,8 +16,40 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Judul", name: "title", widget: "string" }
+      # 1. Judul Utama (H1)
+      - { label: "Judul Artikel (H1)", name: "title", widget: "string", hint: "Judul yang akan tampil besar di halaman artikel." }
+      
+      # 2. SEO Title (Untuk tag <title> di Google)
+      - { label: "SEO Title (Opsional)", name: "seo_title", widget: "string", required: false, hint: "Maksimal 60 karakter. Jika kosong, akan memakai Judul Artikel." }
+      
+      # 3. Meta Description (Cuplikan di Google)
+      - { label: "Meta Description", name: "description", widget: "text", required: false, hint: "Maksimal 155 karakter. Tulis ringkasan menarik agar orang mau mengklik di Google." }
+      
+      # 4. Keywords (Kata Kunci SEO)
+      - { label: "Keywords (Pisahkan dengan koma)", name: "keywords", widget: "string", required: false, hint: "Contoh: cara cetak buku, cetak buku murah, percetakan jogja" }
+      
+      # 5. Tanggal
       - { label: "Tanggal", name: "date", widget: "datetime" }
-      # Perhatikan tambahan required: false di bawah ini
-      - { label: "Gambar Utama", name: "image", widget: "image", required: false }
+      
+      # 6. Penulis
+      - { label: "Penulis", name: "author", widget: "string", default: "Tim Redaksi RAW Media", required: false }
+      
+      # 7. Kategori
+      - label: "Kategori"
+        name: "kategori"
+        widget: "select"
+        options: 
+          - "Percetakan"
+          - "Teknologi"
+          - "Tips Menulis"
+          - "Pendidikan"
+          - "Bisnis"
+          - "Umum"
+        default: "Percetakan"
+        hint: "Pilih satu kategori utama untuk artikel ini."
+      
+      # 8. Gambar Utama
+      - { label: "Gambar Utama (Cover)", name: "image", widget: "image", required: false, hint: "Format JPG/PNG. Rasio disarankan 16:9 (misal 1200x630px)." }
+      
+      # 9. Isi Artikel
       - { label: "Isi Artikel", name: "body", widget: "markdown" }
