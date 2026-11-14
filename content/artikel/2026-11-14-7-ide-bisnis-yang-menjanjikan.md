@@ -1,6 +1,6 @@
 ---
 title: 7 Ide Bisnis Yang Menjanjikan
-seo_title: 7 Bisni sYang Menanjikan Ditahun 2026
+seo_title: 7 Bisnis Yang Menjanjikan Ditahun 2026
 description: Bisnis yang masih menanjikan Sepanjang Tahun 2026, Yang
   menghasilkan Dompet Makin Tebal
 keywords: Ide Bisnis 2026, Bisnis Digital, Bisnis UMKM, Bisnis Menjanjikan 2026
